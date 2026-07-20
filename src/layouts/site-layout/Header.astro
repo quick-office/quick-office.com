@@ -34,7 +34,7 @@ const { pathname } = Astro.url;
 <header class={`header z-50 w-full transition-all duration-300 ${stickyHeader ? 'fixed top-0' : ''}`}>
     <nav class="navbar container relative z-30">
         <!-- logo -->
-        <div class="order-0 bg-light/90 lg:bg-black/5 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-4 py-2">
+        <div class="order-0 bg-white/70 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-4 py-2">
             <Logo />
         </div>
         <!-- navbar toggler -->
@@ -57,7 +57,7 @@ const { pathname } = Astro.url;
         <!-- /navbar toggler -->
         <ul
             id="nav-menu"
-            class="navbar-nav order-3 hidden peer-checked:flex peer-checked:flex-col lg:flex w-full py-6 max-lg:mt-5 lg:order-1 lg:w-auto lg:gap-x-2 lg:py-0 xl:gap-x-8 bg-light/90 lg:bg-black/5 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-6"
+            class="navbar-nav order-3 bg-white/70 hidden peer-checked:flex peer-checked:flex-col lg:flex w-full py-6 max-lg:mt-5 lg:order-1 lg:w-auto lg:gap-x-2 lg:py-0 xl:gap-x-8 bg-light/90 lg:bg-black/5 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-6"
         >
             {
                 navigationLinks.map((menu) => (
