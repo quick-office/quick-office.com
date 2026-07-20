@@ -1,4 +1,4 @@
-import { humanize } from '@/lib/textConverter';
+import { humanize } from '@/lib/text-converter';
 import React from 'react';
 
 function Notice({ type, children }: { type: string; children: React.ReactNode }) {

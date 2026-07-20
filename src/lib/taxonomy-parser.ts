@@ -1,5 +1,5 @@
-import { slugify } from '@/lib/textConverter';
-import { getSinglePage } from './contentParser';
+import { slugify } from '@/lib/text-converter';
+import { getSinglePage } from './content-parser';
 
 export const getTaxonomy = async (collection: any, name: string) => {
     const singlePages = await getSinglePage(collection);
