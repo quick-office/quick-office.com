@@ -1,0 +1,100 @@
+---
+import TestimonialCard from '@/layouts/components/TestimonialCard.astro';
+import Accordion from '@/layouts/components/Accordion.astro';
+
+const testimonials = [
+    {
+        name: 'Karim Rahman',
+        designation: 'Rahman Trading Co., Dhaka',
+        poster: '/images/testimonials/1.png',
+        content: 'Quick Office completely replaced our separate invoicing tool, expense tracker, and month-end spreadsheets. Everything is in one place and I can check our financial health from my phone.',
+        video: '/showcase.mp4',
+    },
+    {
+        name: 'Nadia Islam',
+        designation: 'Operations Manager, Chittagong',
+        poster: '/images/testimonials/2.png',
+        content: 'We went from spending 2 days on month-end closing to 2 hours. The profit & loss reports are instant now — no more waiting for the accountant to compile everything manually.',
+        video: '/showcase.mp4',
+    },
+    {
+        name: 'Arif Hossain',
+        designation: 'Finance Manager, Dhaka',
+        poster: '/images/testimonials/3.png',
+        content: 'The free trial was all we needed to know this was the right tool. Setup took less than an hour and we sent our first invoice the same day. The team permission system is exactly what we needed.',
+        video: '/showcase.mp4',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Do I need an accounting background to use Quick Office?',
+        answer: 'No. Quick Office is designed for business owners, not accountants. Common workflows like creating invoices, recording payments, and generating reports are guided step by step.',
+    },
+    {
+        question: 'How does billing work?',
+        answer: 'Quick Office uses manual billing. You choose when to pay and renew your plan — there are no automatic charges. You also get a 24-hour grace period after your plan expires before access is restricted.',
+    },
+    {
+        question: 'Can I add my team members?',
+        answer: 'Yes. All paid plans support multiple users. You can invite team members, assign roles, and control exactly which modules and actions each person can access.',
+    },
+    {
+        question: 'What payment methods are accepted?',
+        answer: 'We accept payments via SSLCommerz, supporting all major Bangladeshi banks, debit/credit cards, and mobile banking (bKash, Nagad).',
+    },
+    {
+        question: 'What happens after my free trial ends?',
+        answer: 'After your 30-day trial, choose any paid plan to continue. Your data is never deleted — simply pick the plan that fits and carry on where you left off.',
+    },
+];
+---
+
+<!-- Testimonials -->
+<section class="section">
+    <div class="container">
+        <div class="section-container">
+            <div class="section-intro centralize">
+                <h2 class="title hasHighlight">
+                    Real Stories From <strong>Business Owners</strong>
+                </h2>
+            </div>
+            <div class="section-content">
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
+                    {testimonials.map((item) => (
+                        <TestimonialCard
+                            poster={item.poster}
+                            name={item.name}
+                            designation={item.designation}
+                            content={item.content}
+                            video={item.video}
+                        />
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="border-border" />
+
+<!-- FAQ -->
+<section class="section">
+    <div class="container">
+        <div class="section-container grid lg:grid-cols-2">
+            <div class="section-intro max-lg:text-center">
+                <div class="sticky top-(--header-height)">
+                    <h2 class="title lg:ml-0">Common <strong>Questions</strong></h2>
+                    <p class="subtitle lg:ml-0">Everything you need to know before getting started with Quick Office.</p>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="space-y-4">
+                    {faqs.map((item) => (
+                        <Accordion title={item.question} content={item.answer} />
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

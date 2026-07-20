@@ -1,0 +1,34 @@
+---
+import BannerVideoShowcase from './BannerVideoShowcase.astro';
+---
+
+<section class="section-ph relative overflow-hidden">
+    <div class="container relative">
+        <div class="absolute top-0 left-0 w-full">
+            <div class="h-100 w-full overflow-hidden -translate-y-10">
+                <canvas class="heroSporeCanvas w-full"></canvas>
+            </div>
+        </div>
+        <div class="row justify-center">
+            <div class="mb-20 text-center relative">
+                <h1 class="mb-8 lg:col-9 mx-auto text-h3 lg:text-h1 hasHighlight">
+                    The All-In-One Accounting Software for <strong>Growing Businesses</strong>
+                </h1>
+                <p class="mb-10 lg:col-6 mx-auto">
+                    Manage invoices, track expenses, process payments, and generate financial reports — all from one
+                    simple dashboard. Built for Bangladesh's SMBs.
+                </p>
+                <div class="flex gap-4 justify-center items-center flex-wrap">
+                    <a class="btn btn-primary" href="/pricing">Start Free Trial</a>
+                    <a class="btn btn-outline" href="/#how-it-works">See How It Works</a>
+                </div>
+                <p class="mt-6 text-sm text-text">No credit card required · 30-day free trial · Manual billing</p>
+            </div>
+            <div class="col-12">
+                <div class="flex justify-center w-full perspective-near xl:perspective-dramatic">
+                    <BannerVideoShowcase />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

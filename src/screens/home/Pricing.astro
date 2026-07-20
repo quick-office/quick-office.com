@@ -1,0 +1,96 @@
+---
+import GradientBlob from '@/layouts/components/GradientBlob.astro';
+import PricingCard from '@/layouts/components/PricingCard.astro';
+
+const plans = [
+    {
+        title: 'Free',
+        price: '0',
+        yearly_price: '0',
+        is_featured: false,
+        description: 'Get started and explore the platform. No card required.',
+        button: { enable: true, label: 'Start Free Trial', link: '/pricing' },
+        features: [
+            { label: 'Invoice Creation & Management', included: true },
+            { label: 'Payment Receive History', included: true },
+            { label: 'Supplier Invoice Management', included: true },
+            { label: 'Chart of Accounts', included: false },
+            { label: 'Voucher Creation', included: false },
+            { label: 'Profit & Loss Reports', included: false },
+            { label: 'Team Members', included: false },
+        ],
+    },
+    {
+        title: 'Basic',
+        price: '1,999',
+        yearly_price: '19,990',
+        is_featured: false,
+        description: 'Full accounting for small businesses and growing teams.',
+        button: { enable: true, label: 'Get Started', link: '/pricing' },
+        features: [
+            { label: 'Everything in Free', included: true },
+            { label: 'Chart of Accounts', included: true },
+            { label: 'Voucher Creation (Debit/Credit)', included: true },
+            { label: 'Profit & Loss Reports', included: true },
+            { label: 'Cost Center Analysis', included: false },
+            { label: 'Team Roles & Permissions', included: true },
+            { label: 'Up to 5 Team Members', included: true },
+        ],
+    },
+    {
+        title: 'Pro',
+        price: '4,999',
+        yearly_price: '49,990',
+        is_featured: true,
+        offer_text: 'Most Popular',
+        description: 'Advanced reporting and multi-user access for scaling businesses.',
+        button: { enable: true, label: 'Get Started', link: '/pricing' },
+        features: [
+            { label: 'Everything in Basic', included: true },
+            { label: 'Cost Center Analysis', included: true },
+            { label: 'Account Distribution Overview', included: true },
+            { label: 'Journal Book & Account Book', included: true },
+            { label: 'Up to 20 Team Members', included: true },
+            { label: 'Priority Support', included: true },
+            { label: 'SSLCommerz Payments', included: true },
+        ],
+    },
+];
+---
+
+<section class="section-box my-0 bg-transparent" id="pricing">
+    <div class="container">
+        <div class="section-container">
+            <div class="section-intro centralize">
+                <h2 class="title hasHighlight">
+                    Simple, Honest <strong>Pricing</strong>
+                </h2>
+                <p class="subtitle">Manual billing — pay when you are ready. No automatic charges, ever.</p>
+            </div>
+            <div class="section-content">
+                <div class="pricing-container">
+                    <div class="price-togger">
+                        <input type="checkbox" data-pricing-toggle id="pricing-toggle" class="hidden" />
+                        <label for="pricing-toggle" class="price-toggler-btn active">Monthly</label>
+                        <label for="pricing-toggle" class="price-toggler-btn">Yearly</label>
+                    </div>
+                    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7 relative z-10">
+                        {plans.map((plan) => (
+                            <PricingCard
+                                price={plan.price}
+                                yearly_price={plan.yearly_price}
+                                title={plan.title}
+                                is_featured={plan.is_featured}
+                                offer_text={plan.offer_text}
+                                button={plan.button}
+                                description={plan.description}
+                                features={plan.features}
+                            />
+                        ))}
+                    </div>
+                </div>
+                <GradientBlob />
+            </div>
+        </div>
+    </div>
+</section>

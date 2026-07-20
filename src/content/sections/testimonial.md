@@ -1,23 +1,22 @@
 ---
 enable: true
-title: 'Real Stories From Local <strong>Business Owners</strong>'
-
-# Testimonials
+title: 'Real Stories From <strong>Business Owners</strong>'
 testimonials:
-    - name: 'Marvin McKinney'
-      designation: 'Roofing Company Owner'
+    - name: 'Karim Rahman'
+      designation: 'Rahman Trading Co., Dhaka'
       poster: '/images/testimonials/1.png'
-      content: "We used to lose at least 3-4 jobs a week because we couldn't answer the phone while on a roof. The Missed Call Auto-Responder immediately cut that to zero. This software pays for itself a hundred times over."
+      content: 'Quick Office completely replaced our separate invoicing tool, expense tracker, and month-end spreadsheets. Everything is in one place and I can check our financial health from my phone.'
       video: /showcase.mp4
 
-    - name: 'Sarah Jenkins'
-      designation: 'Dental Practice Manager'
+    - name: 'Nadia Islam'
+      designation: 'Operations Manager, Chittagong'
       poster: '/images/testimonials/2.png'
-      content: 'Our front desk was overwhelmed with appointment reminders and review requests. This system automated everything. Our show-up rate increased by 40% and our Google reviews doubled in two months.'
+      content: 'We went from spending 2 days on month-end closing to 2 hours. The profit & loss reports are instant now — no more waiting for the accountant to compile everything manually.'
       video: /showcase.mp4
 
-    - name: 'David Alaba'
-      designation: 'HVAC Contractor'
+    - name: 'Arif Hossain'
+      designation: 'Finance Manager, Dhaka'
       poster: '/images/testimonials/3.png'
-      content: 'I finally cancelled my subscription to 5 different tools. Having the Smart Inbox, calendar, and text campaigns in one dashboard saved me nearly $600 a month and made my life so much simpler.'
+      content: 'The free trial was all we needed to know this was the right tool. Setup took less than an hour and we sent our first invoice the same day. The team permission system is exactly what we needed.'
+      video: /showcase.mp4
 ---

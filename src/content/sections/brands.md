@@ -1,6 +1,6 @@
 ---
 enable: true
-title: Trusted by <strong class="text-primary">10,000+</strong> local businesses to scale their bookings and growth automatically.
+title: Trusted by <strong class="text-primary">500+</strong> businesses across Bangladesh to manage their finances.
 images:
     - src: '/images/brands/dropbox-logo-svg-150px.svg'
       alt: 'Dropbox'

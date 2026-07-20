@@ -1,0 +1,39 @@
+---
+import FeatureCard from '@/layouts/components/FeatureCard.astro';
+import VideoShowcase from '@/layouts/components/VideoShowcase.astro';
+
+const items = [
+    { logo: '/images/features-menu-icon.svg', title: 'Invoice Creation & Management', is_starred: false },
+    { logo: '/images/features-menu-icon.svg', title: 'Payment Receive & History', is_starred: false },
+    { logo: '/images/features-menu-icon.svg', title: 'Supplier Invoice Management', is_starred: false },
+    { logo: '/images/features-menu-icon.svg', title: 'Supplier Payment Processing', is_starred: false },
+    { logo: '/images/features-menu-icon.svg', title: 'Chart of Accounts', is_starred: true },
+    { logo: '/images/features-menu-icon.svg', title: 'Voucher Creation (Debit/Credit)', is_starred: false },
+    { logo: '/images/features-menu-icon.svg', title: 'Profit & Loss Reports', is_starred: false },
+    { logo: '/images/features-menu-icon.svg', title: 'Cost Center & Cost Analysis', is_starred: false },
+    { logo: '/images/features-menu-icon.svg', title: 'Team Roles & Permissions', is_starred: false },
+];
+---
+
+<section class="section-box mx-5 relative isolate overflow-hidden">
+    <div class="container">
+        <div class="section-container">
+            <div class="section-intro centralize">
+                <h2 class="title hasHighlight">
+                    Everything You Need to Run Your <strong>Business Finances</strong>
+                </h2>
+                <p class="subtitle">From your first invoice to a complete P&L report — Quick Office covers it all.</p>
+            </div>
+            <div class="section-content">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 border-r border-text-light/5 border-b">
+                    {items.map((item) => (
+                        <FeatureCard logo={item.logo} title={item.title} is_starred={item.is_starred} />
+                    ))}
+                </div>
+                <div class="mt-16 flex justify-center w-full perspective-near xl:perspective-dramatic">
+                    <VideoShowcase />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

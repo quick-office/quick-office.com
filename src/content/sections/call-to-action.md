@@ -1,9 +1,10 @@
 ---
 enable: true
-title: 'Ready to put Your Local Business Growth on <strong>Autopilot?</strong>'
-description: "Stop wasting thousands on scattered tools that don't convert and start enjoying streamlined, predictable growth."
+badge: 'Get Started Today'
+title: 'Ready to take control of your <strong>business finances?</strong>'
+description: 'Join hundreds of businesses using Quick Office. Start free, no card required.'
 button:
     enable: true
-    label: 'Start Your 14-Days Free Trial'
-    link: '/contact'
+    label: 'Start My Free Trial'
+    link: '/pricing'
 ---

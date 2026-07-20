@@ -1,0 +1,62 @@
+---
+import ValueCard from '@/layouts/components/ValueCard.astro';
+
+const items = [
+    {
+        logo: '/images/value-proposition/values-icon-1.svg',
+        title: 'Sales & Invoicing',
+        list: [
+            'Create & send professional invoices',
+            'Track payment status in real time',
+            'Full payment receive history',
+        ],
+    },
+    {
+        logo: '/images/value-proposition/values-icon-2.svg',
+        title: 'Procurement & Payments',
+        list: [
+            'Manage all supplier invoices',
+            'Process & record supplier payments',
+            'Complete payment history log',
+        ],
+    },
+    {
+        logo: '/images/value-proposition/values-icon-3.svg',
+        title: 'Accounting & Vouchers',
+        list: [
+            'Full chart of accounts',
+            'Debit/credit voucher creation',
+            'Journal book & account book',
+        ],
+    },
+    {
+        logo: '/images/value-proposition/values-icon-4.svg',
+        title: 'Reports & Insights',
+        list: [
+            'Profit & loss summary',
+            'Cost center analysis',
+            'Account distribution overview',
+        ],
+    },
+];
+---
+
+<section class="section relative overflow-hidden">
+    <div class="container">
+        <div class="section-container">
+            <div class="section-intro centralize">
+                <h2 class="title hasHighlight">
+                    One Platform. <strong>Every Financial Workflow.</strong>
+                </h2>
+                <p class="subtitle">Log in to a single dashboard to run your entire financial operation.</p>
+            </div>
+            <div class="section-content">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+                    {items.map((item) => (
+                        <ValueCard logo={item.logo} title={item.title} list={item.list} />
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
