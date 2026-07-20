@@ -13,7 +13,6 @@ export default function PricingCheckout({
     monthlyPrice,
     yearlyPrice,
     buttonLabel = 'Get Access',
-    isFeatured = false,
 }: PricingCheckoutProps) {
     const [showModal, setShowModal] = useState(false);
     const [name, setName] = useState('');
@@ -21,7 +20,7 @@ export default function PricingCheckout({
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    const handleCheckout = async (e: React.FormEvent) => {
+    const handleCheckout = async (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!name || !email) {
             setError('Please enter your name and email.');
