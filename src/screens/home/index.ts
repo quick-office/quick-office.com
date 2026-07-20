@@ -1,4 +1,4 @@
-export { Banner } from './banner';
+export { default as Banner } from './Banner.astro';
 export { default as Comparison } from './Comparison.astro';
 export { default as Cta } from './Cta.astro';
 export { default as FeaturesGrid } from './FeaturesGrid.astro';
