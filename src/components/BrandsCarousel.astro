@@ -1,26 +1,33 @@
 ---
-import { getListPage } from '@/lib/contentParser.astro';
-import type { BrandsSection } from '@/types';
+import { markdownify } from '@/lib/utils/textConverter';
 
-const brandsInfo = await getListPage('brandsSection', 'brands');
-const brandsData: BrandsSection = brandsInfo.data;
-if (!brandsData.enable) return;
+const brands = {
+    enable: true,
+    title: 'Trusted by <strong class="text-primary">500+</strong> businesses across Bangladesh to manage their finances.',
+    images: [
+        { src: '/images/brands/dropbox-logo-svg-150px.svg', alt: 'Dropbox' },
+        { src: '/images/brands/hubspot-logo-svg-150.svg', alt: 'HubSpot' },
+        { src: '/images/brands/livechat-logo-svg-150px.svg', alt: 'LiveChat' },
+        { src: '/images/brands/pingdom-logo-svg-150px.svg', alt: 'Pingdom' },
+        { src: '/images/brands/scapic-logo-svg-150px.svg', alt: 'Scapic' },
+    ],
+};
 
-const brandUrls = brandsData.images.map((img) => img.src);
+const brandUrls = brands.images.map((img) => img.src);
 ---
 
 {
-    brandsData.enable && (
+    brands.enable && (
         <section class="section-sm pt-16 xl:pt-20">
             <div class="container">
                 <div class="text-center mb-10">
-                    <p class="text-text-light text-base  " set:html={brandsData.title} />
+                    <p class="text-text-light text-base" set:html={markdownify(brands.title)} />
                 </div>
                 <div
                     class="flex gap-10 xl:gap-x-16 flex-wrap justify-center items-center [&>img]:lg:h-8"
                     data-trusted-brands-images={JSON.stringify(brandUrls)}
                 >
-                    {/* <!-- Handled by script: main.js updateTrustedPartners() --> */}
+                    {/* Handled by script: main.js updateTrustedPartners() */}
                 </div>
             </div>
         </section>

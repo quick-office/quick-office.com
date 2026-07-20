@@ -5,26 +5,28 @@ import CallToAction from '@/components/CallToAction.astro';
 import FeaturedPostCard from '@/components/FeaturedPostCard.astro';
 import ImageMod from '@/components/ImageMod.astro';
 import { blogFeaturedCover, blogAuthor1, blogPost1 } from '@/lib/assets';
-import { getListPage, getSinglePage } from '@/lib/contentParser.astro';
+import { getSinglePage } from '@/lib/contentParser.astro';
 import dateFormat from '@/lib/utils/dateFormat';
 import { sortByDate } from '@/lib/utils/sortFunctions';
 import { markdownify } from '@/lib/utils/textConverter';
-import type { BlogIndex } from '@/types';
 
-// Page-level content from content collection
-const blogIndex = await getListPage('blogIndex', '-index');
-const pageData: BlogIndex = blogIndex.data;
+const pageData = {
+    page_header: {
+        title: 'Stay Informed With Our <strong>Latest Insights</strong>',
+        featured_post: 'human-touch-ai-marketing',
+    },
+    featured_post: { enable: true },
+    latest_posts: { enable: true, title: 'Latest Local Business Strategies' },
+};
 
-// All blog posts sorted by date
 const allPosts = sortByDate(await getSinglePage('blog'));
 
-// Featured post: use the one specified in content, fallback to first
-const featuredId = pageData.page_header?.featured_post;
+const featuredId = pageData.page_header.featured_post;
 const featuredPost = featuredId ? (allPosts.find((p) => p.id === featuredId) ?? allPosts[0]) : allPosts[0];
 const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
 ---
 
-<SiteLayout {...pageData} title="Blog" description="Tips, guides, and insights to help local businesses grow with Quick Office.">
+<SiteLayout title="Blog" description="Stay informed with the latest insights and guides on getting more local customers on autopilot.">
     <!-- Page Header -->
     <section class="section-ph pb-10 relative">
         <div class="container relative">
@@ -34,14 +36,14 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                 </div>
             </div>
             <div class="lg:max-w-4xl mx-auto text-center relative z-10">
-                <h1 class="hasHighlight mb-0" set:html={markdownify(pageData.page_header?.title ?? pageData.title)} />
+                <h1 class="hasHighlight mb-0" set:html={markdownify(pageData.page_header.title)} />
             </div>
         </div>
     </section>
 
     <!-- Featured Article -->
     {
-        (pageData.featured_post?.enable ?? true) && (
+        pageData.featured_post.enable && (
             <section class="section pt-0">
                 <div class="container">
                     <div class="grid gap-4 lg:grid-cols-[1fr_1.03fr]">
@@ -74,12 +76,12 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
 
     <!-- Latest Articles -->
     {
-        (pageData.latest_posts?.enable ?? true) && (
+        pageData.latest_posts.enable && (
             <section class="section pt-10 lg:pt-14">
                 <div class="container relative isolate">
                     <div class="mb-12 text-center">
                         <h2 class="text-h3-sm md:text-h2 capitalize">
-                            {pageData.latest_posts?.title ?? 'Latest Content From Us'}
+                            {pageData.latest_posts.title}
                         </h2>
                     </div>
 

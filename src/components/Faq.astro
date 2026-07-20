@@ -1,34 +1,61 @@
 ---
 import Accordion from './Accordion.astro';
-import { getListPage } from '@/lib/contentParser.astro';
-import type { FaqSection } from '@/types';
 
-const faqEntry = await getListPage('faqSection', 'faq');
-const faqData: FaqSection = faqEntry.data;
-if (!faqData.enable) return;
+const faq = {
+    enable: true,
+    title: 'Common <strong>Questions</strong>',
+    description: 'Everything you need to know before getting started with Quick Office.',
+    button: { enable: false, label: '', link: '' },
+    items: [
+        {
+            question: 'Do I need an accounting background to use Quick Office?',
+            answer: 'No. Quick Office is designed for business owners, not accountants. Common workflows like creating invoices, recording payments, and generating reports are guided step by step.',
+        },
+        {
+            question: 'How does billing work?',
+            answer: 'Quick Office uses manual billing. You choose when to pay and renew your plan — there are no automatic charges. You also get a 24-hour grace period after your plan expires before access is restricted.',
+        },
+        {
+            question: 'Can I add my team members?',
+            answer: 'Yes. All paid plans support multiple users. You can invite team members, assign roles, and control exactly which modules and actions each person can access.',
+        },
+        {
+            question: 'What payment methods are accepted?',
+            answer: 'We accept payments via SSLCommerz, supporting all major Bangladeshi banks, debit/credit cards, and mobile banking (bKash, Nagad).',
+        },
+        {
+            question: 'What happens after my free trial ends?',
+            answer: 'After your 30-day trial, choose any paid plan to continue. Your data is never deleted — simply pick the plan that fits and carry on where you left off.',
+        },
+    ],
+};
 ---
 
-<section class="section">
-    <div class="container">
-        <div class="section-container grid lg:grid-cols-2">
-            <div class="section-intro max-lg:text-center">
-                <div class="sticky top-(--header-height)">
-                    <h2 class="title lg:ml-0" set:html={faqData.title} />
-                    <p class="subtitle lg:ml-0">{faqData.description}</p>
-                    {
-                        faqData.button && faqData.button.enable && faqData.button.link && (
-                            <a href={faqData.button.link} class="btn btn-outline mt-9">
-                                {faqData.button.label}
-                            </a>
-                        )
-                    }
+{
+    faq.enable && (
+        <section class="section">
+            <div class="container">
+                <div class="section-container grid lg:grid-cols-2">
+                    <div class="section-intro max-lg:text-center">
+                        <div class="sticky top-(--header-height)">
+                            <h2 class="title lg:ml-0" set:html={faq.title} />
+                            <p class="subtitle lg:ml-0">{faq.description}</p>
+                            {faq.button.enable && faq.button.link && (
+                                <a href={faq.button.link} class="btn btn-outline mt-9">
+                                    {faq.button.label}
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                    <div class="section-content">
+                        <div class="space-y-4">
+                            {faq.items.map((item) => (
+                                <Accordion title={item.question} content={item.answer} />
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="section-content">
-                <div class="space-y-4">
-                    {faqData.items.map((item) => <Accordion title={item.question} content={item.answer} />)}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+    )
+}

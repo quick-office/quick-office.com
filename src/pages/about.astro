@@ -8,17 +8,57 @@ import GradientBlob from '@/components/GradientBlob.astro';
 import ImageMod from '@/components/ImageMod.astro';
 import OurStory from '@/components/OurStory.astro';
 import TeamCard from '@/components/TeamCard.astro';
-import { getListPage } from '@/lib/contentParser.astro';
 import { markdownify } from '@/lib/utils/textConverter';
 import Features from '@/components/partials/Features.astro';
 import Testimonial from '@/components/partials/Testimonial.astro';
-import type { About } from '@/types';
 
-const about = await getListPage('about', '-index');
-const aboutData: About = about.data;
+const aboutData = {
+    page_header: {
+        title: 'Your System-Driven <strong>Growth Partner.</strong>',
+        subtitle: "We believe local businesses shouldn't have to hire a full-time IT department just to get more customers. We built this platform to put your growth on autopilot.",
+        image: '/images/about_hero.png',
+    },
+    stats: {
+        enable: true,
+        items: [
+            { value: '10,000+', label: 'Local Businesses Served' },
+            { value: '5M+', label: 'Leads Captured' },
+            { value: '24/7', label: 'Automated Workflows' },
+            { value: '99%', label: 'Platform Uptime' },
+        ],
+    },
+    our_team: {
+        enable: true,
+        badge: 'Our Team',
+        title: 'Meet Our <strong>Team Of Experts</strong>',
+        members: [
+            { image: '/images/peoples/Profile Image.png', name: 'Josh Wangombe', role: 'Co-Founder & CTO' },
+            { image: '/images/peoples/Profile Image-1.png', name: 'Daniel Jenson', role: 'Co-Founder & CEO' },
+            { image: '/images/peoples/Profile Image-2.png', name: 'Toun Aalbers', role: 'Co-Founder & CTO' },
+            { image: '/images/peoples/Profile Image-3.png', name: 'Peter van Ursel', role: 'Customer Success Director' },
+        ],
+    },
+    core_values: {
+        enable: true,
+        badge: 'Our Core Mission',
+        title: 'Empowering Local Businesses to <strong>Thrive and Scale</strong>',
+        content: 'We replace the outdated, scattered tools with one powerful platform, so you can focus on what matters most: serving your clients and customers.',
+        items: [
+            { logo: '/images/icons/innovation.svg', title: 'Simplicity First', is_starred: false },
+            { logo: '/images/icons/security.svg', title: 'Bank-Level Security', is_starred: false },
+            { logo: '/images/icons/collaboration.svg', title: 'Local Focus', is_starred: false },
+            { logo: '/images/icons/result-driven.svg', title: 'Results-Driven Tools', is_starred: false },
+            { logo: '/images/icons/creativity.svg', title: 'Automated Growth', is_starred: true },
+            { logo: '/images/icons/innovation.svg', title: 'Client-Centric', is_starred: false },
+            { logo: '/images/icons/membership.svg', title: 'No Hidden Fees', is_starred: false },
+            { logo: '/images/icons/starred-folder.svg', title: 'Reliable Support', is_starred: false },
+            { logo: '/images/features-menu-icon.svg', title: 'Continuous Updates', is_starred: false },
+        ],
+    },
+};
 ---
 
-<SiteLayout {...aboutData} title="About Us" description="Learn about the team behind Quick Office and our mission to help local businesses grow.">
+<SiteLayout title="About Us" description="Learn about the team behind Quick Office and our mission to help local businesses grow.">
     <!-- Page Header -->
     <section class="section-ph pb-20 overflow-hidden">
         <div class="container">
@@ -38,16 +78,14 @@ const aboutData: About = about.data;
     </section>
     <hr class="border-border" />
 
-    <!-- Trusted By Section -->
     <BrandsCarousel />
 
-    <!-- Stats Section -->
     {
         aboutData.stats.enable && (
             <section class="section relative">
                 <div class="container">
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
-                        {aboutData.stats.items.map((stat: any) => (
+                        {aboutData.stats.items.map((stat) => (
                             <div class="text-center p-8 lg:p-10 lg:py-26 rounded-2xl bg-primary/10">
                                 <div class="text-h2 lg:text-h1 leading-none font-bold font-secondary text-text-dark mb-4">
                                     {stat.value}
@@ -64,10 +102,8 @@ const aboutData: About = about.data;
         )
     }
 
-    <!-- CEO Letter Section -->
     <OurStory />
 
-    <!-- Meet Our Team Section -->
     {
         aboutData.our_team.enable && (
             <section class="section relative isolate overflow-hidden">
@@ -79,7 +115,7 @@ const aboutData: About = about.data;
                         </div>
                         <div class="section-content">
                             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                                {aboutData.our_team.members.map((member: any) => (
+                                {aboutData.our_team.members.map((member) => (
                                     <TeamCard image={member.image} name={member.name} role={member.role} />
                                 ))}
                             </div>
@@ -90,15 +126,9 @@ const aboutData: About = about.data;
         )
     }
 
-    <!-- Core Values -->
     {aboutData.core_values.enable && <Features our_features={aboutData.core_values} />}
 
-    <!-- Testimonials Section -->
     <Testimonial />
-
-    <!-- FAQ -->
     <Faq />
-
-    <!-- Call to Action -->
     <CallToAction />
 </SiteLayout>

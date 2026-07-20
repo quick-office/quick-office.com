@@ -1,39 +1,9 @@
 import type { CollectionEntry } from 'astro:content';
 
-// ─── Content Collection Data Types ───────────────────────────────────────────
-// Derived directly from the Zod schemas in content.config.ts — always in sync.
-
 export type Blog = CollectionEntry<'blog'>['data'];
-export type BlogIndex = CollectionEntry<'blogIndex'>['data'];
-export type About = CollectionEntry<'about'>['data'];
-export type Contact = CollectionEntry<'contact'>['data'];
-export type Features = CollectionEntry<'features'>['data'];
-export type Pricing = CollectionEntry<'pricing'>['data'];
-export type Integrations = CollectionEntry<'integrations'>['data'];
-
-// ─── Section Data Types ───────────────────────────────────────────────────────
-
-export type CtaSection = CollectionEntry<'ctaSection'>['data'];
-export type FaqSection = CollectionEntry<'faqSection'>['data'];
-export type BrandsSection = CollectionEntry<'brandsSection'>['data'];
-export type OurStorySection = CollectionEntry<'ourStorySection'>['data'];
-export type TestimonialSection = CollectionEntry<'testimonialSection'>['data'];
-export type ComparisonRowSection = CollectionEntry<'comparisonRowSection'>['data'];
-export type BusinessNeedsSection = CollectionEntry<'businessNeedsSection'>['data'];
-
-// ─── Shared Component Prop Types ─────────────────────────────────────────────
 
 export interface FeatureItem {
     logo: string;
     title: string;
     is_starred: boolean;
-}
-
-export interface OurFeaturesSection {
-    badge?: string;
-    title: string;
-    content?: string;
-    /** Used by about collection (core_values) */
-    subtitle?: string;
-    items: FeatureItem[];
 }

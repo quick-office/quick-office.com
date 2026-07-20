@@ -1,24 +1,90 @@
 ---
 import GradientBlob from './GradientBlob.astro';
 import PricingCard from './PricingCard.astro';
-import { getListPage } from '@/lib/contentParser.astro';
-import type { Pricing } from '@/types';
 
 interface Props {
-    /** Override the section title HTML */
     title?: string;
-    /** Override the section description */
     content?: string;
     isHome?: boolean;
 }
 
 const { title, content, isHome = true } = Astro.props;
 
-const pricingEntry = await getListPage('pricing', '-index');
-const pricingData: Pricing = pricingEntry.data;
+const pricingData = {
+    page_header: {
+        title: 'Pricing Built For <strong>Local Business Growth</strong>',
+        content: 'Start your free 14-day trial, scale as you grow. No contracts. Cancel anytime.',
+    },
+    toggler: {
+        monthly_label: 'Monthly',
+        yearly_label: 'Yearly',
+    },
+    plans: [
+        {
+            title: 'Essentials',
+            price: '97',
+            yearly_price: '77',
+            is_featured: false,
+            offer_text: '',
+            description: 'Perfect for solo operators and new local businesses getting started.',
+            button: { enable: true, label: 'Start Free Trial', link: '/contact' },
+            features: [
+                { label: '3 User Accounts', included: true },
+                { label: 'Unified Lead Inbox', included: true },
+                { label: 'Missed Call Auto-Responder', included: true },
+                { label: 'Autopilot Review Generator', included: true },
+                { label: '24/7 Appointment Scheduler', included: false },
+                { label: 'Website & Funnel Builder', included: false },
+                { label: 'Automated SMS/Email Campaigns', included: false },
+                { label: 'Multi-Location Management', included: false },
+                { label: 'Email Support', included: true },
+            ],
+        },
+        {
+            title: 'Growth',
+            price: '297',
+            yearly_price: '247',
+            is_featured: true,
+            offer_text: 'Most Popular',
+            description: 'For established local businesses ready to scale their marketing and sales.',
+            button: { enable: true, label: 'Start Free Trial', link: '/contact' },
+            features: [
+                { label: '10 User Accounts', included: true },
+                { label: 'Unified Lead Inbox', included: true },
+                { label: 'Missed Call Auto-Responder', included: true },
+                { label: 'Autopilot Review Generator', included: true },
+                { label: '24/7 Appointment Scheduler', included: true },
+                { label: 'Website & Funnel Builder', included: true },
+                { label: 'Automated SMS/Email Campaigns', included: true },
+                { label: 'Multi-Location Management', included: false },
+                { label: 'Priority Support', included: true },
+            ],
+        },
+        {
+            title: 'Scale',
+            price: '497',
+            yearly_price: '397',
+            is_featured: false,
+            offer_text: '',
+            description: 'For multi-location businesses and agencies managing multiple clients.',
+            button: { enable: true, label: 'Start Free Trial', link: '/contact' },
+            features: [
+                { label: 'Unlimited User Accounts', included: true },
+                { label: 'Unified Lead Inbox', included: true },
+                { label: 'Missed Call Auto-Responder', included: true },
+                { label: 'Autopilot Review Generator', included: true },
+                { label: '24/7 Appointment Scheduler', included: true },
+                { label: 'Website & Funnel Builder', included: true },
+                { label: 'Automated SMS/Email Campaigns', included: true },
+                { label: 'Multi-Location Management', included: true },
+                { label: 'Dedicated Account Manager', included: true },
+            ],
+        },
+    ],
+};
 
-const sectionTitle = title ?? pricingData.page_header?.title ?? '';
-const sectionContent = content ?? pricingData.page_header?.content ?? '';
+const sectionTitle = title ?? pricingData.page_header.title;
+const sectionContent = content ?? pricingData.page_header.content;
 ---
 
 <section class={`section-box ${isHome ? '' : 'pt-0'} my-0 bg-transparent`} id="pricing">
@@ -27,7 +93,7 @@ const sectionContent = content ?? pricingData.page_header?.content ?? '';
             {
                 isHome && (
                     <div class="section-intro centralize">
-                        <h2 class="title hasHighlight  " set:html={sectionTitle} />
+                        <h2 class="title hasHighlight" set:html={sectionTitle} />
                         {sectionContent && <p>{sectionContent}</p>}
                     </div>
                 )
@@ -37,10 +103,10 @@ const sectionContent = content ?? pricingData.page_header?.content ?? '';
                     <div class="price-togger">
                         <input type="checkbox" data-pricing-toggle id="pricing-toggle" class="hidden" />
                         <label for="pricing-toggle" class="price-toggler-btn active"
-                            >{pricingData.toggler?.monthly_label ?? 'Monthly'}</label
+                            >{pricingData.toggler.monthly_label}</label
                         >
                         <label for="pricing-toggle" class="price-toggler-btn"
-                            >{pricingData.toggler?.yearly_label ?? 'Yearly'}</label
+                            >{pricingData.toggler.yearly_label}</label
                         >
                     </div>
                     <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7 relative z-10">

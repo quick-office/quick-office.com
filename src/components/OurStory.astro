@@ -1,18 +1,30 @@
 ---
 import ImageMod from '@/components/ImageMod.astro';
-import { getListPage } from '@/lib/contentParser.astro';
-import type { OurStorySection } from '@/types';
 
-const ourStoryEntry = await getListPage('ourStorySection', 'our-story');
-const ourStoryData: OurStorySection = ourStoryEntry.data;
-if (!ourStoryData.enable) return;
+const ourStory = {
+    enable: true,
+    title: 'Why We Do What We Do - A Letter From <strong>Our CEO</strong>',
+    ceo: {
+        image: '/images/avatar-lg.png',
+        name: 'Ronald Richards',
+        role: 'Founder & CEO',
+    },
+    letter: `<p><strong class="text-white font-normal">At Quick Office, we know you started your local business to serve your community, not to become a software engineer.</strong> The problem is most modern marketing tools are too complex, scattered, and disconnected, which leaves you feeling overwhelmed and stuck in the daily admin grind.</p><br><p>We believe you shouldn't have to pay for five different subscriptions or spend your weekends sending emails just to grow your company. We understand how frustrating it is to watch hard-earned leads slip through the cracks, which is why we built a single, unified platform that puts your follow-ups, reviews, and bookings on complete autopilot.</p>`,
+    letter_points_title: "Here's how we do it:",
+    letter_points: ['1. Plug In Your Business Data', '2. Activate Our Local Workflows', '3. Watch Your Bookings Grow'],
+    closing_content:
+        "Stop wasting money on scattered tools that don't talk to each other, and instead enjoy a streamlined business with consistent, predictable revenue growth.",
+    button: { enable: true, label: 'Start Your 14-Day Free Trial', link: '/pricing' },
+};
+
+if (!ourStory.enable) return;
 ---
 
 <section class="section overflow-hidden">
     <div class="container">
         <div class="section-container">
             <div class="section-intro centralize">
-                <h2 class="title hasHighlight lg:col-8 mx-auto" set:html={ourStoryData.title} />
+                <h2 class="title hasHighlight lg:col-8 mx-auto" set:html={ourStory.title} />
             </div>
             <div class="section-content">
                 <hr class="border-border" />
@@ -24,26 +36,23 @@ if (!ourStoryData.enable) return;
                                     width={211}
                                     height={211}
                                     class="size-52 rounded-full mb-7"
-                                    src={ourStoryData.ceo.image}
-                                    alt={ourStoryData.ceo.name}
+                                    src={ourStory.ceo.image}
+                                    alt={ourStory.ceo.name}
                                 />
-                                <p class="text-text-dark font-semibold">
-                                    {ourStoryData.ceo.name}
-                                </p>
-                                <p class="text-text-dark text-sm">{ourStoryData.ceo.role}</p>
+                                <p class="text-text-dark font-semibold">{ourStory.ceo.name}</p>
+                                <p class="text-text-dark text-sm">{ourStory.ceo.role}</p>
                             </div>
                             <div class="text-h6 mt-12 mb-17 text-left mx-auto">
-                                <div set:html={ourStoryData.letter} />
+                                <div set:html={ourStory.letter} />
                             </div>
-
                             {
-                                ourStoryData.letter_points && ourStoryData.letter_points.length > 0 && (
+                                ourStory.letter_points.length > 0 && (
                                     <>
                                         <div class="text-h6 text-text-dark font-semibold text-center mb-7">
-                                            {ourStoryData.letter_points_title ?? "Here's how we do it:"}
+                                            {ourStory.letter_points_title}
                                         </div>
-                                        <div class="flex flex-col gap-y-7 relative vertical-bg-line ">
-                                            {ourStoryData.letter_points.map((point) => (
+                                        <div class="flex flex-col gap-y-7 relative vertical-bg-line">
+                                            {ourStory.letter_points.map((point) => (
                                                 <div class="bg-light border border-border px-8 w-full py-2.5 rounded-full flex items-center justify-center relative z-10 gap-x-2">
                                                     <span class="font-semibold text-text-dark text-lg">{point}</span>
                                                 </div>
@@ -52,28 +61,22 @@ if (!ourStoryData.enable) return;
                                     </>
                                 )
                             }
-
+                            {ourStory.closing_content && <p class="mt-15 text-h6">{ourStory.closing_content}</p>}
                             {
-                                ourStoryData.closing_content && (
-                                    <p class="mt-15 text-h6">{ourStoryData.closing_content}</p>
-                                )
-                            }
-
-                            {
-                                ourStoryData.button && ourStoryData.button.enable && ourStoryData.button.link && (
+                                ourStory.button.enable && ourStory.button.link && (
                                     <div class="mt-12 flex justify-center">
-                                        <a href={ourStoryData.button.link} class="btn btn-primary py-4">
-                                            {ourStoryData.button.label}
+                                        <a href={ourStory.button.link} class="btn btn-primary py-4">
+                                            {ourStory.button.label}
                                         </a>
                                     </div>
                                 )
                             }
                         </div>
                     </div>
-                    <div class="size-2 bg-white absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2"></div>
-                    <div class="size-2 bg-white absolute right-0 top-0 translate-x-1/2 -translate-y-1/2"></div>
-                    <div class="size-2 bg-white absolute left-0 bottom-0 -translate-x-1/2 translate-y-1/2"></div>
-                    <div class="size-2 bg-white absolute right-0 bottom-0 translate-x-1/2 translate-y-1/2"></div>
+                    <div class="size-2 bg-white absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2" />
+                    <div class="size-2 bg-white absolute right-0 top-0 translate-x-1/2 -translate-y-1/2" />
+                    <div class="size-2 bg-white absolute left-0 bottom-0 -translate-x-1/2 translate-y-1/2" />
+                    <div class="size-2 bg-white absolute right-0 bottom-0 translate-x-1/2 translate-y-1/2" />
                 </div>
                 <hr class="border-border" />
             </div>

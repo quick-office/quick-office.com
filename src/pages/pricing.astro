@@ -4,15 +4,36 @@ import Badge from '@/components/Badge.astro';
 import CallToAction from '@/components/CallToAction.astro';
 import Faq from '@/components/Faq.astro';
 import PricingSection from '@/components/PricingSection.astro';
-import { getListPage } from '@/lib/contentParser.astro';
 import { markdownify } from '@/lib/utils/textConverter';
-import type { Pricing } from '@/types';
 
-const pricing = await getListPage('pricing', '-index');
-const pricingData: Pricing = pricing.data;
+const pricingData = {
+    page_header: {
+        badge: 'Pricing',
+        title: 'Pricing Built For Local Business Growth',
+        content: 'Start your free 14-day trial, scale as you grow. No contracts. Cancel anytime.',
+    },
+    comparison: {
+        enable: true,
+        badge: 'Plan Matrix',
+        title: 'Pricing Plans <strong>Comparison</strong>',
+        headers: [{ label: 'Features' }, { label: 'Essentials' }, { label: 'Growth' }, { label: 'Scale' }],
+        rows: [
+            { feature: 'Monthly Price', values: ['$97', '$297', '$497'] },
+            { feature: 'User Accounts', values: ['3', '10', 'Unlimited'] },
+            { feature: 'Unified Lead Inbox', values: [true, true, true] },
+            { feature: 'Missed Call Auto-Responder', values: [true, true, true] },
+            { feature: 'Autopilot Review Generator', values: [true, true, true] },
+            { feature: '24/7 Appointment Scheduler', values: [false, true, true] },
+            { feature: 'Website & Funnel Builder', values: [false, true, true] },
+            { feature: 'Automated SMS/Email Campaigns', values: [false, true, true] },
+            { feature: 'Multi-Location Management', values: [false, false, true] },
+            { feature: 'Support', values: ['Email Support', 'Priority Support', 'Dedicated Manager'] },
+        ],
+    },
+};
 ---
 
-<SiteLayout {...pricingData} title="Pricing" description="Simple, transparent pricing plans for businesses of every size.">
+<SiteLayout title="Pricing" description="Simple, transparent pricing plans for businesses of every size.">
     <!-- Page Header -->
     <section class="section-ph pb-0 relative overflow-hidden">
         <div class="container relative">
