@@ -23,9 +23,7 @@ const { price, yearly_price, title, is_featured = false, offer_text, button, des
     {
         is_featured && (
             <>
-                <div class="absolute bottom-0 right-0 translate-y-1/2 translate-x-1/2 grid place-items-center -z-10">
-                    
-                </div>
+                <div class="absolute bottom-0 right-0 translate-y-1/2 translate-x-1/2 grid place-items-center -z-10"></div>
                 <div class="absolute top-10 right-5 transform bg-primary/50 text-white text-xs font-semibold py-1.5 px-3 rounded-lg">
                     {offer_text ?? 'Most Popular'}
                 </div>
@@ -39,7 +37,10 @@ const { price, yearly_price, title, is_featured = false, offer_text, button, des
             ${price}
             <span class="ml-1 text-sm text-text transition-all duration-300">/ Per Month</span>
         </span>
-        <span class="text-text-dark text-h3 font-semibold price-tag opacity-0 absolute left-0 top-0" data-price-tag-yearly>
+        <span
+            class="text-text-dark text-h3 font-semibold price-tag opacity-0 absolute left-0 top-0"
+            data-price-tag-yearly
+        >
             ${yearly_price}
             <span class="ml-0.5 text-sm text-text transition-all duration-300">/ Per Month</span>
         </span>

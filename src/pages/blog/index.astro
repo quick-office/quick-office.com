@@ -36,7 +36,6 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                 <h1 class="hasHighlight mb-0" set:html={markdownify(pageData.page_header?.title ?? pageData.title)} />
             </div>
         </div>
-        
     </section>
 
     <!-- Featured Article -->
@@ -97,8 +96,6 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                             />
                         ))}
                     </div>
-
-                    
                 </div>
             </section>
         )

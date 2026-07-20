@@ -44,7 +44,10 @@ const {
                                             data-ghl-trigger={item.type === 'calendar' ? 'true' : undefined}
                                         >
                                             <div class="w-10 h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                                                <DynamicIcon icon={item.icon ?? ''} className="w-10 h-10 text-text-dark" />
+                                                <DynamicIcon
+                                                    icon={item.icon ?? ''}
+                                                    className="w-10 h-10 text-text-dark"
+                                                />
                                             </div>
                                             <div class="flex flex-col gap-3">
                                                 <h3 class="font-secondary font-bold text-2xl text-text-dark">

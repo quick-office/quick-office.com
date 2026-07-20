@@ -76,7 +76,9 @@ export default function PricingCheckout({
                                 <line x1="6" y1="6" x2="18" y2="18"></line>
                             </svg>
                         </button>
-                        <h3 className="mb-4 text-h5 font-bold text-text-dark dark:text-text-dark">Unlock {planTitle}</h3>
+                        <h3 className="mb-4 text-h5 font-bold text-text-dark dark:text-text-dark">
+                            Unlock {planTitle}
+                        </h3>
                         <p className="mb-6 text-sm text-text">
                             Please enter your details below so we can set up your account before payment.
                         </p>
@@ -119,7 +121,11 @@ export default function PricingCheckout({
                                 className="btn btn-primary mt-6 flex w-full items-center justify-center gap-2 disabled:cursor-not-allowed disabled:opacity-70"
                             >
                                 {loading ? (
-                                    <svg className="h-5 w-5 animate-spin text-text-dark" fill="none" viewBox="0 0 24 24">
+                                    <svg
+                                        className="h-5 w-5 animate-spin text-text-dark"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                    >
                                         <circle
                                             className="opacity-25"
                                             cx="12"

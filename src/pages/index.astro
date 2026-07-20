@@ -63,8 +63,6 @@ const homepageData: Homepage = homepage.data;
                 </div>
             </div>
         </div>
-        
-        
     </section>
     <hr class="border-border" />
 
@@ -207,7 +205,8 @@ const homepageData: Homepage = homepage.data;
                                             <div
                                                 class={`blob-message relative z-${i + 1} ${i === 1 ? 'lg:w-10/12' : ''}`}
                                             >
-                                                <span class="font-semibold text-text-dark">{stat.value}</span> {stat.label}
+                                                <span class="font-semibold text-text-dark">{stat.value}</span>{' '}
+                                                {stat.label}
                                             </div>
                                         ))}
                                     </div>
@@ -257,7 +256,6 @@ const homepageData: Homepage = homepage.data;
                     </div>
                 </div>
                 <div class="absolute top-0 lg:bottom-0 grid place-items-center size-full lg:translate-y-20 -z-10">
-                    
                     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-180">
                         <div class="h-100 w-full overflow-hidden">
                             <canvas class="heroSporeCanvas w-full" />
@@ -304,10 +302,8 @@ const homepageData: Homepage = homepage.data;
                             stroke="url(#paint0_linear_proc)"
                             stroke-width="3"
                         />
-                        
                     </svg>
                 </div>
-                
             </section>
         )
     }
@@ -335,7 +331,6 @@ const homepageData: Homepage = homepage.data;
                         </div>
                     </div>
                 </div>
-                
             </section>
         )
     }
