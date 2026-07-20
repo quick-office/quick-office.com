@@ -21,7 +21,12 @@ export default defineConfig({
         processor: unified({
             remarkPlugins: [
                 remarkToc,
-                [remarkCollapse, { test: 'Table of contents' }],
+                [
+                    remarkCollapse,
+                    {
+                        test: 'Table of contents',
+                    },
+                ],
             ],
         }),
         shikiConfig: {

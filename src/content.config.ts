@@ -12,7 +12,7 @@ const commonFields = {
 };
 
 const blogCollection = defineCollection({
-    loader: glob({ pattern: '**/*.{md,mdx}', base: 'src/content/blog' }),
+    loader: glob({ pattern: '**/*.{md,mdx}', base: 'src/content/blogs' }),
     schema: z.object({
         ...commonFields,
         author: z.string().default('Admin'),
@@ -25,5 +25,5 @@ const blogCollection = defineCollection({
 });
 
 export const collections = {
-    blog: blogCollection,
+    blogs: blogCollection,
 };

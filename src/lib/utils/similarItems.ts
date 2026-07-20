@@ -1,6 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
 
-type BlogEntry = CollectionEntry<'blog'>;
+type BlogEntry = CollectionEntry<'blogs'>;
 
 // Returns blog posts related to the current post by categories and tags
 const similarItems = (currentItem: BlogEntry, allItems: BlogEntry[]): BlogEntry[] => {

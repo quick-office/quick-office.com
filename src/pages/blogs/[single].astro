@@ -10,7 +10,7 @@ import { markdownify } from '@/lib/utils/textConverter';
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {
-    const posts = await getSinglePage('blog');
+    const posts = await getSinglePage('blogs');
     return posts.map((post) => ({
         params: { single: post.id },
         props: { post },
@@ -21,8 +21,7 @@ const { post } = Astro.props;
 const postData = post.data;
 const { Content } = await render(post);
 
-// Related posts
-const allPosts = await getSinglePage('blog');
+const allPosts = await getSinglePage('blogs');
 const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
 ---
 
@@ -125,7 +124,7 @@ const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
                                 authorImage={relPost.data.author_image ?? blogAuthor1}
                                 authorName={relPost.data.author}
                                 date={dateFormat(relPost.data.date ?? new Date())}
-                                href={`/blog/${relPost.id}`}
+                                href={`/blogs/${relPost.id}`}
                             />
                         ))}
                     </div>

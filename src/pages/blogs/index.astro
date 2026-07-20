@@ -19,7 +19,7 @@ const pageData = {
     latest_posts: { enable: true, title: 'Latest Local Business Strategies' },
 };
 
-const allPosts = sortByDate(await getSinglePage('blog'));
+const allPosts = sortByDate(await getSinglePage('blogs'));
 
 const featuredId = pageData.page_header.featured_post;
 const featuredPost = featuredId ? (allPosts.find((p) => p.id === featuredId) ?? allPosts[0]) : allPosts[0];
@@ -64,7 +64,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                             authorName={featuredPost.data.author}
                             date={dateFormat(featuredPost.data.date ?? new Date())}
                             readTime={featuredPost.data.read_time ?? '5 min read'}
-                            href={`/blog/${featuredPost.id}`}
+                            href={`/blogs/${featuredPost.id}`}
                         />
                     </div>
 
@@ -95,7 +95,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                                 authorImage={post.data.author_image ?? blogAuthor1}
                                 authorName={post.data.author}
                                 date={dateFormat(post.data.date ?? new Date())}
-                                href={`/blog/${post.id}`}
+                                href={`/blogs/${post.id}`}
                             />
                         ))}
                     </div>
