@@ -1,6 +1,5 @@
 {
     "site": {
-        "title": "Quick Office",
         "base_url": "https://quick-office.com",
         "base_path": "/",
         "trailing_slash": false,
