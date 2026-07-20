@@ -1,13 +1,12 @@
 {
     "site": {
         "title": "Quick Office",
-        "home_title": "Quick Office — All-in-One Growth Software for Local Businesses",
         "base_url": "https://quick-office.com",
         "base_path": "/",
         "trailing_slash": false,
         "favicon": "/images/favicon.png",
         "logo": "/images/logo.svg",
-        "logo_width": "160",
+        "logo_width": "190",
         "logo_height": "45",
         "logo_text": "Quick Office"
     },
