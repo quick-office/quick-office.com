@@ -1,6 +1,6 @@
 ---
 import config from '@/config/config.json';
-import ImageMod from './ImageMod.astro';
+import ImageMod from '@/layouts/components/ImageMod.astro';
 
 const { src }: { src?: string } = Astro.props;
 const {
@@ -8,13 +8,11 @@ const {
     logo_width,
     logo_height,
     logo_text,
-    title,
 }: {
     logo: string;
-    logo_width: any;
-    logo_height: any;
+    logo_width: string;
+    logo_height: string;
     logo_text: string;
-    title: string;
 } = config.site;
 ---
 
@@ -27,7 +25,7 @@ const {
                     class={`inline-block `}
                     width={logo_width.replace('px', '') * 2}
                     height={logo_height.replace('px', '') * 2}
-                    alt={title}
+                    alt={logo_text}
                     style={{
                         height: logo_height.replace('px', '') + 'px',
                         width: logo_width.replace('px', '') + 'px',
@@ -35,10 +33,8 @@ const {
                     format="webp"
                 />
             </>
-        ) : logo_text ? (
-            logo_text
         ) : (
-            title
+            logo_text
         )
     }
 </a>

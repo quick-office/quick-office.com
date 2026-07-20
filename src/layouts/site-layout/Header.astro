@@ -1,26 +1,38 @@
 ---
-import Logo from '@/layouts/components/Logo.astro';
-import config from '@/config/config.json';
-import menu from '@/config/menu.json';
+import Logo from './Logo.astro';
 
-export interface ChildNavigationLink {
-    name: string;
-    url: string;
+interface Props {
+    stickyHeader: boolean;
 }
 
-export interface NavigationLink {
+const { stickyHeader } = Astro.props;
+
+type TNavigationLink = {
     name: string;
     url: string;
     hasChildren?: boolean;
-    children?: ChildNavigationLink[];
-}
+    children?: { name: string; url: string }[];
+};
 
-const { main }: { main: NavigationLink[] } = menu;
-const { navigation_button, settings } = config;
+const navigationLinks: TNavigationLink[] = [
+    { name: 'Features', url: '/features' },
+    { name: 'Pricing', url: '/pricing' },
+    { name: 'Blog', url: '/blog' },
+    { name: 'Integrations', url: '/integrations' },
+    { name: 'Case Studies', url: '/case-study' },
+    { name: 'Contact', url: '/contact' },
+];
+
+const navigationButton = {
+    enable: true,
+    label: 'Get Started',
+    link: '/contact',
+};
+
 const { pathname } = Astro.url;
 ---
 
-<header class={`header z-50 w-full transition-all duration-300 ${settings.sticky_header ? 'fixed top-0' : ''}`}>
+<header class={`header z-50 w-full transition-all duration-300 ${stickyHeader ? 'fixed top-0' : ''}`}>
     <nav class="navbar container relative z-30">
         <!-- logo -->
         <div class="order-0">
@@ -49,7 +61,7 @@ const { pathname } = Astro.url;
             class="navbar-nav order-3 hidden peer-checked:flex peer-checked:flex-col lg:flex w-full py-6 max-lg:mt-5 lg:order-1 lg:w-auto lg:gap-x-2 lg:py-0 xl:gap-x-8 bg-light/90 lg:bg-black/5 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-6"
         >
             {
-                main.map((menu) => (
+                navigationLinks.map((menu) => (
                     <>
                         {menu.hasChildren ? (
                             <li class="nav-item nav-dropdown group relative">
@@ -100,15 +112,15 @@ const { pathname } = Astro.url;
                 ))
             }
             {
-                navigation_button.enable && (
+                navigationButton.enable && (
                     <li class="pt-4 inline-block lg:hidden">
                         <a
                             class="btn-outline btn-sm"
-                            href={navigation_button.link}
-                            target={navigation_button.link.startsWith('http') ? '_blank' : '_self'}
-                            rel={navigation_button.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                            href={navigationButton.link}
+                            target={navigationButton.link.startsWith('http') ? '_blank' : '_self'}
+                            rel={navigationButton.link.startsWith('http') ? 'noopener noreferrer' : ''}
                         >
-                            {navigation_button.label}
+                            {navigationButton.label}
                         </a>
                     </li>
                 )
@@ -116,14 +128,14 @@ const { pathname } = Astro.url;
         </ul>
         <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
             {
-                navigation_button.enable && (
+                navigationButton.enable && (
                     <a
                         class="btn btn-primary hidden lg:inline-block"
-                        href={navigation_button.link}
-                        target={navigation_button.link.startsWith('http') ? '_blank' : '_self'}
-                        rel={navigation_button.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                        href={navigationButton.link}
+                        target={navigationButton.link.startsWith('http') ? '_blank' : '_self'}
+                        rel={navigationButton.link.startsWith('http') ? 'noopener noreferrer' : ''}
                     >
-                        {navigation_button.label}
+                        {navigationButton.label}
                     </a>
                 )
             }
