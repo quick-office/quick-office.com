@@ -7,22 +7,24 @@ import { blogAuthor1 } from '@/lib/assets';
 import { getSinglePage } from '@/lib/content-parser';
 import dateFormat from '@/lib/date-format';
 import { markdownify } from '@/lib/text-converter';
-import { render } from 'astro:content';
+import { render, type CollectionEntry } from 'astro:content';
+
+type BlogEntry = CollectionEntry<'blogs'>;
 
 export async function getStaticPaths() {
     const posts = await getSinglePage('blogs');
-    return posts.map((post) => ({
+    return posts.map((post: BlogEntry) => ({
         params: { single: post.id },
         props: { post },
     }));
 }
 
-const { post } = Astro.props;
+const { post } = Astro.props as { post: BlogEntry };
 const postData = post.data;
 const { Content } = await render(post);
 
 const allPosts = await getSinglePage('blogs');
-const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
+const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0, 3);
 ---
 
 <SiteLayout {...postData} title={postData.title} description={postData.description ?? postData.title}>

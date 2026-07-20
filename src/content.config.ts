@@ -1,14 +1,6 @@
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { defineCollection, image } from 'astro:content';
-
-const commonFields = {
-    title: z.string(),
-    description: z.string().optional(),
-    meta_title: z.string().optional(),
-    date: z.coerce.date().optional(),
-    draft: z.boolean().optional(),
-};
+import { defineCollection } from 'astro:content';
 
 const blogCollection = defineCollection({
     loader: glob({
@@ -18,7 +10,11 @@ const blogCollection = defineCollection({
     }),
     schema: ({ image: img }) =>
         z.object({
-            ...commonFields,
+            title: z.string(),
+            description: z.string().optional(),
+            meta_title: z.string().optional(),
+            date: z.coerce.date().optional(),
+            draft: z.boolean().optional(),
             image: img().optional(),
             author: z.string().default('Admin'),
             author_image: z.string().optional(),
