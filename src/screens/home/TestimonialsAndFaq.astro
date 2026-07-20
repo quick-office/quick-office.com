@@ -48,10 +48,16 @@ const faqs = [
         answer: 'After your 30-day trial, choose any paid plan to continue. Your data is never deleted — simply pick the plan that fits and carry on where you left off.',
     },
 ];
+// zigzag pattern for testimonials
+const zigzag = "url(\"data:image/svg+xml,%3Csvg width='24' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6L6 0L12 6L18 0L24 6' stroke='%23eef1f5' stroke-width='1' fill='none'/%3E%3C/svg%3E\")";
+// diamond pattern for FAQ
+const diamond = "url(\"data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='8' y='8' width='8' height='8' transform='rotate(45 12 12)' stroke='%23eef1f5' stroke-width='1' fill='none'/%3E%3C/svg%3E\")";
 ---
 
 <!-- Testimonials -->
-<section class="section">
+<section class="section relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 pointer-events-none opacity-50" style={`background-image: ${zigzag}; background-size: 24px 12px;`}></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none" style="background: radial-gradient(ellipse 65% 50% at 0% 50%, rgba(109,86,232,0.09) 0%, transparent 65%)"></div>
     <div class="container">
         <div class="section-container">
             <div class="section-intro centralize">
@@ -79,7 +85,9 @@ const faqs = [
 <hr class="border-border" />
 
 <!-- FAQ -->
-<section class="section">
+<section class="section relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 pointer-events-none opacity-50" style={`background-image: ${diamond}; background-size: 24px 24px;`}></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none" style="background: radial-gradient(ellipse 60% 50% at 100% 50%, rgba(109,86,232,0.08) 0%, transparent 65%)"></div>
     <div class="container">
         <div class="section-container grid lg:grid-cols-2">
             <div class="section-intro max-lg:text-center">

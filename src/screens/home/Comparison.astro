@@ -18,9 +18,13 @@ const items = [
         images: ['/images/platforms-logo/slack.svg'],
     },
 ];
+// diagonal stripes pattern
+const pattern = "url(\"data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10L10 0M-2.5 2.5L2.5 -2.5M7.5 12.5L12.5 7.5' stroke='%23eef1f5' stroke-width='1'/%3E%3C/svg%3E\")";
 ---
 
 <section class="section relative isolate overflow-x-hidden">
+    <div class="absolute inset-0 -z-10 pointer-events-none opacity-50" style={`background-image: ${pattern}; background-size: 10px 10px;`}></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none" style="background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(109,86,232,0.08) 0%, transparent 65%)"></div>
     <div class="container">
         <div class="section-container">
             <div class="section-intro centralize">

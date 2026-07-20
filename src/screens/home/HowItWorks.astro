@@ -19,9 +19,13 @@ const steps = [
         content: 'Create invoices, record vouchers, process payments, and pull reports — all from one dashboard.',
     },
 ];
+// wavy lines pattern
+const pattern = "url(\"data:image/svg+xml,%3Csvg width='48' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q12 2 24 10 Q36 18 48 10' stroke='%23eef1f5' stroke-width='1' fill='none'/%3E%3C/svg%3E\")";
 ---
 
 <section class="section-box max-lg:overflow-hidden pb-16 xl:pb-19 bg-transparent relative isolate overflow-hidden" id="how-it-works">
+    <div class="absolute inset-0 -z-10 pointer-events-none opacity-50" style={`background-image: ${pattern}; background-size: 48px 20px;`}></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none" style="background: radial-gradient(ellipse 70% 60% at 100% 50%, rgba(109,86,232,0.09) 0%, transparent 65%)"></div>
     <div class="container">
         <div class="section-container">
             <div class="section-intro centralize">

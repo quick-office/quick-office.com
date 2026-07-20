@@ -6,9 +6,11 @@ const brandUrls = [
     '/images/brands/pingdom-logo-svg-150px.svg',
     '/images/brands/scapic-logo-svg-150px.svg',
 ];
+const pattern = "url(\"data:image/svg+xml,%3Csvg width='28' height='28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 28L28 0M-7 7L7 -7M21 35L35 21' stroke='%23eef1f5' stroke-width='1'/%3E%3C/svg%3E\")";
 ---
 
-<div>
+<div class="relative">
+    <div class="absolute inset-0 -z-10 pointer-events-none opacity-60" style={`background-image: ${pattern}; background-size: 28px 28px;`}></div>
     <div class="container">
         <div class="grid grid-cols-3 gap-4 py-10 border-y border-border text-center">
             <div>
