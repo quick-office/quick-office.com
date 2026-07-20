@@ -24,7 +24,10 @@ const featuredPost = featuredId ? (allPosts.find((p) => p.id === featuredId) ?? 
 const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
 ---
 
-<SiteLayout title="Blog" description="Stay informed with the latest insights and guides on getting more local customers on autopilot.">
+<SiteLayout
+    title="Blog"
+    description="Stay informed with the latest insights and guides on getting more local customers on autopilot."
+>
     <!-- Page Header -->
     <section class="section-ph pb-10 relative">
         <div class="container relative">
@@ -78,9 +81,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
             <section class="section pt-10 lg:pt-14">
                 <div class="container relative isolate">
                     <div class="mb-12 text-center">
-                        <h2 class="text-h3-sm md:text-h2 capitalize">
-                            {pageData.latest_posts.title}
-                        </h2>
+                        <h2 class="text-h3-sm md:text-h2 capitalize">{pageData.latest_posts.title}</h2>
                     </div>
 
                     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

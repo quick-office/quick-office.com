@@ -5,15 +5,25 @@ import { OurStory, TeamCard, Features, Testimonial } from '@/screens/about';
 import { markdownify } from '@/lib/text-converter';
 import {
     aboutHero,
-    peopleProfile, peopleProfile1, peopleProfile2, peopleProfile3,
-    iconInnovation, iconSecurity, iconCollaboration, iconResultDriven,
-    iconCreativity, iconMembership, iconStarredFolder, featuresMenuIcon,
+    peopleProfile,
+    peopleProfile1,
+    peopleProfile2,
+    peopleProfile3,
+    iconInnovation,
+    iconSecurity,
+    iconCollaboration,
+    iconResultDriven,
+    iconCreativity,
+    iconMembership,
+    iconStarredFolder,
+    featuresMenuIcon,
 } from '@/lib/assets';
 
 const aboutData = {
     page_header: {
-        title: 'The All-in-One Platform Built for <strong>Bangladesh\'s Local Businesses.</strong>',
-        subtitle: "We started Quick Office because local entrepreneurs in Bangladesh deserved better tools — not expensive enterprise software locked behind complexity, but a smart, integrated platform that grows your business on autopilot.",
+        title: "The All-in-One Platform Built for <strong>Bangladesh's Local Businesses.</strong>",
+        subtitle:
+            'We started Quick Office because local entrepreneurs in Bangladesh deserved better tools — not expensive enterprise software locked behind complexity, but a smart, integrated platform that grows your business on autopilot.',
         image: aboutHero,
     },
     stats: {
@@ -40,7 +50,8 @@ const aboutData = {
         enable: true,
         badge: 'Our Core Values',
         title: 'Built on Principles That <strong>Put You First</strong>',
-        content: 'Every feature in Quick Office exists for one reason: to make your business easier to run, so you can focus on your customers — not your software.',
+        content:
+            'Every feature in Quick Office exists for one reason: to make your business easier to run, so you can focus on your customers — not your software.',
         items: [
             { logo: iconInnovation, title: 'Radically Simple', is_starred: false },
             { logo: iconSecurity, title: 'Bank-Level Security', is_starred: false },
@@ -56,7 +67,10 @@ const aboutData = {
 };
 ---
 
-<SiteLayout title="About Us" description="Learn about the team behind Quick Office and our mission to help local businesses grow.">
+<SiteLayout
+    title="About Us"
+    description="Learn about the team behind Quick Office and our mission to help local businesses grow."
+>
     <!-- Page Header -->
     <section class="section-ph pb-20 overflow-hidden">
         <div class="container">

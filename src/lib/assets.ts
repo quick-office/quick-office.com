@@ -1,6 +1,6 @@
 // Vectors
-export { default as logo } from '@/assets/vectors/logo.svg';
 export { default as featuresMenuIcon } from '@/assets/vectors/features-menu-icon.svg';
+export { default as logo } from '@/assets/vectors/logo.svg';
 
 // Vectors - brands
 export { default as brandDropbox } from '@/assets/vectors/brands/dropbox-logo-svg-150px.svg';
@@ -41,10 +41,10 @@ export { default as valuesIcon3 } from '@/assets/vectors/value-proposition/value
 export { default as valuesIcon4 } from '@/assets/vectors/value-proposition/values-icon-4.svg';
 
 // Images
-export { default as blogAuthor1 } from '@/assets/images/author.png';
 export { default as aboutHero } from '@/assets/images/about_hero.png';
-export { default as avatar } from '@/assets/images/avatar.png';
+export { default as blogAuthor1 } from '@/assets/images/author.png';
 export { default as avatarLg } from '@/assets/images/avatar-lg.png';
+export { default as avatar } from '@/assets/images/avatar.png';
 export { default as brandsGroup1 } from '@/assets/images/brands-group-1.png';
 export { default as brandsGroup2 } from '@/assets/images/brands-group-2.png';
 export { default as brandsGroup3 } from '@/assets/images/brands-group-3.png';
@@ -53,15 +53,15 @@ export { default as brandsGroup5 } from '@/assets/images/brands-group-5.png';
 export { default as ebook } from '@/assets/images/ebook.png';
 export { default as favicon } from '@/assets/images/favicon.png';
 export { default as featuredVideoThumbnail } from '@/assets/images/featured-video-thumbnail.png';
+export { default as featureDashboardMockup } from '@/assets/images/features/dashboard-mockup.png';
 export { default as ogImage } from '@/assets/images/og-image.png';
 export { default as quickOfficeDashboard } from '@/assets/images/quick-office-dashboard.png';
-export { default as featureDashboardMockup } from '@/assets/images/features/dashboard-mockup.png';
 
 // Images - peoples
-export { default as peopleProfile } from '@/assets/images/peoples/Profile Image.png';
 export { default as peopleProfile1 } from '@/assets/images/peoples/Profile Image-1.png';
 export { default as peopleProfile2 } from '@/assets/images/peoples/Profile Image-2.png';
 export { default as peopleProfile3 } from '@/assets/images/peoples/Profile Image-3.png';
+export { default as peopleProfile } from '@/assets/images/peoples/Profile Image.png';
 
 // Images - testimonials
 export { default as testimonial1 } from '@/assets/images/testimonials/1.png';
