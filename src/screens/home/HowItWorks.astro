@@ -1,7 +1,7 @@
 ---
 import ProcessCard from '@/screens/home/ProcessCard.astro';
 import TestimonialCard from '@/components/TestimonialCard.astro';
-import { valuesIcon1, valuesIcon2, valuesIcon3, featuredVideoThumbnail as howItWorksPoster } from '@/lib/assets';
+import { valuesIcon1, valuesIcon2, valuesIcon3, featuredVideoThumbnail as howItWorksPoster, bannerShowcaseVideo } from '@/lib/assets';
 
 const steps = [
     {
@@ -39,7 +39,7 @@ const steps = [
             </div>
             <div class="section-content">
                 <div class="mb-14">
-                    <TestimonialCard poster={howItWorksPoster} video="/how-it-works.mp4" />
+                    <TestimonialCard poster={howItWorksPoster} video={bannerShowcaseVideo} />
                 </div>
                 <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-16">
                     {steps.map((step) => <ProcessCard logo={step.logo} title={step.title} content={step.content} />)}
