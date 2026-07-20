@@ -1,6 +1,6 @@
 ---
 title: 'Case Studies'
-meta_title: 'Case Studies - Local Business Growth'
+meta_title: 'Case Studies'
 description: 'See how local businesses like yours are scaling automatically.'
 image: ''
 draft: false

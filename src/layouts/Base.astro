@@ -20,6 +20,10 @@ export interface Props {
 }
 
 const { title, meta_title, description, image, noindex, canonical } = Astro.props;
+
+// Page title with the site name appended, unless it already contains it
+const baseTitle = plainify(meta_title ? meta_title : title ? title : config.site.title);
+const pageTitle = baseTitle.includes(config.site.title) ? baseTitle : `${baseTitle} — ${config.site.title}`;
 ---
 
 <!doctype html>
@@ -45,7 +49,7 @@ const { title, meta_title, description, image, noindex, canonical } = Astro.prop
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 
         <title>
-            {plainify(meta_title ? meta_title : title ? title : config.site.title)}
+            {pageTitle}
         </title>
 
         {canonical && <link rel="canonical" href={canonical} item-prop="url" />}
@@ -55,14 +59,14 @@ const { title, meta_title, description, image, noindex, canonical } = Astro.prop
         <!-- View Transitions removed to avoid conflicts with GSAP/Swiper -->
 
         <meta name="author" content={config.metadata.meta_author} />
-        <meta property="og:title" content={plainify(meta_title ? meta_title : title ? title : config.site.title)} />
+        <meta property="og:title" content={pageTitle} />
         <meta
             property="og:description"
             content={plainify(description ? description : config.metadata.meta_description)}
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${config.site.base_url}/${Astro.url.pathname.replace('/', '')}`} />
-        <meta name="twitter:title" content={plainify(meta_title ? meta_title : title ? title : config.site.title)} />
+        <meta name="twitter:title" content={pageTitle} />
         <meta
             name="twitter:description"
             content={plainify(description ? description : config.metadata.meta_description)}

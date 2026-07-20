@@ -1,6 +1,6 @@
 ---
 title: 'Marketing Specialist'
-meta_title: 'Marketing Specialist - Quick Office Careers'
+meta_title: 'Marketing Specialist'
 description: 'Develop and execute marketing campaigns that drive growth and engage our target audience.'
 image: ''
 type: 'Full time'

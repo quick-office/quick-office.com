@@ -1,6 +1,6 @@
 ---
 title: 'The All-In-One Shift: Why Local Shops Are Consolidating Software'
-meta_title: 'The All-In-One Shift - Blog'
+meta_title: 'The All-In-One Shift'
 description: 'Instead of paying for 5 different clunky tools, local businesses are moving to unified software.'
 date: 2025-01-20T05:00:00Z
 image: '/images/blog/featured-cover.png'

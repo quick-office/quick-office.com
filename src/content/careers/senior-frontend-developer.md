@@ -1,6 +1,6 @@
 ---
 title: 'Senior Frontend Developer'
-meta_title: 'Senior Frontend Developer - Quick Office Careers'
+meta_title: 'Senior Frontend Developer'
 description: 'Build and maintain responsive web applications using modern frameworks and best practices.'
 image: ''
 type: 'Full time'

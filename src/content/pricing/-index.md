@@ -1,6 +1,6 @@
 ---
 title: 'Pricing'
-meta_title: 'Pricing - All-In-One Local Business Software'
+meta_title: 'Pricing'
 description: 'Simple, transparent pricing for every stage of your local business growth.'
 image: ''
 draft: false

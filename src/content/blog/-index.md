@@ -1,6 +1,6 @@
 ---
 title: 'Blog'
-meta_title: 'Blog - Local Business Growth'
+meta_title: 'Blog'
 description: 'Stay informed with the latest insights and guides on getting more local customers on autopilot.'
 image: ''
 draft: false

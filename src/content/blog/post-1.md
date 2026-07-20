@@ -1,6 +1,6 @@
 ---
 title: 'Why You Need a Missed Call Auto-Responder Today'
-meta_title: 'Missed Call Auto-Responder - Blog'
+meta_title: 'Missed Call Auto-Responder'
 description: 'Manual workflows slow teams down. We explore how automating missed calls saves local businesses thousands.'
 date: 2025-01-20T05:00:00Z
 image: '/images/blog/post-1.png'

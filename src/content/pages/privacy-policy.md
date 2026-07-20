@@ -1,6 +1,6 @@
 ---
 title: 'Privacy'
-meta_title: ''
+meta_title: 'Privacy Policy'
 description: 'this is meta description'
 image: ''
 draft: false

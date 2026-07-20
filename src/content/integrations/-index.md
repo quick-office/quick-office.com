@@ -1,6 +1,6 @@
 ---
 title: 'Integrations'
-meta_title: 'Integrations - All-In-One Local Business Software'
+meta_title: 'Integrations'
 description: 'Seamlessly connect our platform with your favorite local business tools.'
 image: ''
 draft: false

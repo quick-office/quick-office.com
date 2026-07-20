@@ -1,6 +1,6 @@
 ---
 title: 'UX/UI Designer'
-meta_title: 'UX/UI Designer - Quick Office Careers'
+meta_title: 'UX/UI Designer'
 description: 'Create intuitive user experiences and beautiful interfaces for our growing product suite.'
 image: ''
 type: 'Full time'

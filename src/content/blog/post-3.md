@@ -1,6 +1,6 @@
 ---
 title: 'Why Traditional Spreadsheets Are Failing Local Businesses'
-meta_title: 'Why Spreadsheets Are Failing Local Businesses - Blog'
+meta_title: 'Why Spreadsheets Are Failing Local Businesses'
 description: 'This article breaks down why disorganized customer tracking fails and how a Smart Unified Inbox helps.'
 date: 2025-01-20T05:00:00Z
 image: '/images/blog/post-3.png'

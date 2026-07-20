@@ -13,6 +13,7 @@ import Faq from '@/layouts/components/Faq.astro';
 import CallToAction from '@/layouts/components/CallToAction.astro';
 import VideoShowcase from '@/layouts/components/VideoShowcase.astro';
 import LeadGeneration from '@/layouts/components/LeadGeneration.astro';
+import config from '@/config/config.json';
 import { getListPage } from '@/lib/contentParser.astro';
 import { markdownify } from '@/lib/utils/textConverter';
 import Testimonial from '@/partials/Testimonial.astro';
@@ -22,7 +23,7 @@ const homepage = await getListPage('homepage', '-index');
 const homepageData: Homepage = homepage.data;
 ---
 
-<Base>
+<Base title={config.site.home_title}>
     <!-- Banner -->
     <section class="section-ph relative overflow-hidden">
         <div class="container relative">

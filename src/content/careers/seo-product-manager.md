@@ -1,6 +1,6 @@
 ---
 title: 'SEO Product Manager'
-meta_title: 'SEO Product Manager - Quick Office Careers'
+meta_title: 'SEO Product Manager'
 description: 'Lead product strategy, collaborate with engineering, and shape the future of our analytics platform.'
 image: ''
 type: 'Full time'

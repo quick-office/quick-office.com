@@ -1,6 +1,6 @@
 ---
 title: 'Contact Us'
-meta_title: 'Contact Us - All-In-One Local Business Software'
+meta_title: 'Contact Us'
 description: 'Have a question about streamlining your business? Send us a message.'
 image: ''
 draft: false

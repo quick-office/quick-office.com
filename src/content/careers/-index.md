@@ -1,6 +1,6 @@
 ---
 title: 'Careers'
-meta_title: 'Careers - Join Our Local Business Growth Team'
+meta_title: 'Careers'
 description: 'Join us and help empower local businesses with automated tools for their community growth.'
 image: ''
 draft: false

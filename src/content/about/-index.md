@@ -1,6 +1,6 @@
 ---
 title: 'About Us'
-meta_title: 'About Us - All-In-One Local Business Software'
+meta_title: 'About Us'
 description: 'Your System-Driven Growth Partner.'
 image: ''
 draft: false

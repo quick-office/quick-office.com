@@ -1,6 +1,6 @@
 ---
 title: 'Automated Review Generation: Your Biggest Local Advantage'
-meta_title: 'Automated Review Generation - Blog'
+meta_title: 'Automated Review Generation'
 description: 'Learn how asking for reviews on autopilot can double your local Google visibility.'
 date: 2025-01-20T05:00:00Z
 image: '/images/blog/post-4.png'

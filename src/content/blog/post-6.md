@@ -1,6 +1,6 @@
 ---
 title: 'Automating Marketing Without Losing Your Local Touch'
-meta_title: 'Local Marketing Automation - Blog'
+meta_title: 'Local Marketing Automation'
 description: 'Discover how automation can handle texts and reminders while maintaining a natural, community tone.'
 date: 2025-01-20T05:00:00Z
 image: '/images/blog/post-6.png'

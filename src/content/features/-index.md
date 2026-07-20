@@ -1,6 +1,6 @@
 ---
 title: 'Features'
-meta_title: 'Features - The All-In-One Growth Software'
+meta_title: 'Features'
 description: 'Everything your local business needs to attract, engage, convert, and retain customers automatically.'
 image: ''
 draft: false
