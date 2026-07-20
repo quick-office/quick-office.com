@@ -1,42 +1,23 @@
 ---
-import config from '@/config/config.json';
-
 import ImageMod from '@/layouts/components/ImageMod.astro';
 
-const { src }: { src?: string } = Astro.props;
-
-const {
-    logo,
-    logo_width,
-    logo_height,
-    logo_text,
-}: {
-    logo: string;
-    logo_width: string;
-    logo_height: string;
-    logo_text: string;
-} = config.site;
+const logo = '/images/logo.svg';
+const logo_width = 190;
+const logo_height = 45;
+const logo_text = 'Quick Office';
 ---
 
 <a href="/" class="navbar-brand inline-block">
-    {
-        src || logo ? (
-            <>
-                <ImageMod
-                    src={src ? src : logo}
-                    class={`inline-block `}
-                    width={logo_width.replace('px', '') * 2}
-                    height={logo_height.replace('px', '') * 2}
-                    alt={logo_text}
-                    style={{
-                        height: logo_height.replace('px', '') + 'px',
-                        width: logo_width.replace('px', '') + 'px',
-                    }}
-                    format="webp"
-                />
-            </>
-        ) : (
-            logo_text
-        )
-    }
+    <ImageMod
+        src={logo}
+        class="inline-block"
+        width={logo_width * 2}
+        height={logo_height * 2}
+        alt={logo_text}
+        format="webp"
+        style={{
+            height: `${logo_height}px`,
+            width: `${logo_width}px`,
+        }}
+    />
 </a>

@@ -2,15 +2,7 @@
     "site": {
         "base_url": "https://quick-office.com",
         "base_path": "/",
-        "trailing_slash": false,
-        "favicon": "/images/favicon.png",
-        "logo": "/images/logo.svg",
-        "logo_width": "190",
-        "logo_height": "45",
-        "logo_text": "Quick Office"
-    },
-    "settings": {
-        "sticky_header": true
+        "trailing_slash": false
     },
     "params": {
         "contact_form_action": "#",
@@ -20,15 +12,5 @@
         "footer_tagline": "Empowering Marketing businesses through intelligent automation.",
         "footer_email": "contact@quick-office.com",
         "footer_phone": "(+1) 165-320-0102"
-    },
-    "navigation_button": {
-        "enable": true,
-        "label": "Get Started",
-        "link": "/contact"
-    },
-    "metadata": {
-        "meta_author": "Quick Office",
-        "meta_image": "/images/og-image.png",
-        "meta_description": "The all-in-one marketing and sales automation platform"
     }
 }
