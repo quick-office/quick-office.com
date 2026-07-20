@@ -30,7 +30,7 @@ const { pathname } = Astro.url;
         <input id="nav-toggle" type="checkbox" class="peer hidden" />
         <label
             for="nav-toggle"
-            class="order-3 cursor-pointer flex items-center lg:hidden text-white lg:order-1 bg-dark/10 backdrop-blur-lg size-12 rounded-xl justify-center"
+            class="order-3 cursor-pointer flex items-center lg:hidden text-text-dark lg:order-1 bg-black/10 backdrop-blur-lg size-12 rounded-xl justify-center"
         >
             <svg id="show-button" class="h-6 fill-current block peer-checked:hidden" viewBox="0 0 20 20">
                 <title>Menu Open</title>
@@ -46,7 +46,7 @@ const { pathname } = Astro.url;
         <!-- /navbar toggler -->
         <ul
             id="nav-menu"
-            class="navbar-nav order-3 hidden peer-checked:flex peer-checked:flex-col lg:flex w-full py-6 max-lg:mt-5 lg:order-1 lg:w-auto lg:gap-x-2 lg:py-0 xl:gap-x-8 bg-light/90 lg:bg-dark/30 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-6"
+            class="navbar-nav order-3 hidden peer-checked:flex peer-checked:flex-col lg:flex w-full py-6 max-lg:mt-5 lg:order-1 lg:w-auto lg:gap-x-2 lg:py-0 xl:gap-x-8 bg-light/90 lg:bg-black/5 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-6"
         >
             {
                 main.map((menu) => (
@@ -131,5 +131,5 @@ const { pathname } = Astro.url;
     </nav>
 
     <!-- expanded menu background -->
-    <div class="bg-dark/50 backdrop-blur-sm -z-10" id="nav-menu-bg"></div>
+    <div class="bg-black/20 backdrop-blur-sm -z-10" id="nav-menu-bg"></div>
 </header>

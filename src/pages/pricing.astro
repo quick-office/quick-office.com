@@ -33,11 +33,7 @@ const pricingData: Pricing = pricing.data;
                 </div>
             </div>
         </div>
-        <div
-            class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl"
-            style="background: radial-gradient(circle, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 78%, transparent) 20%, transparent 70%);"
-        >
-        </div>
+        
         <PricingSection isHome={false} />
     </section>
 
@@ -57,7 +53,7 @@ const pricingData: Pricing = pricing.data;
                                     <div class="grid grid-cols-[1.2fr_1fr_1fr_1fr] items-center text-sm md:text-base font-primary text-text relative z-10">
                                         {pricingData.comparison.headers.map((h: any, i: number) => (
                                             <div
-                                                class={`px-6 py-5 text-h5-sm font-semibold text-white ${i === 0 ? '' : 'text-center'}`}
+                                                class={`px-6 py-5 text-h5-sm font-semibold text-text-dark ${i === 0 ? '' : 'text-center'}`}
                                             >
                                                 {h.label}
                                             </div>
@@ -67,16 +63,16 @@ const pricingData: Pricing = pricing.data;
                                     <div class="relative z-10">
                                         {pricingData.comparison.rows.map((row: any, i: number) => (
                                             <div
-                                                class={`grid grid-cols-[1.2fr_1fr_1fr_1fr] items-center border-t border-border/60 ${i % 2 === 0 ? 'bg-white/5' : ''}`}
+                                                class={`grid grid-cols-[1.2fr_1fr_1fr_1fr] items-center border-t border-border/60 ${i % 2 === 0 ? 'bg-black/5' : ''}`}
                                             >
-                                                <div class="px-6 py-4 text-white">{row.feature}</div>
+                                                <div class="px-6 py-4 text-text-dark">{row.feature}</div>
                                                 {row.values.map((val: any, valIndex: number) => (
                                                     <div class="px-6 py-4 text-center">
                                                         {typeof val === 'boolean' ? (
                                                             val ? (
                                                                 <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-primary/80 shadow-[0_8px_18px_rgba(147,122,255,0.35)]">
                                                                     <svg
-                                                                        class="h-4 w-4 text-white"
+                                                                        class="h-4 w-4 text-text-dark"
                                                                         viewBox="0 0 24 24"
                                                                         fill="none"
                                                                         stroke="currentColor"
@@ -89,13 +85,13 @@ const pricingData: Pricing = pricing.data;
                                                                     </svg>
                                                                 </span>
                                                             ) : (
-                                                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-white/10 ring-1 ring-border/60">
-                                                                    <span class="block h-0.5 w-3 rounded-full bg-white/60" />
+                                                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 ring-1 ring-border/60">
+                                                                    <span class="block h-0.5 w-3 rounded-full bg-black/60" />
                                                                 </span>
                                                             )
                                                         ) : (
                                                             <span
-                                                                class={`font-medium ${valIndex === 1 ? 'text-white' : 'text-text-dark'}`}
+                                                                class={`font-medium ${valIndex === 1 ? 'text-text-dark' : 'text-text-dark'}`}
                                                             >
                                                                 {val}
                                                             </span>

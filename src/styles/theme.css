@@ -1,15 +1,15 @@
 @theme {
     /* === Colors === */
-    --color-primary: #937aff;
+    --color-primary: #6d56e8;
     --color-primary-light: #4d36d0;
-    --color-secondary: #ff5353;
-    --color-body: #03010e;
-    --color-border: #202128;
-    --color-light: #0b0c17;
-    --color-dark: #040404;
-    --color-text: #dad4de;
-    --color-text-dark: #817e84;
-    --color-text-light: #e5e5e5;
+    --color-secondary: #e03131;
+    --color-body: #ffffff;
+    --color-border: #e2e8f0;
+    --color-light: #f8fafc;
+    --color-dark: #f1f5f9;
+    --color-text: #4b5563;
+    --color-text-dark: #1f2937;
+    --color-text-light: #374151;
 
     /* === Font Families === */
     --font-primary: Inter Tight, sans-serif;

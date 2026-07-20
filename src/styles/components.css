@@ -52,7 +52,7 @@
     @apply inline-block;
 }
 .social-icons li a {
-    @apply flex size-11 items-center justify-center rounded-full bg-white/5 text-center text-lg leading-9 text-white transition-all duration-200 hover:bg-white/20;
+    @apply flex size-11 items-center justify-center rounded-full bg-black/5 text-center text-lg leading-9 text-text-dark transition-all duration-200 hover:bg-black/10;
 }
 .social-icons li a svg {
     @apply size-5;
@@ -133,19 +133,19 @@
 
 /* accordion */
 .accordion {
-    @apply mb-6 overflow-hidden rounded-2xl border border-border bg-white/5;
+    @apply mb-6 overflow-hidden rounded-2xl border border-border bg-black/5;
 }
 .accordion-header {
     @apply flex w-full cursor-pointer items-center justify-between border-b border-transparent py-4 pr-4 pl-8 text-left text-lg text-text-dark;
 }
 .accordion-icon {
-    @apply size-6.5 -rotate-90 rounded-full bg-white/5 p-1.5 transition-transform duration-200;
+    @apply size-6.5 -rotate-90 rounded-full bg-black/5 p-1.5 transition-transform duration-200;
 }
 .accordion-content {
     @apply max-h-0 overflow-hidden px-8 py-0 text-text;
 }
 .accordion.active .accordion-header {
-    @apply border-border text-white;
+    @apply border-border text-text-dark;
 }
 .accordion.active .accordion-icon {
     @apply rotate-0;
@@ -174,7 +174,7 @@
 /* content style */
 .content {
     @apply prose max-w-none;
-    @apply prose-headings:mt-[.6em] prose-headings:mb-[.3em] prose-headings:text-white;
+    @apply prose-headings:mt-[.6em] prose-headings:mb-[.3em] prose-headings:text-text-dark;
     @apply prose-h1:text-h1-sm md:prose-h1:text-h1;
     @apply prose-h2:text-h2-sm md:prose-h2:text-h2;
     @apply prose-h3:text-h3-sm md:prose-h3:text-h3;
@@ -199,7 +199,7 @@
 }
 .feature-items-group::before {
     content: '';
-    @apply absolute top-1/2 left-0 z-0 h-[1px] w-full bg-white/40;
+    @apply absolute top-1/2 left-0 z-0 h-[1px] w-full bg-black/20;
 }
 .feature-items-group::after {
     content: '';
@@ -268,9 +268,9 @@ ul.green-tick-list {
 
 /* Footer */
 .footer-label {
-    @apply mb-11 text-h6 font-semibold text-white;
+    @apply mb-11 text-h6 font-semibold text-text-dark;
 }
 
 .footer-link {
-    @apply text-text transition-colors duration-200 hover:text-white;
+    @apply text-text transition-colors duration-200 hover:text-text-dark;
 }

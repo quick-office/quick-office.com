@@ -30,11 +30,7 @@ const studyData = study.data;
                 <h1 class="mb-0 text-h3 lg:text-h1 hasHighlight" set:html={markdownify(studyData.title)} />
             </div>
         </div>
-        <div
-            class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl"
-            style="background: radial-gradient(circle, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 78%, transparent) 20%, transparent 70%);"
-        >
-        </div>
+        
     </section>
 
     <!-- Hero Image -->
@@ -57,7 +53,7 @@ const studyData = study.data;
                                 <ImageMod src={item.icon} alt={item.label} class="w-8 h-8" width={32} height={32} />
                             </div>
                             <p class="text-text text-sm mb-1">{item.label}</p>
-                            <p class="text-white font-semibold">{item.value}</p>
+                            <p class="text-text-dark font-semibold">{item.value}</p>
                         </div>
                     ))
                 }
@@ -100,14 +96,14 @@ const studyData = study.data;
                     </div>
                     <!-- Blockquote -->
                     <div class="bg-light/80 rounded-3xl p-8 xl:p-10 relative">
-                        <div class="text-white mb-6">
+                        <div class="text-text-dark mb-6">
                             <svg width="45" height="28" viewBox="0 0 45 28" fill="none">
                                 <path
                                     d="M15.3955 0V10.9561H24.8691L16.5791 28H0L13.0264 0H15.3955ZM36.7109 0V10.9561H45L36.7109 28H21.3154L34.3418 0H36.7109Z"
                                     fill="currentColor"></path>
                             </svg>
                         </div>
-                        <blockquote class="text-h6 text-white mb-8">
+                        <blockquote class="text-h6 text-text-dark mb-8">
                             {studyData?.challenges?.quote}
                         </blockquote>
                         <div class="flex items-center gap-4">
@@ -117,7 +113,7 @@ const studyData = study.data;
                                 class="size-12 rounded-full object-cover"
                             />
                             <div>
-                                <p class="text-white font-semibold">
+                                <p class="text-text-dark font-semibold">
                                     {studyData?.challenges?.quote_author?.name}
                                 </p>
                                 <p class="text-text text-sm">
@@ -188,7 +184,7 @@ const studyData = study.data;
                     {
                         studyData?.results?.metrics?.map((metric) => (
                             <div class="bg-light rounded-3xl p-8 py-16 text-center">
-                                <div class="text-h2 leading-none font-bold font-secondary text-white mb-2">
+                                <div class="text-h2 leading-none font-bold font-secondary text-text-dark mb-2">
                                     {metric.value}
                                 </div>
                                 <p class="text-text">{metric.label}</p>

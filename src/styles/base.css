@@ -4,6 +4,7 @@ html {
 
 body {
     @apply bg-body font-primary text-base leading-relaxed font-normal text-text antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23e2e8f0'/%3E%3C/svg%3E");
 }
 
 h1,
@@ -12,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-    @apply font-secondary leading-tight font-bold text-white;
+    @apply font-secondary leading-tight font-bold text-text-dark;
 }
 
 h1,
@@ -47,7 +48,7 @@ h6,
 
 b,
 strong {
-    @apply font-semibold text-white;
+    @apply font-semibold text-text-dark;
 }
 
 code {
@@ -68,6 +69,6 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0px 1000px var(--color-light) inset;
     box-shadow: 0 0 0px 1000px var(--color-light) inset;
-    -webkit-text-fill-color: var(--color-text-light);
+    -webkit-text-fill-color: var(--color-text-dark);
     transition: background-color 5000s ease-in-out 0s;
 }

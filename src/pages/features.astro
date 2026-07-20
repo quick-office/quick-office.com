@@ -49,13 +49,9 @@ const featuresData: Features = features.data;
                 </div>
             </div>
         </div>
-        <div
-            class="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 size-160 xl:size-300 -z-20 blur-2xl"
-            style="background: radial-gradient(circle, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 78%, transparent) 20%, transparent 70%);"
-        >
-        </div>
+        
     </section>
-    <hr class="h-px bg-linear-to-r from-transparent from-10% via-white/50 to-90% to-transparent border-0" />
+    <hr class="border-border" />
 
     <!-- Trusted Partners -->
     <BrandsCarousel />
@@ -105,10 +101,10 @@ const featuresData: Features = features.data;
                                     <div class="grid sm:grid-cols-2 gap-8 lg:gap-10">
                                         {feature.items.map((item: any) => (
                                             <article>
-                                                <div class="size-10 rounded-xl bg-white/6 border border-border grid place-items-center mb-4">
+                                                <div class="size-10 rounded-xl bg-black/6 border border-border grid place-items-center mb-4">
                                                     <DynamicIcon icon={item.icon} className="text-text-light text-lg" />
                                                 </div>
-                                                <h3 class="text-h5-sm font-bold text-white mb-2">{item.title}</h3>
+                                                <h3 class="text-h5-sm font-bold text-text-dark mb-2">{item.title}</h3>
                                                 <p class="text-text">{item.content}</p>
                                             </article>
                                         ))}
@@ -116,7 +112,7 @@ const featuresData: Features = features.data;
                                 </div>
 
                                 <div
-                                    class={`p-8 lg:p-12 xl:p-14 bg-white/2 h-max ${feature.reverse ? '' : 'lg:order-0'}`}
+                                    class={`p-8 lg:p-12 xl:p-14 bg-black/2 h-max ${feature.reverse ? '' : 'lg:order-0'}`}
                                 >
                                     <ImageMod src={feature.image} alt={feature.title} class="w-full object-contain" />
                                 </div>
