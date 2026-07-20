@@ -22,6 +22,8 @@ export const POST: APIRoute = async ({ request }) => {
 
     const stripe = new Stripe(STRIPE_SECRET_KEY, {
         apiVersion: '2026-06-24.dahlia',
+        // Cloudflare Workers have no Node http module — use fetch
+        httpClient: Stripe.createFetchHttpClient(),
     });
 
     const signature = request.headers.get('stripe-signature');
@@ -33,7 +35,14 @@ export const POST: APIRoute = async ({ request }) => {
 
     try {
         const body = await request.text();
-        event = stripe.webhooks.constructEvent(body, signature, STRIPE_WEBHOOK_SECRET);
+        // Async variant with SubtleCrypto — required on Cloudflare Workers
+        event = await stripe.webhooks.constructEventAsync(
+            body,
+            signature,
+            STRIPE_WEBHOOK_SECRET,
+            undefined,
+            Stripe.createSubtleCryptoProvider(),
+        );
     } catch (err: any) {
         console.error(`Webhook signature verification failed: ${err.message}`);
         return new Response(`Webhook Error: ${err.message}`, { status: 400 });

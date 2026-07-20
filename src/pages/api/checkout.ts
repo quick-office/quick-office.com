@@ -27,6 +27,8 @@ export const POST: APIRoute = async ({ request, url }) => {
 
     const stripe = new Stripe(STRIPE_SECRET_KEY, {
         apiVersion: '2026-06-24.dahlia', // Matching latest SDK typings
+        // Cloudflare Workers have no Node http module — use fetch
+        httpClient: Stripe.createFetchHttpClient(),
     });
 
     // Parse incoming request
