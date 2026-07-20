@@ -4,6 +4,8 @@
 // - GSAP scroll animation: starts tilted/scaled, normalizes on scroll (handled by animations.js)
 // - Click button → unmute video, hide overlay button
 // - Click again → mute, show overlay
+
+import bannerShowcase from '@/assets/videos/banner-showcase.mp4';
 ---
 
 <div class="relative w-full max-w-280 mx-auto rounded-4xl overflow-hidden" data-gsap-video-showcase>
@@ -17,7 +19,7 @@
         playsinline
         preload="metadata"
     >
-        <source src="/showcase.mp4" type="video/mp4" />
+        <source src={bannerShowcase} type="video/mp4" />
         Your browser does not support the video tag.
     </video>
     <!-- Sound toggle overlay — visible = muted (shows icon to unmute) -->
