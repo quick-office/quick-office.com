@@ -1,5 +1,4 @@
 ---
-import config from '@/config/config.json';
 import Base from '@/layouts/Base.astro';
 import CallToAction from '@/layouts/components/CallToAction.astro';
 import Faq from '@/layouts/components/Faq.astro';
@@ -10,9 +9,6 @@ import type { Contact } from '@/types';
 
 const contact = await getListPage('contact', '-index');
 const contactData: Contact = contact.data;
-const {
-    params: { contact_form_action: _unused },
-} = config;
 ---
 
 <Base {...contactData}>

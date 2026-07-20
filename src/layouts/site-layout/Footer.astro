@@ -1,16 +1,39 @@
 ---
 import Social from '@/layouts/components/Social.astro';
-import config from '@/config/config.json';
-import menu from '@/config/menu.json';
-import social from '@/config/social.json';
 import ImageMod from '@/layouts/components/ImageMod.astro';
 import { logo } from '@/lib/assets';
 import { markdownify } from '@/lib/utils/textConverter';
-import type { Menu, SocialType } from '@/types';
 
-const { footer_primary, footer_resource, footer_legal, footer_col_1_title, footer_col_2_title, footer_col_3_title } =
-    menu as Menu;
-const { main: socialLinks } = social as SocialType;
+const footerTagline = 'Empowering Marketing businesses through intelligent automation.';
+const footerEmail = 'contact@quick-office.com';
+const footerPhone = '(+1) 165-320-0102';
+const copyright = 'Copyright &copy; 2026 <strong>Quick Office</strong> All Rights Reserved';
+
+const footerPrimary = [
+    { name: 'Home', url: '/' },
+    { name: 'About Us', url: '/about' },
+    { name: 'Features', url: '/features' },
+    { name: 'Pricing', url: '/pricing' },
+    { name: 'Contact', url: '/contact' },
+];
+
+const footerResource = [
+    { name: 'Case Studies', url: '/case-study' },
+    { name: 'Elements', url: '/elements' },
+    { name: 'Blog', url: '/blog' },
+    { name: 'Careers', url: '/careers' },
+    { name: 'Integrations', url: '/integrations' },
+];
+
+const footerLegal = [
+    { name: 'Privacy Policy', url: '/privacy-policy' },
+    { name: 'Terms and Conditions', url: '/term-and-condition' },
+];
+
+const socialLinks = [
+    { name: 'instagram', icon: 'FaInstagram', link: 'https://www.instagram.com/' },
+    { name: 'youtube', icon: 'FaYoutube', link: 'https://www.youtube.com/' },
+];
 ---
 
 <footer class="section pb-0 relative overflow-hidden">
@@ -19,22 +42,18 @@ const { main: socialLinks } = social as SocialType;
             <!-- Column 1 - Logo & Contact -->
             <div class="max-w-95 mb-20 text-lg text-text">
                 <ImageMod src={logo} width={156} height={50} class="h-12.5" alt="logo" />
-                <p class="mt-6">{config.params.footer_tagline}</p>
-                <a class="link mt-6 inline-block underline" href={`mailto:${config.params.footer_email}`}
-                    >{config.params.footer_email}</a
-                >
-                <a class="link mt-4 block" href={`tel:${config.params.footer_phone}`}>{config.params.footer_phone}</a>
+                <p class="mt-6">{footerTagline}</p>
+                <a class="link mt-6 inline-block underline" href={`mailto:${footerEmail}`}>{footerEmail}</a>
+                <a class="link mt-4 block" href={`tel:${footerPhone}`}>{footerPhone}</a>
             </div>
             <!-- Column 2 - Primary -->
             <div>
-                <h3 class="footer-label">{footer_col_1_title}</h3>
+                <h3 class="footer-label">Primary</h3>
                 <ul>
                     {
-                        footer_primary?.map((item) => (
+                        footerPrimary.map((item) => (
                             <li class="mb-5">
-                                <a href={item.url} class="footer-link">
-                                    {item.name}
-                                </a>
+                                <a href={item.url} class="footer-link">{item.name}</a>
                             </li>
                         ))
                     }
@@ -42,14 +61,12 @@ const { main: socialLinks } = social as SocialType;
             </div>
             <!-- Column 3 - Resource -->
             <div>
-                <h3 class="footer-label">{footer_col_2_title}</h3>
+                <h3 class="footer-label">Resource</h3>
                 <ul>
                     {
-                        footer_resource?.map((item) => (
+                        footerResource.map((item) => (
                             <li class="mb-5">
-                                <a href={item.url} class="footer-link">
-                                    {item.name}
-                                </a>
+                                <a href={item.url} class="footer-link">{item.name}</a>
                             </li>
                         ))
                     }
@@ -57,14 +74,12 @@ const { main: socialLinks } = social as SocialType;
             </div>
             <!-- Column 4 - Legal -->
             <div>
-                <h3 class="footer-label">{footer_col_3_title}</h3>
+                <h3 class="footer-label">Legal</h3>
                 <ul>
                     {
-                        footer_legal?.map((item) => (
+                        footerLegal.map((item) => (
                             <li class="mb-5">
-                                <a href={item.url} class="footer-link">
-                                    {item.name}
-                                </a>
+                                <a href={item.url} class="footer-link">{item.name}</a>
                             </li>
                         ))
                     }
@@ -76,8 +91,7 @@ const { main: socialLinks } = social as SocialType;
     <hr class="border-border" />
     <div class="container py-7">
         <div class="flex justify-between lg:items-center flex-col lg:flex-row gap-y-6 w-full">
-            <p class="text-base text-text" set:html={markdownify(config.params.copyright)} />
-
+            <p class="text-base text-text" set:html={markdownify(copyright)} />
             <Social className="social-icons lg:ml-auto" source={socialLinks} />
         </div>
     </div>

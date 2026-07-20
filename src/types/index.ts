@@ -24,32 +24,6 @@ export type TestimonialSection = CollectionEntry<'testimonialSection'>['data'];
 export type ComparisonRowSection = CollectionEntry<'comparisonRowSection'>['data'];
 export type BusinessNeedsSection = CollectionEntry<'businessNeedsSection'>['data'];
 
-// ─── Config File Types ────────────────────────────────────────────────────────
-
-export interface NavLink {
-    name: string;
-    url: string;
-}
-
-export interface Menu {
-    footer_col_1_title: string;
-    footer_col_2_title: string;
-    footer_col_3_title: string;
-    footer_primary: NavLink[];
-    footer_resource: NavLink[];
-    footer_legal: NavLink[];
-}
-
-export interface SocialLink {
-    name: string;
-    icon: string;
-    link: string;
-}
-
-export interface SocialType {
-    main: SocialLink[];
-}
-
 // ─── Shared Component Prop Types ─────────────────────────────────────────────
 
 export interface FeatureItem {

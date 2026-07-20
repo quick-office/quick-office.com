@@ -1,7 +1,7 @@
 ---
 import '@/styles/main.css';
 
-import { siteName, baseUrl } from '@/lib/config';
+import { siteName } from '@/lib/config';
 import { ogImage as ogImageAsset } from '@/lib/assets';
 
 import Footer from './Footer.astro';
@@ -61,13 +61,13 @@ const pageTitle = `${title} - ${siteName}`;
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${baseUrl}/${Astro.url.pathname.replace('/', '')}`} />
-        <meta property="og:image" content={`${baseUrl}${image || ogImageAsset.src}`} />
+        <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
+        <meta property="og:image" content={new URL(image || ogImageAsset.src, Astro.site).href} />
 
         <!-- Twitter card -->
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${baseUrl}${image || ogImageAsset.src}`} />
+        <meta name="twitter:image" content={new URL(image || ogImageAsset.src, Astro.site).href} />
         <meta name="twitter:card" content="summary_large_image" />
 
         <!-- GSAP CDN -->
