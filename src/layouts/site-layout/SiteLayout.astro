@@ -1,7 +1,8 @@
 ---
 import '@/styles/main.css';
 
-import { siteName, baseUrl, ogImage } from '@/lib/config';
+import { siteName, baseUrl } from '@/lib/config';
+import { ogImage as ogImageAsset } from '@/lib/assets';
 
 import Footer from './Footer.astro';
 import Header from './Header.astro';
@@ -61,12 +62,12 @@ const pageTitle = `${title} - ${siteName}`;
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${baseUrl}/${Astro.url.pathname.replace('/', '')}`} />
-        <meta property="og:image" content={`${baseUrl}${image || ogImage}`} />
+        <meta property="og:image" content={`${baseUrl}${image || ogImageAsset.src}`} />
 
         <!-- Twitter card -->
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${baseUrl}${image || ogImage}`} />
+        <meta name="twitter:image" content={`${baseUrl}${image || ogImageAsset.src}`} />
         <meta name="twitter:card" content="summary_large_image" />
 
         <!-- GSAP CDN -->

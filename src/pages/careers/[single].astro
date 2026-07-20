@@ -5,6 +5,7 @@ import CallToAction from '@/layouts/components/CallToAction.astro';
 import CareerApplyForm from '@/layouts/components/CareerApplyForm.astro';
 import Faq from '@/layouts/components/Faq.astro';
 import ImageMod from '@/layouts/components/ImageMod.astro';
+import { careerDetailsBanner } from '@/lib/assets';
 import { getSinglePage } from '@/lib/contentParser.astro';
 import { markdownify } from '@/lib/utils/textConverter';
 import { render } from 'astro:content';
@@ -45,7 +46,7 @@ const { Content } = await render(job);
         <div class="container">
             <div class="relative rounded-3xl overflow-hidden bg-light aspect-video lg:aspect-1000/520">
                 <ImageMod
-                    src={jobData.banner_image ?? '/images/careers/career-details-banner.png'}
+                    src={jobData.banner_image ?? careerDetailsBanner}
                     alt={jobData.title}
                     width={1200}
                     height={624}

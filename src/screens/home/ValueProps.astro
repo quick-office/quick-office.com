@@ -1,9 +1,10 @@
 ---
 import ValueCard from '@/layouts/components/ValueCard.astro';
+import { valuesIcon1, valuesIcon2, valuesIcon3, valuesIcon4 } from '@/lib/assets';
 
 const items = [
     {
-        logo: '/images/value-proposition/values-icon-1.svg',
+        logo: valuesIcon1,
         title: 'Sales & Invoicing',
         list: [
             'Create & send professional invoices',
@@ -12,17 +13,17 @@ const items = [
         ],
     },
     {
-        logo: '/images/value-proposition/values-icon-2.svg',
+        logo: valuesIcon2,
         title: 'Procurement & Payments',
         list: ['Manage all supplier invoices', 'Process & record supplier payments', 'Complete payment history log'],
     },
     {
-        logo: '/images/value-proposition/values-icon-3.svg',
+        logo: valuesIcon3,
         title: 'Accounting & Vouchers',
         list: ['Full chart of accounts', 'Debit/credit voucher creation', 'Journal book & account book'],
     },
     {
-        logo: '/images/value-proposition/values-icon-4.svg',
+        logo: valuesIcon4,
         title: 'Reports & Insights',
         list: ['Profit & loss summary', 'Cost center analysis', 'Account distribution overview'],
     },

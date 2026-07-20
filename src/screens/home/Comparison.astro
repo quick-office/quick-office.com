@@ -1,21 +1,22 @@
 ---
 import ImageMod from '@/layouts/components/ImageMod.astro';
+import { platformAbleton, platformAirbnb, platformFacebook, platformFigma, platformSlack } from '@/lib/assets';
 
 const items = [
     {
         title: 'Tally + Excel + Separate Payroll',
         price: '৳8,000+',
-        images: ['/images/platforms-logo/ableton.svg', '/images/platforms-logo/airbnb.svg'],
+        images: [platformAbleton, platformAirbnb],
     },
     {
         title: 'Enterprise Accounting Suite',
         price: '৳15,000+',
-        images: ['/images/platforms-logo/facebook.svg', '/images/platforms-logo/figma.svg'],
+        images: [platformFacebook, platformFigma],
     },
     {
         title: 'Quick Office (All-in-One)',
         price: '৳1,999',
-        images: ['/images/platforms-logo/slack.svg'],
+        images: [platformSlack],
     },
 ];
 ---

@@ -3,6 +3,7 @@ import Share from '@/layouts/components/Share.astro';
 import Base from '@/layouts/Base.astro';
 import BlogCard from '@/layouts/components/BlogCard.astro';
 import ImageMod from '@/layouts/components/ImageMod.astro';
+import { blogFeaturedCover, blogAuthor1, blogPost1 } from '@/lib/assets';
 import { getSinglePage } from '@/lib/contentParser.astro';
 import dateFormat from '@/lib/utils/dateFormat';
 import { markdownify } from '@/lib/utils/textConverter';
@@ -37,7 +38,7 @@ const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
 
                 <div class="overflow-hidden rounded-2xl border border-white/10">
                     <ImageMod
-                        src={postData.image ?? '/images/blog/featured-cover.png'}
+                        src={postData.image ?? blogFeaturedCover}
                         alt={postData.title}
                         width={1200}
                         height={600}
@@ -50,7 +51,7 @@ const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
                 >
                     <span class="inline-flex items-center gap-2">
                         <ImageMod
-                            src={postData.author_image ?? '/images/blog/author-1.png'}
+                            src={postData.author_image ?? blogAuthor1}
                             width={24}
                             height={24}
                             class="size-6 rounded-full"
@@ -117,11 +118,11 @@ const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
                     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                         {relatedPosts.map((relPost) => (
                             <BlogCard
-                                image={relPost.data.image ?? '/images/blog/post-1.png'}
+                                image={relPost.data.image ?? blogPost1}
                                 imageAlt={relPost.data.title}
                                 title={relPost.data.title}
                                 description={relPost.data.description ?? ''}
-                                authorImage={relPost.data.author_image ?? '/images/blog/author-1.png'}
+                                authorImage={relPost.data.author_image ?? blogAuthor1}
                                 authorName={relPost.data.author}
                                 date={dateFormat(relPost.data.date ?? new Date())}
                                 href={`/blog/${relPost.id}`}

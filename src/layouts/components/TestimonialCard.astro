@@ -1,13 +1,14 @@
 ---
+import type { ImageMetadata } from 'astro';
 interface Props {
-    poster: string;
+    poster: ImageMetadata | string;
     content?: string;
     name?: string;
     designation?: string;
     video?: string;
 }
 const { poster, content, name, designation, video } = Astro.props;
-console.log('Video URL:', video);
+const posterSrc = typeof poster === 'object' ? poster.src : poster;
 ---
 
 <div>
@@ -15,7 +16,7 @@ console.log('Video URL:', video);
         data-testimonial-video
         class="relative w-full max-w-280 mx-auto rounded-[30px] corner-squircle overflow-hidden"
     >
-        <video class="w-full aspect-video object-cover" width="1000px" playsinline preload="metadata" poster={poster}>
+        <video class="w-full aspect-video object-cover" width="1000px" playsinline preload="metadata" poster={posterSrc}>
             <source src={video} type="video/mp4" />
             Your browser does not support the video tag.
         </video>

@@ -1,10 +1,11 @@
 ---
+import type { ImageMetadata } from 'astro';
 import ImageMod from '@/layouts/components/ImageMod.astro';
 interface Props {
     tag: string;
     title: string;
     description: string;
-    authorImage: string;
+    authorImage: ImageMetadata | string;
     authorName: string;
     date: string;
     readTime: string;

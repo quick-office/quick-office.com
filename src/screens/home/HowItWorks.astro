@@ -1,21 +1,22 @@
 ---
 import ProcessCard from '@/layouts/components/ProcessCard.astro';
 import TestimonialCard from '@/layouts/components/TestimonialCard.astro';
+import { valuesIcon1, valuesIcon2, valuesIcon3, featuredVideoThumbnail as howItWorksPoster } from '@/lib/assets';
 
 const steps = [
     {
-        logo: '/images/value-proposition/values-icon-1.svg',
+        logo: valuesIcon1,
         title: '1. Start Your Free Trial',
         content: 'Sign up in seconds — no credit card required. Your account is ready immediately.',
     },
     {
-        logo: '/images/value-proposition/values-icon-2.svg',
+        logo: valuesIcon2,
         title: '2. Set Up in Minutes',
         content:
             'Add your company, chart of accounts, customers, and suppliers. Most teams send their first invoice within the hour.',
     },
     {
-        logo: '/images/value-proposition/values-icon-3.svg',
+        logo: valuesIcon3,
         title: '3. Run Your Finances Daily',
         content: 'Create invoices, record vouchers, process payments, and pull reports — all from one dashboard.',
     },
@@ -38,7 +39,7 @@ const steps = [
             </div>
             <div class="section-content">
                 <div class="mb-14">
-                    <TestimonialCard poster="/images/how-it-works-poster.jpg" video="/how-it-works.mp4" />
+                    <TestimonialCard poster={howItWorksPoster} video="/how-it-works.mp4" />
                 </div>
                 <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-16">
                     {steps.map((step) => <ProcessCard logo={step.logo} title={step.title} content={step.content} />)}

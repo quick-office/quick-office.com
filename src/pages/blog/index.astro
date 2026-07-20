@@ -4,6 +4,7 @@ import BlogCard from '@/layouts/components/BlogCard.astro';
 import CallToAction from '@/layouts/components/CallToAction.astro';
 import FeaturedPostCard from '@/layouts/components/FeaturedPostCard.astro';
 import ImageMod from '@/layouts/components/ImageMod.astro';
+import { blogFeaturedCover, blogAuthor1, blogPost1 } from '@/lib/assets';
 import { getListPage, getSinglePage } from '@/lib/contentParser.astro';
 import dateFormat from '@/lib/utils/dateFormat';
 import { sortByDate } from '@/lib/utils/sortFunctions';
@@ -46,7 +47,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                     <div class="grid gap-4 lg:grid-cols-[1fr_1.03fr]">
                         <div class="overflow-hidden rounded-2xl border border-white/10">
                             <ImageMod
-                                src={featuredPost.data.image ?? '/images/blog/featured-cover.png'}
+                                src={featuredPost.data.image ?? blogFeaturedCover}
                                 alt={featuredPost.data.title}
                                 width={700}
                                 height={500}
@@ -57,7 +58,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                             tag={featuredPost.data.tag ?? 'Popular'}
                             title={featuredPost.data.title}
                             description={featuredPost.data.description ?? ''}
-                            authorImage={featuredPost.data.author_image ?? '/images/blog/author-1.png'}
+                            authorImage={featuredPost.data.author_image ?? blogAuthor1}
                             authorName={featuredPost.data.author}
                             date={dateFormat(featuredPost.data.date ?? new Date())}
                             readTime={featuredPost.data.read_time ?? '5 min read'}
@@ -85,11 +86,11 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                         {latestPosts.map((post) => (
                             <BlogCard
-                                image={post.data.image ?? '/images/blog/post-1.png'}
+                                image={post.data.image ?? blogPost1}
                                 imageAlt={post.data.title}
                                 title={post.data.title}
                                 description={post.data.description ?? ''}
-                                authorImage={post.data.author_image ?? '/images/blog/author-1.png'}
+                                authorImage={post.data.author_image ?? blogAuthor1}
                                 authorName={post.data.author}
                                 date={dateFormat(post.data.date ?? new Date())}
                                 href={`/blog/${post.id}`}
