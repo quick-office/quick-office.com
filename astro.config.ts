@@ -1,7 +1,6 @@
 import { unified } from '@astrojs/markdown-remark';
 import { defineConfig, sharpImageService } from 'astro/config';
 
-import cloudflare from '@astrojs/cloudflare';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
@@ -12,6 +11,7 @@ import remarkToc from 'remark-toc';
 export default defineConfig({
     base: '/',
     site: 'https://quick-office.com',
+    output: 'static',
     trailingSlash: 'never',
     image: {
         service: sharpImageService(),
@@ -46,7 +46,4 @@ export default defineConfig({
             //
         ],
     },
-    adapter: cloudflare({
-        imageService: 'compile',
-    }),
 });

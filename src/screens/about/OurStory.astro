@@ -4,18 +4,22 @@ import { avatarLg } from '@/lib/assets';
 
 const ourStory = {
     enable: true,
-    title: 'Why We Do What We Do - A Letter From <strong>Our CEO</strong>',
+    title: 'Why We Built Quick Office — A Note From <strong>Our Founder</strong>',
     ceo: {
         image: avatarLg,
-        name: 'Ronald Richards',
-        role: 'Founder & CEO',
+        name: 'Rahim Chowdhury',
+        role: 'Co-Founder & CEO',
     },
-    letter: `<p><strong class="text-white font-normal">At Quick Office, we know you started your local business to serve your community, not to become a software engineer.</strong> The problem is most modern marketing tools are too complex, scattered, and disconnected, which leaves you feeling overwhelmed and stuck in the daily admin grind.</p><br><p>We believe you shouldn't have to pay for five different subscriptions or spend your weekends sending emails just to grow your company. We understand how frustrating it is to watch hard-earned leads slip through the cracks, which is why we built a single, unified platform that puts your follow-ups, reviews, and bookings on complete autopilot.</p>`,
-    letter_points_title: "Here's how we do it:",
-    letter_points: ['1. Plug In Your Business Data', '2. Activate Our Local Workflows', '3. Watch Your Bookings Grow'],
+    letter: `<p><strong class="text-white font-normal">In 2021, I was helping manage my family's trading business in Dhaka — and I was drowning in spreadsheets, WhatsApp follow-ups, and three separate apps just to track invoices and stay on top of leads.</strong> Every missed call was a missed sale. Every manual follow-up we forgot to send was a customer lost to a competitor. I knew we weren't the only ones dealing with this.</p><br><p>Every business owner I spoke to had the same problem: too many disconnected tools, too much admin work, and no clear system for turning new contacts into paying customers. So we built Quick Office — not a generic Western SaaS product with a language toggle, but a platform built from the ground up for how local businesses in Bangladesh actually operate: invoicing in BDT, payments via bKash and Nagad, and automation workflows that run 24/7 so you don't have to.</p>`,
+    letter_points_title: 'Our commitment to every customer:',
+    letter_points: [
+        'Local support team, available 6 days a week',
+        'Transparent pricing — no hidden fees, ever',
+        'Your data stays secure, always backed up',
+    ],
     closing_content:
-        "Stop wasting money on scattered tools that don't talk to each other, and instead enjoy a streamlined business with consistent, predictable revenue growth.",
-    button: { enable: true, label: 'Start Your 14-Day Free Trial', link: '/pricing' },
+        "We're building the platform we wish we had — and every new feature comes directly from feedback from business owners just like you. Thank you for being part of this journey.",
+    button: { enable: true, label: 'Start Your 30-Day Free Trial', link: '/pricing' },
 };
 
 if (!ourStory.enable) return;
