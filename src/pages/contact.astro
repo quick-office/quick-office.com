@@ -1,10 +1,10 @@
 ---
 import { SiteLayout } from '@/layouts/site-layout';
-import CallToAction from '@/layouts/components/CallToAction.astro';
-import Faq from '@/layouts/components/Faq.astro';
-import PageHeader from '@/layouts/components/PageHeader.astro';
+import CallToAction from '@/components/CallToAction.astro';
+import Faq from '@/components/Faq.astro';
+import PageHeader from '@/components/PageHeader.astro';
 import { getListPage } from '@/lib/contentParser.astro';
-import DynamicIcon from '@/layouts/helpers/DynamicIcon';
+import DynamicIcon from '@/components/helpers/DynamicIcon';
 import type { Contact } from '@/types';
 
 const contact = await getListPage('contact', '-index');
