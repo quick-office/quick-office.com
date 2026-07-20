@@ -1,23 +1,16 @@
 ---
 import { siteName } from '@/lib/config';
 import { logo } from '@/lib/assets';
-import ImageMod from '@/layouts/components/ImageMod.astro';
-
-const width = 190;
-const height = 45;
 ---
 
 <a href="/" class="navbar-brand inline-block">
-    <ImageMod
-        src={logo}
-        class="inline-block"
-        width={width * 2}
-        height={height * 2}
+    <img
+        src={logo.src}
         alt={siteName}
-        format="webp"
-        style={{
-            height: `${height}px`,
-            width: `${width}px`,
-        }}
+        width={190}
+        height={45}
+        class="inline-block"
+        style="height:45px;width:190px"
+        loading="eager"
     />
 </a>

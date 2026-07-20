@@ -15,27 +15,14 @@ interface Props {
     style?: any;
 }
 
-const assets = import.meta.glob<{ default: ImageMetadata }>(
-    ['/src/assets/images/**/*.{svg,png,jpg,jpeg,webp,gif}', '/src/assets/vectors/**/*.svg'],
-    { eager: true },
-);
-
-function resolveAsset(path: string): ImageMetadata | string {
-    const fromImages = path.replace(/^\/images\//, '/src/assets/images/');
-    const fromVectors = path.replace(/^\/images\//, '/src/assets/vectors/');
-    return assets[fromImages]?.default ?? assets[fromVectors]?.default ?? path;
-}
-
 const { src, alt, width, height, loading, decoding, class: className, format, style, fit } = Astro.props;
-
-const resolved = typeof src === 'string' ? resolveAsset(src) : src;
-const isMetadata = typeof resolved === 'object' && resolved !== null;
+const isMetadata = typeof src === 'object' && src !== null;
 ---
 
 {
     isMetadata ? (
         <Image
-            src={resolved as ImageMetadata}
+            src={src as ImageMetadata}
             alt={alt}
             width={width as any}
             height={height as any}
@@ -46,9 +33,9 @@ const isMetadata = typeof resolved === 'object' && resolved !== null;
             format={format}
             style={style}
         />
-    ) : resolved ? (
+    ) : src ? (
         <img
-            src={resolved as string}
+            src={src as string}
             alt={alt}
             width={width}
             height={height}
