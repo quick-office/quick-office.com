@@ -1,0 +1,28 @@
+.btn {
+    @apply inline-block cursor-pointer rounded-full px-8 py-3 font-normal capitalize transition select-none;
+}
+
+.btn-sm {
+    @apply cursor-pointer rounded-sm px-4 py-1.5 text-sm select-none;
+}
+
+.btn-primary {
+    @apply text-white;
+    background: linear-gradient(0deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+
+    &:hover {
+        @apply brightness-125;
+        transition: all 0.3s ease;
+        box-shadow: 0px 0px 20px var(--color-primary-light);
+    }
+}
+.btn-outline-primary {
+    @apply border-[1.5px] border-primary text-primary;
+}
+
+.btn-outline {
+    @apply border-[1.5px] border-text bg-transparent text-text-light transition-all duration-300 hover:border-primary hover:bg-primary hover:text-white;
+}
+.btn-outline:hover {
+    box-shadow: 0px 0px 15px var(--color-primary);
+}
