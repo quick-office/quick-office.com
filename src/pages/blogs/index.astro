@@ -4,7 +4,7 @@ import BlogCard from '@/components/BlogCard.astro';
 import CallToAction from '@/components/CallToAction.astro';
 import FeaturedPostCard from '@/components/FeaturedPostCard.astro';
 import ImageMod from '@/components/ImageMod.astro';
-import { blogFeaturedCover, blogAuthor1, blogPost1 } from '@/lib/assets';
+import { blogAuthor1 } from '@/lib/assets';
 import { getSinglePage } from '@/lib/contentParser.astro';
 import dateFormat from '@/lib/utils/dateFormat';
 import { sortByDate } from '@/lib/utils/sortFunctions';
@@ -49,7 +49,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                     <div class="grid gap-4 lg:grid-cols-[1fr_1.03fr]">
                         <div class="overflow-hidden rounded-2xl border border-white/10">
                             <ImageMod
-                                src={featuredPost.data.image ?? blogFeaturedCover}
+                                src={featuredPost.data.image}
                                 alt={featuredPost.data.title}
                                 width={700}
                                 height={500}
@@ -88,7 +88,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                         {latestPosts.map((post) => (
                             <BlogCard
-                                image={post.data.image ?? blogPost1}
+                                image={post.data.image}
                                 imageAlt={post.data.title}
                                 title={post.data.title}
                                 description={post.data.description ?? ''}

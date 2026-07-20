@@ -26,21 +26,7 @@ export { default as ogImage } from '@/assets/images/og-image.png';
 export { default as pricingUntick } from '@/assets/images/pricing-untick.png';
 export { default as quickOfficeDashboard } from '@/assets/images/quick-office-dashboard.png';
 
-// Images - blog
-export { default as blogFeaturedCover } from '@/assets/images/blog/featured-cover.png';
-export { default as blogAuthor1 } from '@/assets/images/blog/author-1.png';
-export { default as blogAuthor2 } from '@/assets/images/blog/author-2.png';
-export { default as blogAuthor3 } from '@/assets/images/blog/author-3.png';
-export { default as blogAuthor4 } from '@/assets/images/blog/author-4.png';
-export { default as blogAuthor5 } from '@/assets/images/blog/author-5.png';
-export { default as blogAuthor6 } from '@/assets/images/blog/author-6.png';
-export { default as blogAuthor7 } from '@/assets/images/blog/author-7.png';
-export { default as blogPost1 } from '@/assets/images/blog/post-1.png';
-export { default as blogPost2 } from '@/assets/images/blog/post-2.png';
-export { default as blogPost3 } from '@/assets/images/blog/post-3.png';
-export { default as blogPost4 } from '@/assets/images/blog/post-4.png';
-export { default as blogPost5 } from '@/assets/images/blog/post-5.png';
-export { default as blogPost6 } from '@/assets/images/blog/post-6.png';
+export { default as blogAuthor1 } from '@/assets/images/author.png';
 
 // Images - blog-single
 export { default as blogSingleHeroCover } from '@/assets/images/blog-single/hero-cover.png';

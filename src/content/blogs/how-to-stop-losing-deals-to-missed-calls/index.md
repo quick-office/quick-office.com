@@ -3,9 +3,8 @@ title: 'How to Stop Losing Deals to Missed Calls'
 meta_title: 'Stop Losing Deals to Missed Calls'
 description: 'Missed calls cost thousands. Learn how an Auto-Responder text can save your next customer.'
 date: 2025-01-20T05:00:00Z
-image: '/images/blog/post-5.png'
+image: './cover.png'
 author: 'Leslie Alexander'
-author_image: '/images/blog/author-6.png'
 tag: 'Buyer Intent'
 read_time: '5 min read'
 categories: ['Sales']
