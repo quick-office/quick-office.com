@@ -10,6 +10,12 @@ import GradientBlob from '@/components/GradientBlob.astro';
 import ImageMod from '@/components/ImageMod.astro';
 import ShowcaseCard from '@/components/ShowcaseCard.astro';
 import { markdownify } from '@/lib/utils/textConverter';
+import {
+    quickOfficeDashboard,
+    featureAutomatedMarketing, featureAiPoweredGraph, featureGrowYourEarnings,
+    featureTurnoverTable, featureMarketingAutopilot,
+    featureServiceFeature1, featureServiceFeature2,
+} from '@/lib/assets';
 
 const featuresData = {
     banner: {
@@ -17,18 +23,18 @@ const featuresData = {
         content: 'A single piece of software built to manage your entire business on autopilot. Say goodbye to scattered tools and forgotten leads.',
         button_primary: { enable: true, label: 'Start Free Trial', link: '/pricing' },
         button_secondary: { enable: true, label: 'Book a Demo', link: '/contact' },
-        image: '/images/quick-office-dashboard.png',
+        image: quickOfficeDashboard,
     },
     partners: { enable: true, badge: 'Trusted Platform', title: 'Powering thousands of <strong>local businesses</strong> worldwide' },
     smart_platform: {
         enable: true,
         title: 'Automate every part of your <br /> business with <strong>one smart platform.</strong>',
         cards: [
-            { title: 'Automated Customer Follow-Up', subtitle: 'Never lose a lead again. Respond to inquiries instantly and automatically.', image: '/images/features/automated-marketing-visual.svg', classNames: '' },
-            { title: 'Autopilot Review Generator', subtitle: 'Automatically request and track 5-star Google reviews from happy clients.', image: '/images/features/ai-powered-graph.svg', classNames: '' },
-            { title: 'Missed Call Auto-Responder', subtitle: 'Turn missed calls into booked appointments with instant automated text messages.', image: '/images/features/grow-your-earnings.svg', classNames: '' },
-            { title: 'Unified Lead Inbox', subtitle: 'Manage all your SMS, email, Facebook, and Instagram messages in one single dashboard.', image: '/images/features/turnover-table.svg', classNames: 'md:col-span-2 lg:col-span-2' },
-            { title: '24/7 Appointment Scheduler', subtitle: 'Let customers book directly on your calendar, completely eliminating back-and-forth emails.', image: '/images/features/marketing-autopilot.svg', classNames: '' },
+            { title: 'Automated Customer Follow-Up', subtitle: 'Never lose a lead again. Respond to inquiries instantly and automatically.', image: featureAutomatedMarketing, classNames: '' },
+            { title: 'Autopilot Review Generator', subtitle: 'Automatically request and track 5-star Google reviews from happy clients.', image: featureAiPoweredGraph, classNames: '' },
+            { title: 'Missed Call Auto-Responder', subtitle: 'Turn missed calls into booked appointments with instant automated text messages.', image: featureGrowYourEarnings, classNames: '' },
+            { title: 'Unified Lead Inbox', subtitle: 'Manage all your SMS, email, Facebook, and Instagram messages in one single dashboard.', image: featureTurnoverTable, classNames: 'md:col-span-2 lg:col-span-2' },
+            { title: '24/7 Appointment Scheduler', subtitle: 'Let customers book directly on your calendar, completely eliminating back-and-forth emails.', image: featureMarketingAutopilot, classNames: '' },
         ],
     },
     service_features: {
@@ -36,7 +42,7 @@ const featuresData = {
         items: [
             {
                 title: 'Built specifically to grow <strong>your local business</strong>',
-                image: '/images/features/service-feature-1.svg',
+                image: featureServiceFeature1,
                 reverse: false,
                 items: [
                     { icon: 'FaBolt', title: 'Setup in Minutes', content: 'Get up and running immediately with our pre-built local business templates.' },
@@ -47,7 +53,7 @@ const featuresData = {
             },
             {
                 title: 'The only software you need to <strong>scale predictably</strong>',
-                image: '/images/features/service-feature-2.svg',
+                image: featureServiceFeature2,
                 reverse: true,
                 items: [
                     { icon: 'FaChartSimple', title: 'Clear ROI Tracking', content: 'See exactly which campaigns and ads are generating the most revenue.' },

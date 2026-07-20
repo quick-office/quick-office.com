@@ -1,37 +1,38 @@
 ---
 import StepCard from './StepCard.astro';
 import { markdownify } from '@/lib/utils/textConverter';
+import { brandsGroup1, brandsGroup2, brandsGroup3, brandsGroup4, brandsGroup5 } from '@/lib/assets';
 
 const businessNeeds = {
     enable: true,
     title: 'The 5 things every <strong>Business Needs</strong>',
     items: [
         {
-            image: '/images/brands-group-1.png',
+            image: brandsGroup1,
             number: '01',
             title: 'TRAFFIC',
             content: 'Drive more high-quality local leads to your business through optimized Google search and social visibility.',
         },
         {
-            image: '/images/brands-group-2.png',
+            image: brandsGroup2,
             number: '02',
             title: 'CAPTURE',
             content: 'Convert website visitors into real conversations using web chat widgets and fast lead capture forms.',
         },
         {
-            image: '/images/brands-group-3.png',
+            image: brandsGroup3,
             number: '03',
             title: 'NURTURING',
             content: 'Automatically follow up with every lead via SMS and email so no one slips through the cracks.',
         },
         {
-            image: '/images/brands-group-4.png',
+            image: brandsGroup4,
             number: '04',
             title: 'CONVERT',
             content: 'Turn prospects into paying customers by making appointment booking and payments incredibly simple.',
         },
         {
-            image: '/images/brands-group-5.png',
+            image: brandsGroup5,
             number: '05',
             title: 'REFER',
             content: 'Automatically request 5-star Google reviews from happy customers to drive even more organic traffic.',
