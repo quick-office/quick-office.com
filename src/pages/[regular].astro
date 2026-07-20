@@ -24,7 +24,7 @@ const { title, description } = page.data;
 const { Content } = await render(page);
 ---
 
-<SiteLayout {...page.data}>
+<SiteLayout {...page.data} title={title} description={description ?? title}>
     <PageHeader title={title} subtitle={description!} />
     <section class="section-sm">
         <div class="container">

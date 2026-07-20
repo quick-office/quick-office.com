@@ -18,7 +18,7 @@ const about = await getListPage('about', '-index');
 const aboutData: About = about.data;
 ---
 
-<SiteLayout {...aboutData}>
+<SiteLayout {...aboutData} title="About Us" description="Learn about the team behind Quick Office and our mission to help local businesses grow.">
     <!-- Page Header -->
     <section class="section-ph pb-20 overflow-hidden">
         <div class="container">

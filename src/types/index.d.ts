@@ -7,7 +7,6 @@ export type Blog = CollectionEntry<'blog'>['data'];
 export type BlogIndex = CollectionEntry<'blogIndex'>['data'];
 export type About = CollectionEntry<'about'>['data'];
 export type Contact = CollectionEntry<'contact'>['data'];
-export type Homepage = CollectionEntry<'homepage'>['data'];
 export type Features = CollectionEntry<'features'>['data'];
 export type Pricing = CollectionEntry<'pricing'>['data'];
 export type Integrations = CollectionEntry<'integrations'>['data'];
@@ -33,7 +32,6 @@ export interface FeatureItem {
 export interface OurFeaturesSection {
     badge?: string;
     title: string;
-    /** Used by homepage collection */
     content?: string;
     /** Used by about collection (core_values) */
     subtitle?: string;

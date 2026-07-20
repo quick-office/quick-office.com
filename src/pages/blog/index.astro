@@ -24,7 +24,7 @@ const featuredPost = featuredId ? (allPosts.find((p) => p.id === featuredId) ?? 
 const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
 ---
 
-<SiteLayout {...pageData}>
+<SiteLayout {...pageData} title="Blog" description="Tips, guides, and insights to help local businesses grow with Quick Office.">
     <!-- Page Header -->
     <section class="section-ph pb-10 relative">
         <div class="container relative">
