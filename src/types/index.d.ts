@@ -1,7 +1,4 @@
-import type { CollectionEntry } from 'astro:content';
 import type { ImageMetadata } from 'astro';
-
-export type Blog = CollectionEntry<'blogs'>['data'];
 
 export interface FeatureItem {
     logo: ImageMetadata | string;
