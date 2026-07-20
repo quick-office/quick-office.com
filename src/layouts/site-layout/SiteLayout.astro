@@ -1,6 +1,8 @@
 ---
 import '@/styles/main.css';
 
+import { siteName, baseUrl, ogImage } from '@/lib/config';
+
 import Footer from './Footer.astro';
 import Header from './Header.astro';
 
@@ -13,10 +15,6 @@ export interface Props {
 }
 
 const { title, description, image, noindex, canonical } = Astro.props;
-
-const siteName = 'Quick Office';
-const baseUrl = 'https://quick-office.com';
-const ogImage = '/images/og-image.png';
 
 const stickyHeader = true;
 

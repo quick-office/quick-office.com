@@ -1,23 +1,24 @@
 ---
+import { siteName } from '@/lib/config';
+
 import ImageMod from '@/layouts/components/ImageMod.astro';
 
 const logo = '/images/logo.svg';
-const logo_width = 190;
-const logo_height = 45;
-const logo_text = 'Quick Office';
+const width = 190;
+const height = 45;
 ---
 
 <a href="/" class="navbar-brand inline-block">
     <ImageMod
         src={logo}
         class="inline-block"
-        width={logo_width * 2}
-        height={logo_height * 2}
-        alt={logo_text}
+        width={width * 2}
+        height={height * 2}
+        alt={siteName}
         format="webp"
         style={{
-            height: `${logo_height}px`,
-            width: `${logo_width}px`,
+            height: `${height}px`,
+            width: `${width}px`,
         }}
     />
 </a>
