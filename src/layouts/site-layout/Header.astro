@@ -117,31 +117,16 @@ const { pathname } = Astro.url;
                 ))
             }
             <li class="pt-4 inline-block lg:hidden">
-                <a
-                    class="btn-outline btn-sm"
-                    href={primaryAction.link}
-                    target={primaryAction.link.startsWith('http') ? '_blank' : '_self'}
-                    rel={primaryAction.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                >
+                <a class="btn-outline btn-sm" href={primaryAction.link}>
                     {primaryAction.label}
                 </a>
             </li>
         </ul>
         <div class="order-1 gap-4 ml-auto flex items-center md:order-2 lg:ml-0">
-            <a
-                class="btn btn-outline hidden lg:inline-block"
-                href={secendaryAction.link}
-                target={secendaryAction.link.startsWith('http') ? '_blank' : '_self'}
-                rel={secendaryAction.link.startsWith('http') ? 'noopener noreferrer' : ''}
-            >
+            <a class="btn btn-outline hidden lg:inline-block" href={secendaryAction.link}>
                 {secendaryAction.label}
             </a>
-            <a
-                class="btn btn-primary hidden lg:inline-block"
-                href={primaryAction.link}
-                target={primaryAction.link.startsWith('http') ? '_blank' : '_self'}
-                rel={primaryAction.link.startsWith('http') ? 'noopener noreferrer' : ''}
-            >
+            <a class="btn btn-primary hidden lg:inline-block" href={primaryAction.link}>
                 {primaryAction.label}
             </a>
         </div>
