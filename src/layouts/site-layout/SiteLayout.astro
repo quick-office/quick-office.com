@@ -74,11 +74,13 @@ const pageTitle = `${title} - ${siteName}`;
         <script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
         <script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
 
-        <!-- Main UI interactions -->
-        <script is:inline defer src="/scripts/main.js"></script>
-
-        <!-- Animations (Modules are deferred automatically by browsers) -->
-        <script is:inline type="module" src="/scripts/animations.js"></script>
+        <!-- Main UI interactions & animations (bundled by Vite) -->
+        <script>
+            import '@/scripts/main.js';
+        </script>
+        <script>
+            import '@/scripts/animations.js';
+        </script>
     </head>
     <body>
         {/* <TwSizeIndicator /> */}
