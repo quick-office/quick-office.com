@@ -1,4 +1,4 @@
-/* global gsap, ScrollTrigger, Lenis */
+/* global gsap, ScrollTrigger */
 import { sporeCanvas } from './particleCanvas.js';
 
 (function () {
@@ -155,8 +155,6 @@ import { sporeCanvas } from './particleCanvas.js';
 
     function init() {
         gsap.registerPlugin(ScrollTrigger);
-        // Init Lenis smooth scroll
-        new Lenis({ autoRaf: true });
 
         heroVideo();
         updateTrustedPartners();
