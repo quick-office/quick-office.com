@@ -1,16 +1,8 @@
 ---
 import { SiteLayout } from '@/layouts/site-layout';
-import Badge from '@/components/Badge.astro';
-import BrandsCarousel from '@/components/BrandsCarousel.astro';
-import CallToAction from '@/components/CallToAction.astro';
-import Faq from '@/components/Faq.astro';
-import GradientBlob from '@/components/GradientBlob.astro';
-import ImageMod from '@/components/ImageMod.astro';
-import OurStory from '@/screens/about/OurStory.astro';
-import TeamCard from '@/screens/about/TeamCard.astro';
+import { Badge, BrandsCarousel, CallToAction, Faq, GradientBlob, ImageMod } from '@/components';
+import { OurStory, TeamCard, Features, Testimonial } from '@/screens/about';
 import { markdownify } from '@/lib/text-converter';
-import Features from '@/screens/about/Features.astro';
-import Testimonial from '@/screens/about/Testimonial.astro';
 import {
     aboutHero,
     peopleProfile, peopleProfile1, peopleProfile2, peopleProfile3,

@@ -1,0 +1,15 @@
+export { default as Accordion } from './Accordion.astro';
+export { default as Badge } from './Badge.astro';
+export { default as BrandsCarousel } from './BrandsCarousel.astro';
+export { default as CallToAction } from './CallToAction.astro';
+export { default as Faq } from './Faq.astro';
+export { default as FeatureCard } from './FeatureCard.astro';
+export { default as GradientBlob } from './GradientBlob.astro';
+export { default as ImageMod } from './ImageMod.astro';
+export { default as LeadGeneration } from './LeadGeneration.astro';
+export { default as PageHeader } from './PageHeader.astro';
+export { default as Pagination } from './Pagination.astro';
+export { default as PricingCard } from './PricingCard.astro';
+export { default as Social } from './Social.astro';
+export { default as TestimonialCard } from './TestimonialCard.astro';
+export { default as TwSizeIndicator } from './TwSizeIndicator.astro';

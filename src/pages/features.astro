@@ -1,14 +1,8 @@
 ---
 import DynamicIcon from '@/components/helpers/DynamicIcon';
 import { SiteLayout } from '@/layouts/site-layout';
-import BrandsCarousel from '@/components/BrandsCarousel.astro';
-import BusinessNeeds from '@/screens/features/BusinessNeeds.astro';
-import CallToAction from '@/components/CallToAction.astro';
-import ComparisonRow from '@/screens/features/ComparisonRow.astro';
-import Faq from '@/components/Faq.astro';
-import GradientBlob from '@/components/GradientBlob.astro';
-import ImageMod from '@/components/ImageMod.astro';
-import ShowcaseCard from '@/screens/features/ShowcaseCard.astro';
+import { BrandsCarousel, CallToAction, Faq, GradientBlob, ImageMod } from '@/components';
+import { BusinessNeeds, ComparisonRow, ShowcaseCard } from '@/screens/features';
 import { markdownify } from '@/lib/text-converter';
 import {
     quickOfficeDashboard,

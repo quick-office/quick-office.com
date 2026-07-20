@@ -1,0 +1,10 @@
+export { Banner } from './banner';
+export { default as Comparison } from './Comparison.astro';
+export { default as Cta } from './Cta.astro';
+export { default as FeaturesGrid } from './FeaturesGrid.astro';
+export { default as HowItWorks } from './HowItWorks.astro';
+export { default as PainPoints } from './PainPoints.astro';
+export { default as Pricing } from './Pricing.astro';
+export { default as SocialProof } from './SocialProof.astro';
+export { default as TestimonialsAndFaq } from './TestimonialsAndFaq.astro';
+export { default as ValueProps } from './ValueProps.astro';

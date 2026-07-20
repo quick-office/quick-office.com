@@ -1,9 +1,7 @@
 ---
 import { SiteLayout } from '@/layouts/site-layout';
-import BlogCard from '@/screens/blogs/BlogCard.astro';
-import CallToAction from '@/components/CallToAction.astro';
-import FeaturedPostCard from '@/screens/blogs/FeaturedPostCard.astro';
-import ImageMod from '@/components/ImageMod.astro';
+import { BlogCard, FeaturedPostCard } from '@/screens/blogs';
+import { CallToAction, ImageMod } from '@/components';
 import { blogAuthor1 } from '@/lib/assets';
 import { getSinglePage } from '@/lib/content-parser';
 import dateFormat from '@/lib/date-format';
