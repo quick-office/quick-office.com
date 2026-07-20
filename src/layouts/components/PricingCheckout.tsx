@@ -37,30 +37,12 @@ export default function PricingCheckout({
         const priceToCharge = isYearly ? yearlyPrice : monthlyPrice;
         const intervalToCharge = isYearly ? 'year' : 'month';
 
-        try {
-            const res = await fetch('/api/checkout', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name,
-                    email,
-                    planTitle,
-                    price: priceToCharge,
-                    interval: intervalToCharge,
-                }),
-            });
-
-            const data = await res.json();
-            if (data.success && data.url) {
-                window.location.href = data.url;
-            } else {
-                setError(data.error || 'Failed to initiate checkout. Please try again.');
-                setLoading(false);
-            }
-        } catch (err: any) {
-            setError('Network error occurred. Please try again.');
-            setLoading(false);
-        }
+        // TODO: send { name, email, planTitle, price: priceToCharge, interval: intervalToCharge }
+        // to a checkout backend here (Stripe integration removed)
+        void priceToCharge;
+        void intervalToCharge;
+        setLoading(false);
+        setShowModal(false);
     };
 
     return (

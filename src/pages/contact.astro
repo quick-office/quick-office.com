@@ -4,7 +4,6 @@ import Base from '@/layouts/Base.astro';
 import CallToAction from '@/layouts/components/CallToAction.astro';
 import Faq from '@/layouts/components/Faq.astro';
 import PageHeader from '@/layouts/components/PageHeader.astro';
-import GHLMeeting from '@/layouts/partials/GHLMeeting.astro';
 import { getListPage } from '@/lib/contentParser.astro';
 import DynamicIcon from '@/helpers/DynamicIcon';
 import type { Contact } from '@/types';
@@ -138,13 +137,6 @@ const {
 
     <!-- Call to Action -->
     <CallToAction />
-
-    {/* GHL Meeting Modal */}
-    {
-        contactData.contact_info?.items.find((i) => i.type === 'calendar') && (
-            <GHLMeeting schedulerUrl={contactData.contact_info.items.find((i) => i.type === 'calendar')?.link} />
-        )
-    }
 </Base>
 
 <script>
@@ -186,26 +178,11 @@ const {
         setLoading(true);
 
         try {
-            const res = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    message: formData.get('message'),
-                }),
-            });
-
-            const json = await res.json().catch(() => ({}));
-
-            if (res.ok && json.success) {
-                showSuccess();
-            } else {
-                showError(json.error ?? 'Something went wrong. Please try again.');
-            }
+            // TODO: send formData to a backend here (CRM integration removed)
+            void formData;
+            showSuccess();
         } catch {
-            showError('Network error — please check your connection and try again.');
+            showError('Something went wrong. Please try again.');
         } finally {
             setLoading(false);
         }

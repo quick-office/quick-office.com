@@ -25,6 +25,7 @@ contact_info:
         - type: 'calendar'
           title: 'Book A Demo'
           detail: 'Schedule your one-on-one setup call'
-          link: 'https://api.leadconnectorhq.com/widget/booking/huqDO6gbH3SQmdp73TjE'
+          # TODO: point this at a booking page/widget when the scheduler is reconnected
+          link: ''
           icon: 'FaCalendarCheck'
 ---

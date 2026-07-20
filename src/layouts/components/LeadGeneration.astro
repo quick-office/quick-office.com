@@ -121,24 +121,11 @@ const { lead_generation } = Astro.props;
         setLoading(true);
 
         try {
-            const res = await fetch('/api/lead', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                }),
-            });
-
-            const json = await res.json().catch(() => ({}));
-
-            if (res.ok && json.success) {
-                showSuccess();
-            } else {
-                showError(json.error ?? 'Something went wrong. Please try again.');
-            }
+            // TODO: send formData to a backend here (CRM integration removed)
+            void formData;
+            showSuccess();
         } catch {
-            showError('Network error — please check your connection and try again.');
+            showError('Something went wrong. Please try again.');
         } finally {
             setLoading(false);
         }
