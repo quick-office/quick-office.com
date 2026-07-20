@@ -1,7 +1,8 @@
 ---
-import Social from '@/components/Social.astro';
 import { logo } from '@/lib/assets';
 import { markdownify } from '@/lib/text-converter';
+
+import { Social } from '@/components';
 
 const footerTagline = 'Empowering Marketing businesses through intelligent automation.';
 const footerEmail = 'contact@quick-office.com';
@@ -16,9 +17,7 @@ const footerPrimary = [
     { name: 'Contact', url: '/contact' },
 ];
 
-const footerResource = [
-    { name: 'Blog', url: '/blogs' },
-];
+const footerResource = [{ name: 'Blog', url: '/blogs' }];
 
 const footerLegal = [
     { name: 'Privacy Policy', url: '/privacy-policy' },
@@ -48,7 +47,9 @@ const socialLinks = [
                     {
                         footerPrimary.map((item) => (
                             <li class="mb-5">
-                                <a href={item.url} class="footer-link">{item.name}</a>
+                                <a href={item.url} class="footer-link">
+                                    {item.name}
+                                </a>
                             </li>
                         ))
                     }
@@ -61,7 +62,9 @@ const socialLinks = [
                     {
                         footerResource.map((item) => (
                             <li class="mb-5">
-                                <a href={item.url} class="footer-link">{item.name}</a>
+                                <a href={item.url} class="footer-link">
+                                    {item.name}
+                                </a>
                             </li>
                         ))
                     }
@@ -74,7 +77,9 @@ const socialLinks = [
                     {
                         footerLegal.map((item) => (
                             <li class="mb-5">
-                                <a href={item.url} class="footer-link">{item.name}</a>
+                                <a href={item.url} class="footer-link">
+                                    {item.name}
+                                </a>
                             </li>
                         ))
                     }
