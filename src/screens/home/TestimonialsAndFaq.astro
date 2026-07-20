@@ -7,21 +7,24 @@ const testimonials = [
         name: 'Karim Rahman',
         designation: 'Rahman Trading Co., Dhaka',
         poster: '/images/testimonials/1.png',
-        content: 'Quick Office completely replaced our separate invoicing tool, expense tracker, and month-end spreadsheets. Everything is in one place and I can check our financial health from my phone.',
+        content:
+            'Quick Office completely replaced our separate invoicing tool, expense tracker, and month-end spreadsheets. Everything is in one place and I can check our financial health from my phone.',
         video: '/showcase.mp4',
     },
     {
         name: 'Nadia Islam',
         designation: 'Operations Manager, Chittagong',
         poster: '/images/testimonials/2.png',
-        content: 'We went from spending 2 days on month-end closing to 2 hours. The profit & loss reports are instant now — no more waiting for the accountant to compile everything manually.',
+        content:
+            'We went from spending 2 days on month-end closing to 2 hours. The profit & loss reports are instant now — no more waiting for the accountant to compile everything manually.',
         video: '/showcase.mp4',
     },
     {
         name: 'Arif Hossain',
         designation: 'Finance Manager, Dhaka',
         poster: '/images/testimonials/3.png',
-        content: 'The free trial was all we needed to know this was the right tool. Setup took less than an hour and we sent our first invoice the same day. The team permission system is exactly what we needed.',
+        content:
+            'The free trial was all we needed to know this was the right tool. Setup took less than an hour and we sent our first invoice the same day. The team permission system is exactly what we needed.',
         video: '/showcase.mp4',
     },
 ];
@@ -53,7 +56,10 @@ const faqs = [
 <!-- Testimonials -->
 <section class="section relative overflow-hidden">
     <div class="absolute inset-0 -z-10 pointer-events-none pattern-zigzag opacity-30"></div>
-    <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-r from-primary/10 via-transparent to-transparent"></div>
+    <div
+        class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-r from-primary/10 via-transparent to-transparent"
+    >
+    </div>
     <div class="container">
         <div class="section-container">
             <div class="section-intro centralize">
@@ -61,15 +67,17 @@ const faqs = [
             </div>
             <div class="section-content">
                 <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
-                    {testimonials.map((item) => (
-                        <TestimonialCard
-                            poster={item.poster}
-                            name={item.name}
-                            designation={item.designation}
-                            content={item.content}
-                            video={item.video}
-                        />
-                    ))}
+                    {
+                        testimonials.map((item) => (
+                            <TestimonialCard
+                                poster={item.poster}
+                                name={item.name}
+                                designation={item.designation}
+                                content={item.content}
+                                video={item.video}
+                            />
+                        ))
+                    }
                 </div>
             </div>
         </div>
@@ -81,20 +89,23 @@ const faqs = [
 <!-- FAQ -->
 <section class="section relative overflow-hidden">
     <div class="absolute inset-0 -z-10 pointer-events-none pattern-diamond opacity-30"></div>
-    <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-l from-primary/10 via-transparent to-transparent"></div>
+    <div
+        class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-l from-primary/10 via-transparent to-transparent"
+    >
+    </div>
     <div class="container">
         <div class="section-container grid lg:grid-cols-2">
             <div class="section-intro max-lg:text-center">
                 <div class="sticky top-(--header-height)">
                     <h2 class="title lg:ml-0">Common <strong>Questions</strong></h2>
-                    <p class="subtitle lg:ml-0">Everything you need to know before getting started with Quick Office.</p>
+                    <p class="subtitle lg:ml-0">
+                        Everything you need to know before getting started with Quick Office.
+                    </p>
                 </div>
             </div>
             <div class="section-content">
                 <div class="space-y-4">
-                    {faqs.map((item) => (
-                        <Accordion title={item.question} content={item.answer} />
-                    ))}
+                    {faqs.map((item) => <Accordion title={item.question} content={item.answer} />)}
                 </div>
             </div>
         </div>

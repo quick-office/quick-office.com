@@ -60,7 +60,10 @@ const plans = [
 
 <section class="section-box my-0 bg-transparent relative isolate overflow-hidden" id="pricing">
     <div class="absolute inset-0 -z-10 pointer-events-none pattern-circles opacity-30"></div>
-    <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-primary/8"></div>
+    <div
+        class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-primary/8"
+    >
+    </div>
     <div class="container">
         <div class="section-container">
             <div class="section-intro centralize">
@@ -75,18 +78,20 @@ const plans = [
                         <label for="pricing-toggle" class="price-toggler-btn">Yearly</label>
                     </div>
                     <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7 relative z-10">
-                        {plans.map((plan) => (
-                            <PricingCard
-                                price={plan.price}
-                                yearly_price={plan.yearly_price}
-                                title={plan.title}
-                                is_featured={plan.is_featured}
-                                offer_text={plan.offer_text}
-                                button={plan.button}
-                                description={plan.description}
-                                features={plan.features}
-                            />
-                        ))}
+                        {
+                            plans.map((plan) => (
+                                <PricingCard
+                                    price={plan.price}
+                                    yearly_price={plan.yearly_price}
+                                    title={plan.title}
+                                    is_featured={plan.is_featured}
+                                    offer_text={plan.offer_text}
+                                    button={plan.button}
+                                    description={plan.description}
+                                    features={plan.features}
+                                />
+                            ))
+                        }
                     </div>
                 </div>
                 <GradientBlob />

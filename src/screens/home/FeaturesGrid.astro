@@ -17,7 +17,10 @@ const items = [
 
 <section class="section-box mx-5 relative isolate overflow-hidden">
     <div class="absolute inset-0 -z-10 pointer-events-none pattern-dots opacity-40"></div>
-    <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-primary/10 via-transparent to-transparent"></div>
+    <div
+        class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-primary/10 via-transparent to-transparent"
+    >
+    </div>
     <div class="container">
         <div class="section-container">
             <div class="section-intro centralize">
@@ -26,9 +29,11 @@ const items = [
             </div>
             <div class="section-content">
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 border-r border-text-light/5 border-b">
-                    {items.map((item) => (
-                        <FeatureCard logo={item.logo} title={item.title} is_starred={item.is_starred} />
-                    ))}
+                    {
+                        items.map((item) => (
+                            <FeatureCard logo={item.logo} title={item.title} is_starred={item.is_starred} />
+                        ))
+                    }
                 </div>
                 <div class="mt-16 flex justify-center w-full perspective-near xl:perspective-dramatic">
                     <VideoShowcase />
