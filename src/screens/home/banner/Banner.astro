@@ -1,11 +1,9 @@
 ---
-import BannerVideoShowcase from './BannerVideoShowcase.astro';
+import VideoShowcase from './VideoShowcase.astro';
 ---
 
 <section class="section-ph relative overflow-hidden">
-    <div
-        class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-b from-primary/10 via-primary/5 to-transparent"
-    >
+    <div class="absolute inset-0 -z-10 pointer-events-none bg-linear-to-b from-primary/10 via-primary/5 to-transparent">
     </div>
     <div class="container relative">
         <div class="absolute top-0 left-0 w-full">
@@ -30,7 +28,7 @@ import BannerVideoShowcase from './BannerVideoShowcase.astro';
             </div>
             <div class="col-12">
                 <div class="flex justify-center w-full perspective-near xl:perspective-dramatic">
-                    <BannerVideoShowcase />
+                    <VideoShowcase />
                 </div>
             </div>
         </div>

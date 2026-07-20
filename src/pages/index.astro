@@ -1,8 +1,8 @@
 ---
-import config from '@/config/config.json';
+import { Banner } from '@/screens/home/banner';
+import { SiteLayout } from '@/layouts/site-layout';
+import { HorizontalRule } from '@/components/horizontal-rule';
 
-import Base from '@/layouts/Base.astro';
-import Banner from '@/screens/home/banner/Banner.astro';
 import SocialProof from '@/screens/home/SocialProof.astro';
 import PainPoints from '@/screens/home/PainPoints.astro';
 import ValueProps from '@/screens/home/ValueProps.astro';
@@ -14,19 +14,19 @@ import TestimonialsAndFaq from '@/screens/home/TestimonialsAndFaq.astro';
 import Cta from '@/screens/home/Cta.astro';
 ---
 
-<Base title={config.site.home_title}>
+<SiteLayout title="Quick Office — All-in-One Growth Software for Local Businesses">
     <Banner />
-    <hr class="border-border" />
+    <HorizontalRule />
     <SocialProof />
-    <hr class="border-border" />
+    <HorizontalRule />
     <PainPoints />
-    <hr class="border-border" />
+    <HorizontalRule />
     <ValueProps />
     <FeaturesGrid />
     <HowItWorks />
     <Comparison />
     <Pricing />
-    <hr class="border-border" />
+    <HorizontalRule />
     <TestimonialsAndFaq />
     <Cta />
-</Base>
+</SiteLayout>
