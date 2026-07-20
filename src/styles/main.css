@@ -1,10 +1,10 @@
 @import 'tailwindcss';
+
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 @plugin 'tailwind-bootstrap-grid';
 
 @import './theme.css';
-
 @import './safe.css';
 @import './utilities.css';
 
