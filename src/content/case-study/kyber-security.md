@@ -19,7 +19,7 @@ stats:
       label: 'Reduction in manual calls'
 
 client_info:
-    - icon: '/images/icons/careerdevelopment.svg'
+    - icon: '/images/icons/innovation.svg'
       label: 'Client'
       value: 'Kyber Home Services'
     - icon: '/images/icons/healthicon.svg'

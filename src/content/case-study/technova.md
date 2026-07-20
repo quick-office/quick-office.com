@@ -19,7 +19,7 @@ stats:
       label: 'Less no-shows'
 
 client_info:
-    - icon: '/images/icons/careerdevelopment.svg'
+    - icon: '/images/icons/innovation.svg'
       label: 'Client'
       value: 'TechNova Dental'
     - icon: '/images/icons/healthicon.svg'
