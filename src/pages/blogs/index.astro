@@ -5,10 +5,10 @@ import CallToAction from '@/components/CallToAction.astro';
 import FeaturedPostCard from '@/components/FeaturedPostCard.astro';
 import ImageMod from '@/components/ImageMod.astro';
 import { blogAuthor1 } from '@/lib/assets';
-import { getSinglePage } from '@/lib/contentParser';
-import dateFormat from '@/lib/utils/dateFormat';
-import { sortByDate } from '@/lib/utils/sortFunctions';
-import { markdownify } from '@/lib/utils/textConverter';
+import { getSinglePage } from '@/lib/content-parser';
+import dateFormat from '@/lib/date-format';
+import { sortByDate } from '@/lib/sort-functions';
+import { markdownify } from '@/lib/text-converter';
 
 const pageData = {
     page_header: {
