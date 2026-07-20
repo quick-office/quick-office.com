@@ -4,7 +4,6 @@ import { plainify } from '@/lib/utils/textConverter';
 import Footer from '@/layouts/partials/Footer.astro';
 import Header from '@/layouts/partials/Header.astro';
 import '@/styles/main.css';
-import { GoogleTagmanager, GoogleTagmanagerNoscript } from '@digi4care/astro-google-tagmanager';
 
 export interface Props {
     title: string;
@@ -16,14 +15,14 @@ export interface Props {
 
 const { title, description, image, noindex, canonical } = Astro.props;
 
-const pageTitle = `${title} - Quick Office`;
+const siteName = 'Quick Office';
+
+const pageTitle = `${title} - ${siteName}`;
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- google tag manager -->
-        {config.google_tag_manager.enable && <GoogleTagmanager id={config.google_tag_manager.gtm_id} />}
         <link rel="shortcut icon" href={config.site.favicon} />
         <meta name="theme-name" content="quick-office" />
         <meta name="msapplication-TileColor" content="#000000" />
@@ -85,9 +84,6 @@ const pageTitle = `${title} - Quick Office`;
         <script is:inline type="module" src="/scripts/animations.js"></script>
     </head>
     <body>
-        {/* google tag manager noscript */}
-        {config.google_tag_manager.enable && <GoogleTagmanagerNoscript id={config.google_tag_manager.gtm_id} />}
-
         {/* <TwSizeIndicator /> */}
         <Header />
         <main id="main-content" class="overflow-x-hidden md:overflow-x-auto">

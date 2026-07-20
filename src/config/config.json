@@ -26,10 +26,6 @@
         "label": "Get Started",
         "link": "/contact"
     },
-    "google_tag_manager": {
-        "enable": false,
-        "gtm_id": "GTM-XXXXXX"
-    },
     "metadata": {
         "meta_author": "Quick Office",
         "meta_image": "/images/og-image.png",
