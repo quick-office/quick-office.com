@@ -1,6 +1,20 @@
 ---
 import FeatureCard from '@/components/FeatureCard.astro';
-import type { OurFeaturesSection } from '@/types';
+
+import type { ImageMetadata } from 'astro';
+
+interface FeatureItem {
+    logo: ImageMetadata | string;
+    title: string;
+    is_starred: boolean;
+}
+
+interface OurFeaturesSection {
+    badge?: string;
+    title: string;
+    content?: string;
+    items: FeatureItem[];
+}
 
 interface Props {
     our_features: OurFeaturesSection;

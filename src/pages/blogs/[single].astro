@@ -27,7 +27,7 @@ const allPosts = await getSinglePage('blogs');
 const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0, 3);
 ---
 
-<SiteLayout {...postData} title={postData.title} description={postData.description ?? postData.title}>
+<SiteLayout title={postData.title} description={postData.description ?? postData.title} image={postData.image?.src}>
     <!-- Blog Single Hero -->
     <section class="section-ph relative pb-10 lg:pb-14">
         <div class="container">
@@ -39,7 +39,7 @@ const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0
 
                 <div class="overflow-hidden rounded-2xl border border-white/10">
                     <ImageMod
-                        src={postData.image}
+                        src={postData.image!}
                         alt={postData.title}
                         width={1200}
                         height={600}
@@ -119,7 +119,7 @@ const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0
                     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                         {relatedPosts.map((relPost) => (
                             <BlogCard
-                                image={relPost.data.image}
+                                image={relPost.data.image!}
                                 imageAlt={relPost.data.title}
                                 title={relPost.data.title}
                                 description={relPost.data.description ?? ''}
