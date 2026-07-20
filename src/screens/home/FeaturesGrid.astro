@@ -13,18 +13,15 @@ const items = [
     { logo: '/images/features-menu-icon.svg', title: 'Cost Center & Cost Analysis', is_starred: false },
     { logo: '/images/features-menu-icon.svg', title: 'Team Roles & Permissions', is_starred: false },
 ];
-const pattern = "url(\"data:image/svg+xml,%3Csvg width='36' height='36' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='18' cy='18' r='1.5' fill='%23e8edf3'/%3E%3C/svg%3E\")";
 ---
 
 <section class="section-box mx-5 relative isolate overflow-hidden">
-    <div class="absolute inset-0 -z-10 pointer-events-none opacity-50" style={`background-image: ${pattern}; background-size: 36px 36px;`}></div>
-    <div class="absolute inset-0 -z-10 pointer-events-none" style="background: radial-gradient(ellipse 65% 50% at 50% 110%, rgba(109,86,232,0.11) 0%, transparent 65%)"></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none pattern-dots opacity-40"></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-primary/10 via-transparent to-transparent"></div>
     <div class="container">
         <div class="section-container">
             <div class="section-intro centralize">
-                <h2 class="title hasHighlight">
-                    Everything You Need to Run Your <strong>Business Finances</strong>
-                </h2>
+                <h2 class="title hasHighlight">Everything You Need to Run Your <strong>Business Finances</strong></h2>
                 <p class="subtitle">From your first invoice to a complete P&L report — Quick Office covers it all.</p>
             </div>
             <div class="section-content">
@@ -40,3 +37,10 @@ const pattern = "url(\"data:image/svg+xml,%3Csvg width='36' height='36' xmlns='h
         </div>
     </div>
 </section>
+
+<style>
+    .pattern-dots {
+        background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='18' cy='18' r='1.5' fill='%23b8c6d6'/%3E%3C/svg%3E");
+        background-size: 36px 36px;
+    }
+</style>

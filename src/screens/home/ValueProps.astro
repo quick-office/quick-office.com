@@ -5,52 +5,33 @@ const items = [
     {
         logo: '/images/value-proposition/values-icon-1.svg',
         title: 'Sales & Invoicing',
-        list: [
-            'Create & send professional invoices',
-            'Track payment status in real time',
-            'Full payment receive history',
-        ],
+        list: ['Create & send professional invoices', 'Track payment status in real time', 'Full payment receive history'],
     },
     {
         logo: '/images/value-proposition/values-icon-2.svg',
         title: 'Procurement & Payments',
-        list: [
-            'Manage all supplier invoices',
-            'Process & record supplier payments',
-            'Complete payment history log',
-        ],
+        list: ['Manage all supplier invoices', 'Process & record supplier payments', 'Complete payment history log'],
     },
     {
         logo: '/images/value-proposition/values-icon-3.svg',
         title: 'Accounting & Vouchers',
-        list: [
-            'Full chart of accounts',
-            'Debit/credit voucher creation',
-            'Journal book & account book',
-        ],
+        list: ['Full chart of accounts', 'Debit/credit voucher creation', 'Journal book & account book'],
     },
     {
         logo: '/images/value-proposition/values-icon-4.svg',
         title: 'Reports & Insights',
-        list: [
-            'Profit & loss summary',
-            'Cost center analysis',
-            'Account distribution overview',
-        ],
+        list: ['Profit & loss summary', 'Cost center analysis', 'Account distribution overview'],
     },
 ];
-const pattern = "url(\"data:image/svg+xml,%3Csvg width='40' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8h40' stroke='%23eef1f5' stroke-width='1'/%3E%3C/svg%3E\")";
 ---
 
 <section class="section relative overflow-hidden">
-    <div class="absolute inset-0 -z-10 pointer-events-none opacity-60" style={`background-image: ${pattern}; background-size: 40px 16px;`}></div>
-    <div class="absolute inset-0 -z-10 pointer-events-none" style="background: radial-gradient(ellipse 70% 55% at 0% 50%, rgba(109,86,232,0.09) 0%, transparent 65%)"></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none pattern-hlines opacity-30"></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-r from-primary/10 via-transparent to-transparent"></div>
     <div class="container">
         <div class="section-container">
             <div class="section-intro centralize">
-                <h2 class="title hasHighlight">
-                    One Platform. <strong>Every Financial Workflow.</strong>
-                </h2>
+                <h2 class="title hasHighlight">One Platform. <strong>Every Financial Workflow.</strong></h2>
                 <p class="subtitle">Log in to a single dashboard to run your entire financial operation.</p>
             </div>
             <div class="section-content">
@@ -63,3 +44,10 @@ const pattern = "url(\"data:image/svg+xml,%3Csvg width='40' height='16' xmlns='h
         </div>
     </div>
 </section>
+
+<style>
+    .pattern-hlines {
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8h40' stroke='%23c7d2e0' stroke-width='1'/%3E%3C/svg%3E");
+        background-size: 40px 16px;
+    }
+</style>

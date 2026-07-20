@@ -56,19 +56,15 @@ const plans = [
         ],
     },
 ];
-// circle rings pattern
-const pattern = "url(\"data:image/svg+xml,%3Csvg width='44' height='44' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='22' cy='22' r='9' stroke='%23eef1f5' stroke-width='1' fill='none'/%3E%3C/svg%3E\")";
 ---
 
 <section class="section-box my-0 bg-transparent relative isolate overflow-hidden" id="pricing">
-    <div class="absolute inset-0 -z-10 pointer-events-none opacity-50" style={`background-image: ${pattern}; background-size: 44px 44px;`}></div>
-    <div class="absolute inset-0 -z-10 pointer-events-none" style="background: radial-gradient(ellipse 75% 55% at 50% 0%, rgba(109,86,232,0.10) 0%, transparent 65%), radial-gradient(ellipse 50% 40% at 100% 100%, rgba(109,86,232,0.07) 0%, transparent 60%)"></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none pattern-circles opacity-30"></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-primary/8"></div>
     <div class="container">
         <div class="section-container">
             <div class="section-intro centralize">
-                <h2 class="title hasHighlight">
-                    Simple, Honest <strong>Pricing</strong>
-                </h2>
+                <h2 class="title hasHighlight">Simple, Honest <strong>Pricing</strong></h2>
                 <p class="subtitle">Manual billing — pay when you are ready. No automatic charges, ever.</p>
             </div>
             <div class="section-content">
@@ -98,3 +94,10 @@ const pattern = "url(\"data:image/svg+xml,%3Csvg width='44' height='44' xmlns='h
         </div>
     </div>
 </section>
+
+<style>
+    .pattern-circles {
+        background-image: url("data:image/svg+xml,%3Csvg width='44' height='44' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='22' cy='22' r='9' stroke='%23c7d2e0' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+        background-size: 44px 44px;
+    }
+</style>

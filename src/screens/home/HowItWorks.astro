@@ -19,26 +19,19 @@ const steps = [
         content: 'Create invoices, record vouchers, process payments, and pull reports — all from one dashboard.',
     },
 ];
-// wavy lines pattern
-const pattern = "url(\"data:image/svg+xml,%3Csvg width='48' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q12 2 24 10 Q36 18 48 10' stroke='%23eef1f5' stroke-width='1' fill='none'/%3E%3C/svg%3E\")";
 ---
 
 <section class="section-box max-lg:overflow-hidden pb-16 xl:pb-19 bg-transparent relative isolate overflow-hidden" id="how-it-works">
-    <div class="absolute inset-0 -z-10 pointer-events-none opacity-50" style={`background-image: ${pattern}; background-size: 48px 20px;`}></div>
-    <div class="absolute inset-0 -z-10 pointer-events-none" style="background: radial-gradient(ellipse 70% 60% at 100% 50%, rgba(109,86,232,0.09) 0%, transparent 65%)"></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none pattern-wave opacity-30"></div>
+    <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-l from-primary/10 via-transparent to-transparent"></div>
     <div class="container">
         <div class="section-container">
             <div class="section-intro centralize">
-                <h2 class="title hasHighlight">
-                    Up and Running in <strong class="italic">3 Simple Steps</strong>
-                </h2>
+                <h2 class="title hasHighlight">Up and Running in <strong class="italic">3 Simple Steps</strong></h2>
             </div>
             <div class="section-content">
                 <div class="mb-14">
-                    <TestimonialCard
-                        poster="/images/how-it-works-poster.jpg"
-                        video="/how-it-works.mp4"
-                    />
+                    <TestimonialCard poster="/images/how-it-works-poster.jpg" video="/how-it-works.mp4" />
                 </div>
                 <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-16">
                     {steps.map((step) => (
@@ -53,12 +46,14 @@ const pattern = "url(\"data:image/svg+xml,%3Csvg width='48' height='20' xmlns='h
     </div>
     <div class="absolute inset-x-0 top-0 -z-10">
         <svg class="w-full" viewBox="0 0 1920 1099" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M960 1.5C1224.88 1.5 1464.62 62.943 1638.08 162.205C1811.58 261.491 1918.5 398.425 1918.5 549.356C1918.5 700.287 1811.58 837.222 1638.08 936.508C1464.62 1035.77 1224.88 1097.21 960 1097.21C695.116 1097.21 455.383 1035.77 281.923 936.508C108.42 837.222 1.50012 700.287 1.5 549.356C1.5 398.425 108.42 261.491 281.923 162.205C455.383 62.943 695.116 1.5 960 1.5Z"
-                fill="black"
-                stroke="var(--color-border)"
-                stroke-width="3"
-            />
+            <path d="M960 1.5C1224.88 1.5 1464.62 62.943 1638.08 162.205C1811.58 261.491 1918.5 398.425 1918.5 549.356C1918.5 700.287 1811.58 837.222 1638.08 936.508C1464.62 1035.77 1224.88 1097.21 960 1097.21C695.116 1097.21 455.383 1035.77 281.923 936.508C108.42 837.222 1.50012 700.287 1.5 549.356C1.5 398.425 108.42 261.491 281.923 162.205C455.383 62.943 695.116 1.5 960 1.5Z" fill="black" stroke="var(--color-border)" stroke-width="3" />
         </svg>
     </div>
 </section>
+
+<style>
+    .pattern-wave {
+        background-image: url("data:image/svg+xml,%3Csvg width='48' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q12 2 24 10 Q36 18 48 10' stroke='%23c7d2e0' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+        background-size: 48px 20px;
+    }
+</style>
