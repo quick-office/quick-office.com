@@ -1,5 +1,5 @@
 ---
-import Base from '@/layouts/Base.astro';
+import { SiteLayout } from '@/layouts/site-layout';
 import Badge from '@/layouts/components/Badge.astro';
 import CallToAction from '@/layouts/components/CallToAction.astro';
 import CareerApplyForm from '@/layouts/components/CareerApplyForm.astro';
@@ -23,7 +23,7 @@ const jobData = job.data;
 const { Content } = await render(job);
 ---
 
-<Base {...jobData}>
+<SiteLayout {...jobData}>
     <!-- Page Header -->
     <section class="section-ph pb-8 relative overflow-hidden">
         <div class="container relative">
@@ -103,4 +103,4 @@ const { Content } = await render(job);
 
     <!-- Call to Action -->
     <CallToAction />
-</Base>
+</SiteLayout>

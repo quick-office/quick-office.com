@@ -1,5 +1,5 @@
 ---
-import Base from '@/layouts/Base.astro';
+import { SiteLayout } from '@/layouts/site-layout';
 import Badge from '@/layouts/components/Badge.astro';
 import CallToAction from '@/layouts/components/CallToAction.astro';
 import Faq from '@/layouts/components/Faq.astro';
@@ -12,7 +12,7 @@ const pricing = await getListPage('pricing', '-index');
 const pricingData: Pricing = pricing.data;
 ---
 
-<Base {...pricingData}>
+<SiteLayout {...pricingData}>
     <!-- Page Header -->
     <section class="section-ph pb-0 relative overflow-hidden">
         <div class="container relative">
@@ -115,4 +115,4 @@ const pricingData: Pricing = pricing.data;
 
     <!-- Call to Action -->
     <CallToAction />
-</Base>
+</SiteLayout>

@@ -1,6 +1,6 @@
 ---
 import Share from '@/layouts/components/Share.astro';
-import Base from '@/layouts/Base.astro';
+import { SiteLayout } from '@/layouts/site-layout';
 import BlogCard from '@/layouts/components/BlogCard.astro';
 import ImageMod from '@/layouts/components/ImageMod.astro';
 import { blogFeaturedCover, blogAuthor1, blogPost1 } from '@/lib/assets';
@@ -26,7 +26,7 @@ const allPosts = await getSinglePage('blog');
 const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
 ---
 
-<Base {...postData}>
+<SiteLayout {...postData}>
     <!-- Blog Single Hero -->
     <section class="section-ph relative pb-10 lg:pb-14">
         <div class="container">
@@ -133,4 +133,4 @@ const relatedPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
             </section>
         )
     }
-</Base>
+</SiteLayout>

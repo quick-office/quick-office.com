@@ -1,5 +1,5 @@
 ---
-import Base from '@/layouts/Base.astro';
+import { SiteLayout } from '@/layouts/site-layout';
 import Badge from '@/layouts/components/Badge.astro';
 import BrandsCarousel from '@/layouts/components/BrandsCarousel.astro';
 import CallToAction from '@/layouts/components/CallToAction.astro';
@@ -18,7 +18,7 @@ const about = await getListPage('about', '-index');
 const aboutData: About = about.data;
 ---
 
-<Base {...aboutData}>
+<SiteLayout {...aboutData}>
     <!-- Page Header -->
     <section class="section-ph pb-20 overflow-hidden">
         <div class="container">
@@ -101,4 +101,4 @@ const aboutData: About = about.data;
 
     <!-- Call to Action -->
     <CallToAction />
-</Base>
+</SiteLayout>

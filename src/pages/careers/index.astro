@@ -1,5 +1,5 @@
 ---
-import Base from '@/layouts/Base.astro';
+import { SiteLayout } from '@/layouts/site-layout';
 import CallToAction from '@/layouts/components/CallToAction.astro';
 import CareerCard from '@/layouts/components/CareerCard.astro';
 import Faq from '@/layouts/components/Faq.astro';
@@ -18,7 +18,7 @@ const pageData: Careers = careersIndex.data;
 const jobs = await getSinglePage('careers');
 ---
 
-<Base {...pageData}>
+<SiteLayout {...pageData}>
     <!-- Page Header -->
     <section class="section-ph pb-10 relative">
         <div class="container relative">
@@ -193,4 +193,4 @@ const jobs = await getSinglePage('careers');
 
     <!-- Call to Action -->
     <CallToAction />
-</Base>
+</SiteLayout>

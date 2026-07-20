@@ -1,6 +1,6 @@
 ---
 import DynamicIcon from '@/layouts/helpers/DynamicIcon';
-import Base from '@/layouts/Base.astro';
+import { SiteLayout } from '@/layouts/site-layout';
 import BrandsCarousel from '@/layouts/components/BrandsCarousel.astro';
 import BusinessNeeds from '@/layouts/components/BusinessNeeds.astro';
 import CallToAction from '@/layouts/components/CallToAction.astro';
@@ -17,7 +17,7 @@ const features = await getListPage('features', '-index');
 const featuresData: Features = features.data;
 ---
 
-<Base {...featuresData}>
+<SiteLayout {...featuresData}>
     <!-- Banner -->
     <section class="section-ph relative overflow-hidden pb-20">
         <div class="container relative">
@@ -134,4 +134,4 @@ const featuresData: Features = features.data;
 
     <!-- Call to Action -->
     <CallToAction />
-</Base>
+</SiteLayout>

@@ -1,5 +1,5 @@
 ---
-import Base from '@/layouts/Base.astro';
+import { SiteLayout } from '@/layouts/site-layout';
 import CallToAction from '@/layouts/components/CallToAction.astro';
 import ImageMod from '@/layouts/components/ImageMod.astro';
 import { getSinglePage } from '@/lib/contentParser.astro';
@@ -17,7 +17,7 @@ const { study } = Astro.props;
 const studyData = study.data;
 ---
 
-<Base {...studyData}>
+<SiteLayout {...studyData}>
     <!-- Page Header -->
     <section class="section-ph pb-8 relative overflow-hidden">
         <div class="container relative">
@@ -204,4 +204,4 @@ const studyData = study.data;
 
     <!-- Call to Action -->
     <CallToAction />
-</Base>
+</SiteLayout>

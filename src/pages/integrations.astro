@@ -1,5 +1,5 @@
 ---
-import Base from '@/layouts/Base.astro';
+import { SiteLayout } from '@/layouts/site-layout';
 import CallToAction from '@/layouts/components/CallToAction.astro';
 import Faq from '@/layouts/components/Faq.astro';
 import IntegrationCard from '@/layouts/components/IntegrationCard.astro';
@@ -11,7 +11,7 @@ const integrations = await getListPage('integrations', '-index');
 const integrationsData: Integrations = integrations.data;
 ---
 
-<Base {...integrationsData}>
+<SiteLayout {...integrationsData}>
     <!-- Page Header -->
     <section class="section-ph pb-10 relative">
         <div class="container relative">
@@ -46,4 +46,4 @@ const integrationsData: Integrations = integrations.data;
 
     <!-- Call to Action -->
     <CallToAction />
-</Base>
+</SiteLayout>

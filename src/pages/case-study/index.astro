@@ -1,5 +1,5 @@
 ---
-import Base from '@/layouts/Base.astro';
+import { SiteLayout } from '@/layouts/site-layout';
 import CallToAction from '@/layouts/components/CallToAction.astro';
 import CaseStudyCard from '@/layouts/components/CaseStudyCard.astro';
 import { getListPage, getSinglePage } from '@/lib/contentParser.astro';
@@ -14,7 +14,7 @@ const pageData: CaseStudy = caseStudyList.data;
 const caseStudies = await getSinglePage('caseStudy');
 ---
 
-<Base {...pageData}>
+<SiteLayout {...pageData}>
     <!-- Page Header -->
     <section class="section-ph pb-20 relative overflow-hidden">
         <div class="container relative">
@@ -65,4 +65,4 @@ const caseStudies = await getSinglePage('caseStudy');
 
     <!-- Call to Action -->
     <CallToAction />
-</Base>
+</SiteLayout>

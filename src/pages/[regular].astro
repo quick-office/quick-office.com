@@ -1,5 +1,5 @@
 ---
-import Base from '@/layouts/Base.astro';
+import { SiteLayout } from '@/layouts/site-layout';
 import { getSinglePage } from '@/lib/contentParser.astro';
 import PageHeader from '@/layouts/components/PageHeader.astro';
 import { render } from 'astro:content';
@@ -24,7 +24,7 @@ const { title, description } = page.data;
 const { Content } = await render(page);
 ---
 
-<Base {...page.data}>
+<SiteLayout {...page.data}>
     <PageHeader title={title} subtitle={description!} />
     <section class="section-sm">
         <div class="container">
@@ -37,4 +37,4 @@ const { Content } = await render(page);
             </div>
         </div>
     </section>
-</Base>
+</SiteLayout>
