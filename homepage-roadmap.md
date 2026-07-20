@@ -1,225 +1,519 @@
 # Homepage Roadmap — Quick Office
+### Mapped to the existing site structure & components
 
-> **Product:** Quick Office — cloud accounting & financial management SaaS for SMBs  
-> **Market:** Bangladesh (BDT pricing, SSLCommerz payments)  
-> **Audience:** Small-to-medium businesses needing professional accounting without enterprise complexity
-
----
-
-## Section 1 — Hero
-
-**Goal:** Communicate the value proposition in under 5 seconds and drive free-trial signups.
-
-**Content:**
-
-- **Headline:** A bold, problem-aware statement — e.g., _"All Your Business Finances, One Simple Dashboard"_ or _"Stop Juggling Spreadsheets. Start Running Your Business."_
-- **Sub-headline:** One sentence on who it's for and what it replaces — e.g., _"Quick Office gives SMBs a complete system for invoicing, accounting, and financial reporting — without the enterprise price tag."_
-- **Primary CTA:** `Start Free Trial` (links to signup, reinforces the 30-day free plan)
-- **Secondary CTA:** `Watch Demo` or `See How It Works`
-- **Hero visual:** Animated or static screenshot of the dashboard — showing the Overview panel (total balance, invoice status, net worth). This is the single highest-trust asset on the page.
-- **Trust line beneath CTAs:** _"No credit card required · 30-day free trial · Cancel anytime"_
+> The homepage already has a working layout with the video banner in place.
+> Every section below maps directly to a component or content field that already exists.
+> This is a **content replacement guide**, not a structural one.
 
 ---
 
-## Section 2 — Social Proof Bar
+## Section Order (as rendered on the page)
 
-**Goal:** Instant credibility before the visitor reads further.
-
-**Content:**
-
-- 3–4 trust stats pulled from real usage, e.g.:
-    - `500+ Businesses` using Quick Office
-    - `10,000+ Invoices` processed
-    - `৳ X Crore` managed on the platform
-    - `4.8★` average rating
-- Optionally: a row of logos from recognizable client companies
+```
+Banner (video ✓) → Main Features → Value Props → Features Grid → Business Needs →
+Comparison Row → Testimonial Quote → Brands Carousel → Single Testimonial →
+Growth Process → Our Story → Integrations → Lead Generation →
+Pricing → Testimonials → FAQ → Call To Action
+```
 
 ---
 
-## Section 3 — Problem Statement
+## 1. Banner
+**File:** `src/content/homepage/-index.md` → `banner`  
+**Visual:** `VideoShowcase` component already in place — keep it ✓
 
-**Goal:** Make the visitor feel understood before pitching the solution.
+The video is the hero's strongest trust asset. Only the copy needs updating.
 
-**Content:**
+**`banner.title`**
+```
+The All-In-One Accounting Software for <strong>Growing Businesses</strong>
+```
 
-- Section heading: _"Running a business is hard enough. Your accounting software shouldn't make it harder."_
-- 3-column grid of pain points, each with an icon:
-    1. **Too many tools** — Separate apps for invoices, expenses, reports, and payments that never talk to each other
-    2. **No real-time visibility** — You never know your actual cash position until month-end
-    3. **Manual everything** — Creating vouchers, chasing payments, reconciling accounts by hand wastes hours every week
-- Brief closing line: _"Quick Office brings it all under one roof."_
+**`banner.content`**
+```
+Manage invoices, track expenses, process payments, and generate financial reports —
+all from one simple dashboard. Built for Bangladesh's SMBs.
+```
 
----
+**`banner.button_primary`** → label: `Start Free Trial` · link: `/pricing`  
+**`banner.button_secondary`** → label: `See How It Works` · link: `/#how-it-works`
 
-## Section 4 — Product Overview / Feature Pillars
-
-**Goal:** Show the breadth of what Quick Office covers in a scannable format.
-
-**Content:**
-Five pillars matching the app's core modules, each with icon + title + 1-sentence description:
-
-| Pillar | Title                   | Description                                                                                  |
-| ------ | ----------------------- | -------------------------------------------------------------------------------------------- |
-| 🧾     | Sales & Invoicing       | Create professional invoices, track payment status, and receive payments — all in one place. |
-| 📦     | Procurement & Suppliers | Manage supplier invoices and payments with full history and status tracking.                 |
-| 📒     | Accounting & Vouchers   | Full chart of accounts, journal books, voucher creation, and cost center management.         |
-| 📊     | Financial Reports       | Instant profit & loss summaries, account books, and cost analysis — no accountant required.  |
-| 👥     | Team & Permissions      | Invite team members, assign roles, and control exactly who can see and do what.              |
-
-Each pillar links to a dedicated features page or scrolls to Section 5.
+Add a trust line below the buttons in the Astro file:
+```
+No credit card required · 30-day free trial · Manual billing — pay when you're ready
+```
 
 ---
 
-## Section 5 — Feature Deep-Dive (Alternating Layout)
+## 2. Main Features — Pain Points
+**File:** `src/content/homepage/-index.md` → `main_features`  
+**Component:** pill-shaped labels in two rows of 3 (`feature-items-group`)
 
-**Goal:** Give each major feature its own moment with a real screenshot.
+Name the exact pain points Quick Office solves. Keep them blunt and recognisable.
 
-**Content:** 3–4 alternating image + text blocks, one per key workflow:
+**`main_features.title`**
+```
+Still managing your business finances with <strong>spreadsheets and guesswork?</strong>
+```
 
-### 5a — Dashboard Overview
+**`main_features.content`**
+```
+Manual accounting is slow, error-prone, and impossible to scale. Quick Office gives you
+a complete financial system that works the way your business actually does.
+```
 
-- **Visual:** Screenshot of the Overview dashboard (financial health metrics, account distribution chart, recent transactions)
-- **Headline:** _"Your Business Health, At a Glance"_
-- **Body:** Total assets, liabilities, net worth, outstanding invoices, and recent vouchers — all on one screen, updated in real time.
-- **Bullet points:**
-    - Total balance across all accounts
-    - Invoice status breakdown (paid, unpaid, overdue)
-    - Supplier payment status
-    - Transaction breakdown by voucher type
-
-### 5b — Invoicing
-
-- **Visual:** Screenshot of the invoice creation form or invoice list view
-- **Headline:** _"Professional Invoices in Minutes"_
-- **Body:** Create, send, and track customer invoices. Record payments and maintain a complete history without spreadsheets.
-- **Bullet points:**
-    - Customizable invoice templates
-    - Bank details linked per invoice
-    - Payment receive & history tracking
-    - Instant outstanding balance view
-
-### 5c — Accounting & Vouchers
-
-- **Visual:** Screenshot of voucher creation or chart of accounts
-- **Headline:** _"Accounting That Actually Makes Sense"_
-- **Body:** Manage your chart of accounts, create journal vouchers, and track every transaction — without needing a dedicated accountant on-call.
-- **Bullet points:**
-    - Chart of accounts (assets, liabilities, equity, income, expense)
-    - Debit/credit voucher creation
-    - Journal and account book
-    - Cost center allocation
-
-### 5d — Reports
-
-- **Visual:** Screenshot of the profit & loss summary or cost analysis view
-- **Headline:** _"Reports That Drive Decisions"_
-- **Body:** Generate profit & loss statements and cost analysis reports on demand. Know exactly where money is coming in and going out.
-- **Bullet points:**
-    - Profit & loss summary
-    - Cost analysis by category
-    - Account book with full transaction history
-    - Date-range filtering
+**`main_features.items`** (6 pills — 3 per row)
+```yaml
+- 'Invoices Lost in Email Threads'
+- 'No Real-Time Cash Visibility'
+- 'Manual Voucher Creation'
+- 'Chasing Supplier Payments'
+- 'Month-End Accounting Panic'
+- 'Multiple Disconnected Tools'
+```
 
 ---
 
-## Section 6 — How It Works
+## 3. Value Props — Module Cards
+**File:** `src/content/homepage/-index.md` → `value_props`  
+**Component:** `ValueCard` — 4-column grid with icon, title, and 3 bullet features
 
-**Goal:** Remove friction by making the product feel simple to start.
+Map each card to one of Quick Office's core modules.
 
-**Content:** 3-step linear flow with icons and short descriptions:
+**`value_props.title`**
+```
+One Platform. <strong>Every Financial Workflow.</strong>
+```
 
-1. **Create Your Account** — Sign up free. Set up your company profile, add your chart of accounts, and invite your team. Takes under 10 minutes.
-2. **Add Customers, Suppliers & Products** — Build your master data once. Quick Office uses it to auto-fill invoices and track balances automatically.
-3. **Start Managing Finances** — Create invoices, record expenses, process payments, and generate reports — all from one dashboard.
+**`value_props.content`**
+```
+Log in to a single dashboard to run your entire financial operation —
+from first invoice to final report.
+```
 
-CTA below: `Get Started Free →`
+**`value_props.items`**
+```yaml
+- logo: '/images/value-proposition/values-icon-1.svg'
+  title: 'Sales & Invoicing'
+  list:
+    - 'Create & send professional invoices'
+    - 'Track payment status in real time'
+    - 'Full payment receive history'
 
----
+- logo: '/images/value-proposition/values-icon-2.svg'
+  title: 'Procurement & Payments'
+  list:
+    - 'Manage all supplier invoices'
+    - 'Process & record supplier payments'
+    - 'Complete payment history log'
 
-## Section 7 — Pricing
+- logo: '/images/value-proposition/values-icon-3.svg'
+  title: 'Accounting & Vouchers'
+  list:
+    - 'Full chart of accounts'
+    - 'Debit/credit voucher creation'
+    - 'Journal book & account book'
 
-**Goal:** Reduce sticker shock and convert fence-sitters with the free tier.
-
-**Content:**
-
-Four pricing cards in a horizontal grid, with the Professional plan visually highlighted (most popular):
-
-| Plan         | Price        | Users           | Best For                         |
-| ------------ | ------------ | --------------- | -------------------------------- |
-| Free Trial   | ৳0 / 30 days | 1 user          | Try before you buy               |
-| Basic        | ৳1,999 / mo  | Up to 3 users   | Solo founders & micro-businesses |
-| Professional | ৳4,999 / mo  | Up to 10 users  | Growing SMBs _(Most Popular)_    |
-| Enterprise   | ৳9,999 / mo  | Unlimited users | Multi-department organizations   |
-
-- Feature comparison table below the cards (rows = features, columns = plans, checkmarks/dashes)
-- Note: _"Manual billing — pay when you're ready. No automatic charges."_
-- CTA on each card: `Start Free Trial` / `Get Started`
-
----
-
-## Section 8 — Testimonials
-
-**Goal:** Peer validation from real customers in similar businesses.
-
-**Content:**
-
-- Section heading: _"Trusted by businesses across Bangladesh"_
-- 2–3 testimonial cards, each with:
-    - Quote (2–3 sentences focused on a specific outcome, e.g., _"We cut our invoice processing time in half..."_)
-    - Customer name, role, company name
-    - Company logo or avatar
-- Optional: a stat callout, e.g., _"Teams save an average of 8 hours/week on accounting tasks"_
-
----
-
-## Section 9 — FAQ
-
-**Goal:** Pre-empt objections and buying blockers.
-
-**Suggested questions:**
-
-1. **Do I need an accounting background to use Quick Office?** — No. The interface is designed for business owners, not accountants. Common workflows are guided step by step.
-2. **How does billing work?** — Quick Office uses manual billing. You pay when you choose to renew — there are no automatic charges. You get a 24-hour grace period after expiry.
-3. **Can I add my team members?** — Yes. All paid plans include multiple users with role-based permissions so you control exactly what each person can access.
-4. **Is my financial data secure?** — Yes. [Data storage and security details here.]
-5. **Can I upgrade or downgrade my plan?** — Yes, you can switch plans at any time. Changes take effect on your next billing cycle.
-6. **What payment methods do you accept?** — We accept payments via SSLCommerz, supporting all major Bangladeshi banks and mobile banking.
+- logo: '/images/value-proposition/values-icon-4.svg'
+  title: 'Reports & Insights'
+  list:
+    - 'Profit & loss summary'
+    - 'Cost center analysis'
+    - 'Account distribution overview'
+```
 
 ---
 
-## Section 10 — Final CTA (Call to Action)
+## 4. Features Grid
+**File:** `src/content/homepage/-index.md` → `our_features`  
+**Component:** `FeatureCard` inside `Features` partial — bordered 3×3 grid
 
-**Goal:** Last-chance conversion for visitors who scrolled to the bottom.
+**`our_features.title`**
+```
+Everything You Need to Run Your <strong>Business Finances</strong>
+```
 
-**Content:**
+**`our_features.content`**
+```
+From your first customer invoice to a complete profit & loss report —
+Quick Office covers the full accounting lifecycle.
+```
 
-- **Headline:** _"Ready to take control of your business finances?"_
-- **Sub-copy:** _"Join hundreds of businesses using Quick Office to manage invoices, payments, and accounting — all in one place. Start free, no card required."_
-- **CTA buttons:** `Start Free Trial` (primary) + `Contact Sales` (secondary)
-- Background: use the `bg-light` section box style with the dot pattern visible — clean, not heavy
+**`our_features.items`** (9 items)
+```yaml
+- logo: '/images/features-menu-icon.svg'
+  title: 'Invoice Creation & Management'
+  is_starred: false
+
+- logo: '/images/features-menu-icon.svg'
+  title: 'Payment Receive & History'
+  is_starred: false
+
+- logo: '/images/features-menu-icon.svg'
+  title: 'Supplier Invoice Management'
+  is_starred: false
+
+- logo: '/images/features-menu-icon.svg'
+  title: 'Supplier Payment Processing'
+  is_starred: false
+
+- logo: '/images/features-menu-icon.svg'
+  title: 'Chart of Accounts'
+  is_starred: true
+
+- logo: '/images/features-menu-icon.svg'
+  title: 'Voucher Creation (Debit/Credit)'
+  is_starred: false
+
+- logo: '/images/features-menu-icon.svg'
+  title: 'Profit & Loss Reports'
+  is_starred: false
+
+- logo: '/images/features-menu-icon.svg'
+  title: 'Cost Center & Cost Analysis'
+  is_starred: false
+
+- logo: '/images/features-menu-icon.svg'
+  title: 'Team Roles & Permissions'
+  is_starred: false
+```
 
 ---
 
-## Content Priorities (Build Order)
+## 5. Business Needs — How It Works
+**File:** `src/content/sections/business-needs.md`  
+**Component:** `StepCard` vertical list with image, number, title, content
 
-| Priority | Section           | Why                                                    |
-| -------- | ----------------- | ------------------------------------------------------ |
-| 1        | Hero              | Determines whether anyone reads further                |
-| 2        | Feature Deep-Dive | Real screenshots build the most trust                  |
-| 3        | Pricing           | Highest-intent visitors jump straight here             |
-| 4        | How It Works      | Reduces "is this too complex?" anxiety                 |
-| 5        | Problem Statement | Emotional resonance, sets up the solution              |
-| 6        | Final CTA         | Captures late-funnel visitors                          |
-| 7        | Testimonials      | Add once real customer quotes are available            |
-| 8        | Social Proof Bar  | Add once usage numbers are meaningful                  |
-| 9        | FAQ               | Fill in based on actual sales/support questions        |
-| 10       | Feature Pillars   | Good for SEO and scannability, lower conversion impact |
+Use this as the step-by-step onboarding section.
+
+```yaml
+title: 'Get Up and Running in <strong>Minutes, Not Months</strong>'
+items:
+  - number: '01'
+    title: 'Set Up Your Company'
+    content: >
+      Create your account, add your company profile, define your chart of accounts,
+      and invite your team. Most businesses are fully set up in under 10 minutes.
+    image: '/images/business-needs/step-1.png'
+
+  - number: '02'
+    title: 'Add Customers, Suppliers & Products'
+    content: >
+      Build your master data once. Quick Office auto-fills invoices from your customer
+      and product list, and tracks supplier balances automatically.
+    image: '/images/business-needs/step-2.png'
+
+  - number: '03'
+    title: 'Manage Finances from One Dashboard'
+    content: >
+      Create invoices, record vouchers, process payments, and generate reports — all
+      from one screen. See your net worth, cash position, and outstanding payments
+      at a glance.
+    image: '/images/business-needs/step-3.png'
+```
 
 ---
 
-## Copy Notes
+## 6. Comparison Row — Quick Office vs. The Alternatives
+**File:** `src/content/sections/comparison-row.md`  
+**Component:** `ComparisonRow` — one horizontal row per alternative with logos + price
 
-- **Tone:** Confident, practical, direct. This is a B2B finance tool — avoid hype words like "revolutionary" or "game-changing." Speak to outcomes: time saved, clarity gained, errors avoided.
-- **Language:** English primary. Consider a Bangla version for wider market reach.
-- **Screenshots:** Use real app screenshots, not illustrations. Finance buyers trust demos over mockups.
-- **Numbers:** Specific numbers outperform vague claims. _"Save 8 hours/week"_ beats _"save time."_
+Show price contrast. The visual impact of ৳1,999 vs ৳8,000+ is the main hook.
+
+```yaml
+title: 'One Tool. <strong>Replace Them All.</strong>'
+price_suffix: '/Per Month'
+items:
+  - title: 'Tally + Excel + Separate Payroll'
+    price: '৳8,000+'
+    images:
+      - '/images/integrations/tally.png'
+      - '/images/integrations/excel.png'
+
+  - title: 'Enterprise Accounting Suite'
+    price: '৳15,000+'
+    images:
+      - '/images/integrations/enterprise.png'
+
+  - title: 'Quick Office (All-in-One)'
+    price: '৳1,999'
+    images:
+      - '/images/logo.png'
+```
+
+---
+
+## 7. Testimonial Quote
+**File:** `src/content/homepage/-index.md` → `testimonial_quote`  
+**Component:** single blockquote between two `<hr>` dividers
+
+**`testimonial_quote.title`**
+```
+We know you didn't start your business to become a <strong>full-time accountant</strong>
+```
+
+**`testimonial_quote.quote`**
+```
+Before Quick Office, I was spending 3 hours every Sunday just reconciling invoices and
+figuring out which suppliers I still owed. Now it takes 20 minutes and I know my exact
+profit margin in real time.
+```
+
+---
+
+## 8. Brands Carousel
+**File:** `src/content/sections/brands.md`  
+**Component:** `BrandsCarousel`
+
+Logos of businesses using Quick Office. Until real client logos are collected, use
+industry category labels (Retail, Trading, Construction, Services) as placeholder trust signals.
+
+---
+
+## 9. Single Testimonial — Stats + Quote Card
+**File:** `src/content/homepage/-index.md` → `single_testimonial`  
+**Component:** `blob-message` stat pills on the left, quote card on the right
+
+**`single_testimonial.stats`**
+```yaml
+- value: '500+'
+  label: 'Businesses on Quick Office'
+- value: '৳10 Crore+'
+  label: 'Transactions Managed'
+- value: '8 hrs/week'
+  label: 'Average Time Saved'
+```
+
+**`single_testimonial.testimonial`**
+```yaml
+quote: >
+  Quick Office completely replaced our separate invoicing tool, our expense tracker,
+  and our accountant's manual spreadsheets. Everything is in one place and I can
+  check our financial health from my phone at any time.
+avatar: '/images/avatar.png'
+name: 'Karim Rahman'
+company: 'Rahman Trading Co., Dhaka'
+```
+
+---
+
+## 10. Growth Process — 3-Step Path
+**File:** `src/content/homepage/-index.md` → `growth_process`  
+**Component:** `ProcessCard` grid inside the oval `section-box`
+
+**`growth_process.title`**
+```
+From Sign-Up to <strong class="italic">Full Financial Control</strong> in 3 Steps
+```
+
+**`growth_process.items`**
+```yaml
+- logo: '/images/value-proposition/values-icon-1.svg'
+  title: '1. Start Your Free Trial'
+  content: >
+    Sign up and get 30 days free — no credit card required. Your account is ready
+    the moment you register.
+
+- logo: '/images/value-proposition/values-icon-2.svg'
+  title: '2. Set Up in Minutes'
+  content: >
+    Add your company, chart of accounts, customers, and suppliers. Most businesses
+    are creating their first invoice within the hour.
+
+- logo: '/images/value-proposition/values-icon-3.svg'
+  title: '3. Run Your Finances on Autopilot'
+  content: >
+    Create invoices, track payments, manage vouchers, and pull reports — all from
+    one dashboard. Know your exact financial position every day.
+```
+
+**`growth_process.button`** → label: `Start My Free Trial` · link: `/pricing`
+
+---
+
+## 11. Our Story (CEO Letter)
+**File:** `src/content/sections/our-story.md`  
+**Component:** `OurStory` — CEO photo, letter body, sign-off, key points
+
+Keep the layout. Update the letter to speak to Bangladesh SMB owners frustrated with
+manual accounting. Key themes:
+
+- "We built Quick Office because we lived this problem"
+- Fragmented tools + month-end chaos + no real-time visibility
+- Mission: professional accounting for every SMB, not just enterprises with big IT budgets
+
+---
+
+## 12. Integrations
+**File:** `src/content/homepage/-index.md` → `integrations`  
+**Component:** overlapping circle logo bubbles
+
+Quick Office's main external connection is SSLCommerz. Two options:
+
+- **Option A (recommended):** Reframe as "Works with Bangladesh's payment systems" — show logos of SSLCommerz, bKash, Nagad, major banks
+- **Option B:** Set `enable: false` until real integrations exist
+
+**`integrations.title`** (if keeping)
+```
+Connects with your <strong>existing payment systems</strong>
+```
+
+---
+
+## 13. Lead Generation — Free Resource
+**File:** `src/content/homepage/-index.md` → `lead_generation`  
+**Component:** `LeadGeneration` — image left, form + bullet list right
+
+**`lead_generation.title`**
+```
+Free Resource for <strong>Business Owners</strong>
+```
+
+**`lead_generation.subtitle`**
+```
+The Bangladesh SMB Accounting Checklist: 7 Financial Controls Every Business Needs
+```
+
+**`lead_generation.content`**
+```
+Most small businesses have no idea if they're actually profitable until it's too late.
+Download our FREE checklist to find the gaps in your current financial system
+and fix them before they cost you.
+```
+
+**`lead_generation.list`**
+```yaml
+- '<strong>Cash Flow Check:</strong> Know exactly where your money is and where it''s going.'
+- '<strong>Invoice Audit:</strong> Find the unpaid invoices silently draining your revenue.'
+- '<strong>Month-End Shortcut:</strong> Close your books in under an hour with this process.'
+```
+
+**`lead_generation.button`** → label: `Download Free Checklist`
+
+---
+
+## 14. Pricing
+**File:** `src/content/homepage/-index.md` → `pricing` + `src/content/pricing/-index.md`  
+**Component:** `PricingSection`
+
+**`pricing.title`**
+```
+Simple, Honest <strong>Pricing</strong>
+```
+
+**`pricing.content`**
+```
+Choose the plan that fits your business. Manual billing — pay when you're ready.
+No automatic charges, ever.
+```
+
+| Plan | Price | Users | Note |
+|---|---|---|---|
+| Free Trial | ৳0 | 1 user | 30 days, no card required |
+| Basic | ৳1,999/mo | Up to 3 users | — |
+| Professional | ৳4,999/mo | Up to 10 users | Mark as "Most Popular" |
+| Enterprise | ৳9,999/mo | Unlimited | — |
+
+Add a note below the cards:
+```
+24-hour grace period after plan expiry · Coupon discounts available on renewal
+```
+
+---
+
+## 15. Testimonials
+**File:** `src/content/sections/testimonial.md`  
+**Component:** `Testimonial` partial — card grid with quote, avatar, name, role, company
+
+Focus quotes on specific measurable outcomes. Placeholder copy until real ones are collected:
+
+- *"We went from spending 2 days on month-end closing to 2 hours."* — Operations Manager, Dhaka
+- *"Finally I can see my outstanding invoices and supplier balances on one screen."* — Business Owner
+- *"The free trial was all we needed to know this was the right tool for our team."* — Finance Manager
+
+---
+
+## 16. FAQ
+**File:** `src/content/sections/faq.md`  
+**Component:** `Faq` — accordion list
+
+```yaml
+- question: 'Do I need an accounting background to use Quick Office?'
+  answer: >
+    No. Quick Office is designed for business owners, not accountants. Common workflows
+    like creating invoices, recording payments, and generating reports are guided
+    step by step.
+
+- question: 'How does billing work?'
+  answer: >
+    Quick Office uses manual billing. You choose when to pay and renew — there are no
+    automatic charges. You also get a 24-hour grace period after your plan expires
+    before access is restricted.
+
+- question: 'Can I add my team members?'
+  answer: >
+    Yes. All paid plans support multiple users. You can invite team members, assign
+    roles, and control exactly which modules and actions each person can access.
+
+- question: 'Is my financial data secure?'
+  answer: >
+    Yes. All data is encrypted and stored securely. Only your authorised team members
+    can access your company's financial information.
+
+- question: 'Can I upgrade or downgrade my plan?'
+  answer: >
+    Yes, you can change your plan at any time. Contact us and we will apply the change
+    on your next renewal.
+
+- question: 'What payment methods do you accept?'
+  answer: >
+    We accept payments via SSLCommerz, supporting all major Bangladeshi banks,
+    debit/credit cards, and mobile banking (bKash, Nagad).
+
+- question: 'What happens when my free trial ends?'
+  answer: >
+    After your 30-day trial, choose any paid plan to continue. Your data is never
+    deleted — simply pick the plan that fits and carry on where you left off.
+```
+
+---
+
+## 17. Call To Action
+**File:** `src/content/sections/call-to-action.md`  
+**Component:** `CallToAction` — badge, headline, description, single button
+
+```yaml
+badge: 'Get Started Today'
+title: 'Ready to take control of your <strong>business finances?</strong>'
+description: >
+  Join hundreds of businesses using Quick Office to manage invoices, payments,
+  and accounting — all from one dashboard. Start free, no card required.
+button:
+  enable: true
+  label: 'Start My Free Trial'
+  link: '/pricing'
+```
+
+---
+
+## Content Build Priority
+
+| # | Section | File to Update | Priority |
+|---|---|---|---|
+| 1 | Banner | `homepage/-index.md` → `banner` | 🔴 Now |
+| 2 | Main Features | `homepage/-index.md` → `main_features` | 🔴 Now |
+| 3 | Value Props | `homepage/-index.md` → `value_props` | 🔴 Now |
+| 4 | Pricing | `homepage/-index.md` + `pricing/-index.md` | 🔴 Now |
+| 5 | Growth Process | `homepage/-index.md` → `growth_process` | 🟡 Soon |
+| 6 | Business Needs | `sections/business-needs.md` | 🟡 Soon |
+| 7 | FAQ | `sections/faq.md` | 🟡 Soon |
+| 8 | Call To Action | `sections/call-to-action.md` | 🟡 Soon |
+| 9 | Testimonial Quote | `homepage/-index.md` → `testimonial_quote` | 🟡 Soon |
+| 10 | Features Grid | `homepage/-index.md` → `our_features` | 🟡 Soon |
+| 11 | Comparison Row | `sections/comparison-row.md` | 🟡 Soon |
+| 12 | Single Testimonial | `homepage/-index.md` → `single_testimonial` | 🟢 Later |
+| 13 | Our Story | `sections/our-story.md` | 🟢 Later |
+| 14 | Lead Generation | `homepage/-index.md` → `lead_generation` | 🟢 Later |
+| 15 | Testimonials | `sections/testimonial.md` | 🟢 Later |
+| 16 | Brands Carousel | `sections/brands.md` | 🟢 Later |
+| 17 | Integrations | `homepage/-index.md` → `integrations` | 🟢 Later |
