@@ -4,7 +4,7 @@ import CallToAction from '@/layouts/components/CallToAction.astro';
 import CaseStudyCard from '@/layouts/components/CaseStudyCard.astro';
 import { getListPage, getSinglePage } from '@/lib/contentParser.astro';
 import { markdownify } from '@/lib/utils/textConverter';
-import Testimonial from '@/partials/Testimonial.astro';
+import Testimonial from '@/layouts/partials/Testimonial.astro';
 import type { CaseStudy } from '@/types';
 
 const caseStudyList = await getListPage('caseStudy', '-index');

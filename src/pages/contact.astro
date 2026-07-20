@@ -5,7 +5,7 @@ import CallToAction from '@/layouts/components/CallToAction.astro';
 import Faq from '@/layouts/components/Faq.astro';
 import PageHeader from '@/layouts/components/PageHeader.astro';
 import { getListPage } from '@/lib/contentParser.astro';
-import DynamicIcon from '@/helpers/DynamicIcon';
+import DynamicIcon from '@/layouts/helpers/DynamicIcon';
 import type { Contact } from '@/types';
 
 const contact = await getListPage('contact', '-index');

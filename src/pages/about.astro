@@ -10,8 +10,8 @@ import OurStory from '@/layouts/components/OurStory.astro';
 import TeamCard from '@/layouts/components/TeamCard.astro';
 import { getListPage } from '@/lib/contentParser.astro';
 import { markdownify } from '@/lib/utils/textConverter';
-import Features from '@/partials/Features.astro';
-import Testimonial from '@/partials/Testimonial.astro';
+import Features from '@/layouts/partials/Features.astro';
+import Testimonial from '@/layouts/partials/Testimonial.astro';
 import type { About } from '@/types';
 
 const about = await getListPage('about', '-index');
