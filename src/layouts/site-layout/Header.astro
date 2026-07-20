@@ -1,6 +1,8 @@
 ---
 import Logo from './Logo.astro';
 
+import { registerLink } from '@/lib/config';
+
 interface Props {
     stickyHeader: boolean;
 }
@@ -22,10 +24,14 @@ const navigationLinks: TNavigationLink[] = [
     { name: 'Contact', url: '/contact' },
 ];
 
-const navigationButton = {
-    enable: true,
-    label: 'Get Started',
+const secendaryAction = {
+    label: 'Book A Demo',
     link: '/contact',
+};
+
+const primaryAction = {
+    label: 'Start Free Trial',
+    link: registerLink,
 };
 
 const { pathname } = Astro.url;
@@ -110,37 +116,36 @@ const { pathname } = Astro.url;
                     </>
                 ))
             }
-            {
-                navigationButton.enable && (
-                    <li class="pt-4 inline-block lg:hidden">
-                        <a
-                            class="btn-outline btn-sm"
-                            href={navigationButton.link}
-                            target={navigationButton.link.startsWith('http') ? '_blank' : '_self'}
-                            rel={navigationButton.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                        >
-                            {navigationButton.label}
-                        </a>
-                    </li>
-                )
-            }
+            <li class="pt-4 inline-block lg:hidden">
+                <a
+                    class="btn-outline btn-sm"
+                    href={primaryAction.link}
+                    target={primaryAction.link.startsWith('http') ? '_blank' : '_self'}
+                    rel={primaryAction.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                >
+                    {primaryAction.label}
+                </a>
+            </li>
         </ul>
-        <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-            {
-                navigationButton.enable && (
-                    <a
-                        class="btn btn-primary hidden lg:inline-block"
-                        href={navigationButton.link}
-                        target={navigationButton.link.startsWith('http') ? '_blank' : '_self'}
-                        rel={navigationButton.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                    >
-                        {navigationButton.label}
-                    </a>
-                )
-            }
+        <div class="order-1 gap-4 ml-auto flex items-center md:order-2 lg:ml-0">
+            <a
+                class="btn btn-outline hidden lg:inline-block"
+                href={secendaryAction.link}
+                target={secendaryAction.link.startsWith('http') ? '_blank' : '_self'}
+                rel={secendaryAction.link.startsWith('http') ? 'noopener noreferrer' : ''}
+            >
+                {secendaryAction.label}
+            </a>
+            <a
+                class="btn btn-primary hidden lg:inline-block"
+                href={primaryAction.link}
+                target={primaryAction.link.startsWith('http') ? '_blank' : '_self'}
+                rel={primaryAction.link.startsWith('http') ? 'noopener noreferrer' : ''}
+            >
+                {primaryAction.label}
+            </a>
         </div>
     </nav>
-
     <!-- expanded menu background -->
     <div class="bg-black/20 backdrop-blur-sm -z-10" id="nav-menu-bg"></div>
 </header>

@@ -19,8 +19,9 @@
 }
 
 .btn-outline {
-    @apply border-[1.5px] border-text bg-transparent text-text-light transition-all duration-300 hover:border-primary hover:bg-primary hover:text-white;
-}
-.btn-outline:hover {
-    box-shadow: 0px 0px 15px var(--color-primary);
+    @apply border-[1.5px] border-text bg-white/70 text-text-light hover:shadow;
+
+    &:hover {
+        transition: all 0.3s ease;
+    }
 }
