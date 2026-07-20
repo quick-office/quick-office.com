@@ -3,3 +3,5 @@ declare module '*.astro' {
     const _default: AstroComponentFactory;
     export default _default;
 }
+
+declare module 'remark-collapse';
