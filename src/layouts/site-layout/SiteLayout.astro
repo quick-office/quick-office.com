@@ -1,13 +1,12 @@
 ---
-import config from '@/config/config.json';
-import { plainify } from '@/lib/utils/textConverter';
+import '@/styles/main.css';
+
 import Footer from '@/layouts/partials/Footer.astro';
 import Header from '@/layouts/partials/Header.astro';
-import '@/styles/main.css';
 
 export interface Props {
     title: string;
-    description?: string;
+    description: string;
     image?: string;
     noindex?: boolean;
     canonical?: string;
@@ -16,6 +15,8 @@ export interface Props {
 const { title, description, image, noindex, canonical } = Astro.props;
 
 const siteName = 'Quick Office';
+const baseUrl = 'https://quick-office.com';
+const ogImage = '/images/og-image.png';
 
 const pageTitle = `${title} - ${siteName}`;
 ---
@@ -27,15 +28,7 @@ const pageTitle = `${title} - ${siteName}`;
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-
-        <meta name="theme-name" content="quick-office" />
-        <meta name="msapplication-TileColor" content="#000000" />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
-        <meta name="generator" content={Astro.generator} />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-        <!-- Fonts: Inter Tight (body) + Urbanist (headings) — preconnect + preloaded stylesheet -->
+        <meta name="theme-color" content="#6d56e8" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -47,34 +40,22 @@ const pageTitle = `${title} - ${siteName}`;
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Urbanist:wght@500;700&display=swap"
         />
-
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-
         <title>
             {pageTitle}
         </title>
-
         {canonical && <link rel="canonical" href={canonical} item-prop="url" />}
         {noindex && <meta name="robots" content="noindex,nofollow" />}
-        <meta name="description" content={plainify(description ? description : config.metadata.meta_description)} />
-
-        <!-- View Transitions removed to avoid conflicts with GSAP/Swiper -->
-
-        <meta name="author" content={config.metadata.meta_author} />
+        <meta name="description" content={description} />
+        <meta name="author" content={siteName} />
         <meta property="og:title" content={pageTitle} />
-        <meta
-            property="og:description"
-            content={plainify(description ? description : config.metadata.meta_description)}
-        />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${config.site.base_url}/${Astro.url.pathname.replace('/', '')}`} />
+        <meta property="og:url" content={`${baseUrl}/${Astro.url.pathname.replace('/', '')}`} />
         <meta name="twitter:title" content={pageTitle} />
-        <meta
-            name="twitter:description"
-            content={plainify(description ? description : config.metadata.meta_description)}
-        />
-        <meta property="og:image" content={`${config.site.base_url}${image ? image : config.metadata.meta_image}`} />
-        <meta name="twitter:image" content={`${config.site.base_url}${image ? image : config.metadata.meta_image}`} />
+        <meta name="twitter:description" content={description} />
+        <meta property="og:image" content={`${baseUrl}${image || ogImage}`} />
+        <meta name="twitter:image" content={`${baseUrl}${image || ogImage}`} />
         <meta name="twitter:card" content="summary_large_image" />
 
         <!-- GSAP CDN -->
