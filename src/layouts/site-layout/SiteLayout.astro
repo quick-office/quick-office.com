@@ -24,11 +24,14 @@ const pageTitle = `${title} - ${siteName}`;
 <!doctype html>
 <html lang="en">
     <head>
+        <!-- Favicons & PWA manifest -->
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#6d56e8" />
+
+        <!-- Fonts: Inter Tight (body) + Urbanist (headings) — preconnect + preloaded stylesheet -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -40,21 +43,29 @@ const pageTitle = `${title} - ${siteName}`;
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Urbanist:wght@500;700&display=swap"
         />
+
+        <!-- Viewport & title -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <title>
             {pageTitle}
         </title>
+
+        <!-- SEO -->
         {canonical && <link rel="canonical" href={canonical} item-prop="url" />}
         {noindex && <meta name="robots" content="noindex,nofollow" />}
         <meta name="description" content={description} />
         <meta name="author" content={siteName} />
+
+        <!-- Open Graph -->
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${baseUrl}/${Astro.url.pathname.replace('/', '')}`} />
+        <meta property="og:image" content={`${baseUrl}${image || ogImage}`} />
+
+        <!-- Twitter card -->
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
-        <meta property="og:image" content={`${baseUrl}${image || ogImage}`} />
         <meta name="twitter:image" content={`${baseUrl}${image || ogImage}`} />
         <meta name="twitter:card" content="summary_large_image" />
 
