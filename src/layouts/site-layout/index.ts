@@ -1,1 +1,1 @@
-export { default as SiteLayout } from './../Base.astro';
+export { default as SiteLayout } from './SiteLayout.astro';
