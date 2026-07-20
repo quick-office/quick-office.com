@@ -1,4 +1,3 @@
----
 import { getCollection, getEntry, type CollectionEntry, type CollectionKey } from 'astro:content';
 
 type PageData = {
@@ -29,4 +28,3 @@ export const getListPage = async <C extends CollectionKey>(
 
     return data;
 };
----
