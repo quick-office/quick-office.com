@@ -65,13 +65,6 @@ export { default as brandLivechat } from '@/assets/images/brands/livechat-logo-s
 export { default as brandPingdom } from '@/assets/images/brands/pingdom-logo-svg-150px.svg';
 export { default as brandScapic } from '@/assets/images/brands/scapic-logo-svg-150px.svg';
 
-// Images - careers
-export { default as careerDetailsBanner } from '@/assets/images/careers/career-details-banner.png';
-export { default as careerOffice1 } from '@/assets/images/careers/office-1.png';
-export { default as careerOffice2 } from '@/assets/images/careers/office-2.png';
-export { default as careerOffice3 } from '@/assets/images/careers/office-3.png';
-export { default as careerOffice4 } from '@/assets/images/careers/office-4.png';
-
 // Images - features
 export { default as featureAiPoweredGraph } from '@/assets/images/features/ai-powered-graph.svg';
 export { default as featureAutomatedMarketing } from '@/assets/images/features/automated-marketing-visual.svg';
@@ -83,7 +76,6 @@ export { default as featureServiceFeature2 } from '@/assets/images/features/serv
 export { default as featureTurnoverTable } from '@/assets/images/features/turnover-table.svg';
 
 // Images - icons
-export { default as iconCareerDevelopment } from '@/assets/images/icons/careerdevelopment.svg';
 export { default as iconCollaboration } from '@/assets/images/icons/collaboration.svg';
 export { default as iconCreativity } from '@/assets/images/icons/creativity.svg';
 export { default as iconHealth } from '@/assets/images/icons/healthicon.svg';
