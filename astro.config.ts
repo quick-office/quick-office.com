@@ -1,5 +1,5 @@
 import { unified } from '@astrojs/markdown-remark';
-import { defineConfig } from 'astro/config';
+import { defineConfig, sharpImageService } from 'astro/config';
 
 import cloudflare from '@astrojs/cloudflare';
 import mdx from '@astrojs/mdx';
@@ -8,14 +8,13 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import remarkCollapse from 'remark-collapse';
 import remarkToc from 'remark-toc';
-import sharp from 'sharp';
 
 export default defineConfig({
     base: '/',
     site: 'https://quick-office.com',
     trailingSlash: 'never',
     image: {
-        service: sharp(),
+        service: sharpImageService(),
         dangerouslyProcessSVG: true,
     },
     markdown: {
@@ -41,7 +40,10 @@ export default defineConfig({
         //
     ],
     vite: {
-        plugins: [tailwindcss()],
+        plugins: [
+            tailwindcss(),
+            //
+        ],
     },
     adapter: cloudflare({
         imageService: 'compile',
