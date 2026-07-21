@@ -1,0 +1,19 @@
+---
+import type { TSectionVariant } from './section-variants';
+
+import { sectionVariants } from './section-variants';
+
+interface Props {
+    id?: string;
+    class?: string;
+    variant?: TSectionVariant;
+}
+
+const { variant, class: className, ...rest } = Astro.props;
+
+const classes = sectionVariants({ variant, className });
+---
+
+<section class={classes} {...rest}>
+    <slot />
+</section>
