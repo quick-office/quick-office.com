@@ -3,6 +3,7 @@ import ImageMod from '@/components/ImageMod.astro';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { markdownify } from '@/lib/text-converter';
+import { Container } from '@/components/ui/container';
 
 interface Props {
     lead_generation: any;
@@ -12,7 +13,7 @@ const { lead_generation } = Astro.props;
 ---
 
 <Section variant="box" class="bg-transparent my-0 pb-0">
-    <div class="container-sm">
+    <Container sm>
         <div class="flex flex-col gap-10 lg:gap-16 pb-20">
             <div class="flex flex-col items-center gap-y-5 text-center">
                 <h2
@@ -83,7 +84,7 @@ const { lead_generation } = Astro.props;
                 </div>
             </div>
         </div>
-    </div>
+    </Container>
     <hr class="border-border" />
 </Section>
 

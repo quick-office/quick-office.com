@@ -2,6 +2,7 @@
 import GradientBlob from '@/components/GradientBlob.astro';
 import PricingCard from '@/components/PricingCard.astro';
 import { Section } from '@/components/ui/section';
+import { Container } from '@/components/ui/container';
 
 interface Props {
     title?: string;
@@ -89,7 +90,7 @@ const sectionContent = content ?? pricingData.page_header.content;
 ---
 
 <Section variant="box" id="pricing" class={`${isHome ? '' : 'pt-0'} my-0 bg-transparent`}>
-    <div class="container">
+    <Container>
         <div class="flex flex-col gap-10 lg:gap-16">
             {
                 isHome && (
@@ -103,7 +104,7 @@ const sectionContent = content ?? pricingData.page_header.content;
                 )
             }
             <div class="mb-0">
-                <div class="pricing-container">
+                <div>
                     <div class="price-togger">
                         <input type="checkbox" data-pricing-toggle id="pricing-toggle" class="hidden" />
                         <label for="pricing-toggle" class="price-toggler-btn active"
@@ -131,5 +132,5 @@ const sectionContent = content ?? pricingData.page_header.content;
                 <GradientBlob />
             </div>
         </div>
-    </div>
+    </Container>
 </Section>

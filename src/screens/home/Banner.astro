@@ -4,12 +4,13 @@ import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 
 import BannerVideoShowcase from './BannerVideoShowcase.astro';
+import { Container } from '@/components/ui/container';
 ---
 
 <Section variant="ph" class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 pointer-events-none bg-linear-to-b from-primary/10 via-primary/5 to-transparent">
     </div>
-    <div class="container relative">
+    <Container class="relative">
         <div class="absolute top-0 left-0 w-full">
             <div class="h-100 w-full overflow-hidden -translate-y-10">
                 <canvas class="heroSporeCanvas w-full"></canvas>
@@ -36,5 +37,5 @@ import BannerVideoShowcase from './BannerVideoShowcase.astro';
                 </div>
             </div>
         </div>
-    </div>
+    </Container>
 </Section>

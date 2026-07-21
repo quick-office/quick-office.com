@@ -3,6 +3,7 @@ import ProcessCard from '@/screens/home/ProcessCard.astro';
 import TestimonialCard from '@/components/TestimonialCard.astro';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
+import { Container } from '@/components/ui/container';
 import {
     valuesIcon1,
     valuesIcon2,
@@ -42,7 +43,7 @@ const steps = [
         class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-l from-primary/10 via-transparent to-transparent"
     >
     </div>
-    <div class="container">
+    <Container>
         <div class="flex flex-col gap-10 lg:gap-16">
             <div class="flex flex-col items-center gap-y-5 text-center">
                 <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary">
@@ -61,7 +62,7 @@ const steps = [
                 </div>
             </div>
         </div>
-    </div>
+    </Container>
     <div class="absolute inset-x-0 top-0 -z-10">
         <svg class="w-full" viewBox="0 0 1920 1099" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

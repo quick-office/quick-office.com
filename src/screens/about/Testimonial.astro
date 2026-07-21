@@ -3,6 +3,7 @@ import GradientBlob from '@/components/GradientBlob.astro';
 import TestimonialCard from '@/components/TestimonialCard.astro';
 import { Section } from '@/components/ui/section';
 import { testimonial1, testimonial2, testimonial3, bannerShowcaseVideo } from '@/lib/assets';
+import { Container } from '@/components/ui/container';
 
 const testimonial = {
     enable: true,
@@ -39,7 +40,7 @@ const testimonial = {
 {
     testimonial.enable && (
         <Section class="relative">
-            <div class="container">
+            <Container>
                 <div class="flex flex-col gap-10 lg:gap-16">
                     <div class="flex flex-col items-center gap-y-5 text-center">
                         <h2
@@ -61,7 +62,7 @@ const testimonial = {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
             <GradientBlob />
         </Section>
     )

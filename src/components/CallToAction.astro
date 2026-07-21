@@ -3,6 +3,7 @@ import Badge from './Badge.astro';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { markdownify } from '@/lib/text-converter';
+import { Container } from '@/components/ui/container';
 
 const cta = {
     enable: true,
@@ -20,7 +21,7 @@ const cta = {
 {
     cta.enable && (
         <Section>
-            <div class="container bg-light py-20 rounded-4xl relative overflow-hidden isolate">
+            <Container class="bg-light py-20 rounded-4xl relative overflow-hidden isolate">
                 <div class="flex flex-col gap-10 lg:gap-16">
                     <div class="flex flex-col items-center gap-y-5 text-center">
                         <Badge title={cta.badge} />
@@ -39,7 +40,7 @@ const cta = {
                 <div class="absolute top-1/2 -translate-y-1/2 h-1/2 w-full overflow-hidden">
                     <canvas class="heroSporeCanvas w-full" />
                 </div>
-            </div>
+            </Container>
         </Section>
     )
 }

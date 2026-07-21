@@ -2,6 +2,7 @@
 import { markdownify } from '@/lib/text-converter';
 import { brandDropbox, brandHubspot, brandLivechat, brandPingdom, brandScapic } from '@/lib/assets';
 import { Section } from '@/components/ui/section';
+import { Container } from '@/components/ui/container';
 
 const brands = {
     enable: true,
@@ -21,7 +22,7 @@ const brandUrls = brands.images.map((img) => img.src);
 {
     brands.enable && (
         <Section variant="sm" class="pt-16 xl:pt-20">
-            <div class="container">
+            <Container>
                 <div class="text-center mb-10">
                     <p class="text-text-light text-base" set:html={markdownify(brands.title)} />
                 </div>
@@ -31,7 +32,7 @@ const brandUrls = brands.images.map((img) => img.src);
                 >
                     {/* Handled by script: main.js updateTrustedPartners() */}
                 </div>
-            </div>
+            </Container>
         </Section>
     )
 }

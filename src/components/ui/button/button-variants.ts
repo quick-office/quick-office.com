@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils';
+
 export type TButtonVariant = 'primary' | 'outline' | 'outline-primary';
 export type TButtonSize = 'default' | 'sm';
 
@@ -22,4 +24,4 @@ export const buttonVariants = ({
     variant?: TButtonVariant;
     size?: TButtonSize;
     className?: string;
-} = {}): string => [base, sizeMap[size], variantMap[variant], className].filter(Boolean).join(' ');
+} = {}): string => cn(base, sizeMap[size], variantMap[variant], className);

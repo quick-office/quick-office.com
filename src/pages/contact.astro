@@ -4,6 +4,7 @@ import { CallToAction, Faq, PageHeader } from '@/components';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import DynamicIcon from '@/components/helpers/DynamicIcon';
+import { Container } from '@/components/ui/container';
 
 const contactData = {
     page_header: {
@@ -45,7 +46,7 @@ const contactData = {
 
     <!-- Contact Section -->
     <Section class="pt-0">
-        <div class="container">
+        <Container>
             <div class="row g-7 max-lg:gap-5">
                 <!-- Left Column - Contact Cards -->
                 <div class="col-12 lg:col-5">
@@ -53,7 +54,7 @@ const contactData = {
                         {
                             contactData.contact_info?.enable &&
                                 contactData.contact_info.items.map((item) => {
-                                    const Container = item.type === 'calendar' ? 'div' : 'a';
+                                    const Tag = item.type === 'calendar' ? 'div' : 'a';
                                     const href =
                                         item.link ||
                                         (item.type === 'email'
@@ -63,8 +64,8 @@ const contactData = {
                                               : undefined);
 
                                     return (
-                                        <Container
-                                            href={Container === 'a' ? href : undefined}
+                                        <Tag
+                                            href={Tag === 'a' ? href : undefined}
                                             class={`flex flex-col gap-5 p-7 md:p-8 bg-black/5 rounded-2xl cursor-pointer hover:bg-black/10 transition-all duration-300 ring-1 ring-black/10 hover:ring-primary/50 group hover:scale-[1.02]`}
                                             data-ghl-trigger={item.type === 'calendar' ? 'true' : undefined}
                                         >
@@ -80,7 +81,7 @@ const contactData = {
                                                 </h3>
                                                 <p class="text-text text-lg">{item.detail}</p>
                                             </div>
-                                        </Container>
+                                        </Tag>
                                     );
                                 })
                         }
@@ -157,7 +158,7 @@ const contactData = {
                     </div>
                 </div>
             </div>
-        </div>
+        </Container>
     </Section>
 
     <!-- FAQ -->

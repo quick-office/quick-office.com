@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import { marked } from 'marked';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -31,12 +32,15 @@ const Tabs = ({ children }: { children: React.ReactElement }) => {
     };
 
     return (
-        <div className="tab">
-            <ul className="tab-nav">
+        <div className="overflow-hidden rounded-lg border border-border">
+            <ul className="m-0! flex list-none! border-b border-border bg-light">
                 {tabLinks.map((item: { name: string; children: string }, index: number) => (
                     <li
                         key={index}
-                        className={`tab-nav-item ${index === active && 'active'}`}
+                        className={cn(
+                            'my-0! cursor-pointer border-b-[3px] px-8! py-2 text-lg text-text-dark',
+                            index === active ? 'border-dark opacity-100' : 'border-border opacity-80',
+                        )}
                         role="tab"
                         tabIndex={index === active ? 0 : -1}
                         onKeyDown={(event) => handleKeyDown(event, index)}
@@ -50,7 +54,7 @@ const Tabs = ({ children }: { children: React.ReactElement }) => {
             </ul>
             {tabLinks.map((item: { name: string; children: string }, i: number) => (
                 <div
-                    className={active === i ? 'tab-content block px-5' : 'hidden'}
+                    className={cn('px-5 [&_p]:mb-0', active === i ? 'block p-8' : 'hidden')}
                     key={i}
                     dangerouslySetInnerHTML={{
                         __html: marked.parse(item.children),

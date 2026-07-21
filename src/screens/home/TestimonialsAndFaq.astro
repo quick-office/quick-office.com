@@ -3,6 +3,7 @@ import TestimonialCard from '@/components/TestimonialCard.astro';
 import Accordion from '@/components/Accordion.astro';
 import { Section } from '@/components/ui/section';
 import { testimonial1, testimonial2, testimonial3, bannerShowcaseVideo } from '@/lib/assets';
+import { Container } from '@/components/ui/container';
 
 const testimonials = [
     {
@@ -63,7 +64,7 @@ const faqs = [
         class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-r from-primary/10 via-transparent to-transparent"
     >
     </div>
-    <div class="container">
+    <Container>
         <div class="flex flex-col gap-10 lg:gap-16">
             <div class="flex flex-col items-center gap-y-5 text-center">
                 <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary">
@@ -86,7 +87,7 @@ const faqs = [
                 </div>
             </div>
         </div>
-    </div>
+    </Container>
 </Section>
 
 <hr class="border-border" />
@@ -99,7 +100,7 @@ const faqs = [
         class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-l from-primary/10 via-transparent to-transparent"
     >
     </div>
-    <div class="container">
+    <Container>
         <div class="grid gap-10 lg:gap-16 lg:grid-cols-2">
             <div class="max-lg:text-center">
                 <div class="sticky top-(--header-height)">
@@ -115,7 +116,7 @@ const faqs = [
                 </div>
             </div>
         </div>
-    </div>
+    </Container>
 </Section>
 
 <style>

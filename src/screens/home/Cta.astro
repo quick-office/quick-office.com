@@ -2,10 +2,11 @@
 import Badge from '@/components/Badge.astro';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
+import { Container } from '@/components/ui/container';
 ---
 
 <Section>
-    <div class="container bg-light py-20 rounded-4xl relative overflow-hidden isolate">
+    <Container class="bg-light py-20 rounded-4xl relative overflow-hidden isolate">
         <div
             class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-primary/12 via-transparent to-primary/10"
         >
@@ -25,5 +26,5 @@ import { Section } from '@/components/ui/section';
         <div class="absolute top-1/2 -translate-y-1/2 h-1/2 w-full overflow-hidden">
             <canvas class="heroSporeCanvas w-full"></canvas>
         </div>
-    </div>
+    </Container>
 </Section>

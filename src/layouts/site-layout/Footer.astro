@@ -3,6 +3,7 @@ import { logo } from '@/lib/assets';
 import { markdownify } from '@/lib/text-converter';
 
 import { Social } from '@/components';
+import { Container } from '@/components/ui/container';
 
 const footerTagline = 'Empowering Marketing businesses through intelligent automation.';
 const footerEmail = 'contact@quick-office.com';
@@ -31,7 +32,7 @@ const socialLinks = [
 ---
 
 <footer class="relative py-16 xl:py-19 pb-0 overflow-hidden">
-    <div class="container pb-10">
+    <Container class="pb-10">
         <div class="flex lg:justify-between flex-wrap gap-x-10 gap-y-10">
             <!-- Column 1 - Logo & Contact -->
             <div class="max-w-95 mb-20 text-lg text-text">
@@ -95,13 +96,13 @@ const socialLinks = [
                 </ul>
             </div>
         </div>
-    </div>
+    </Container>
     <!-- Bottom Area -->
     <hr class="border-border" />
-    <div class="container py-7">
+    <Container class="py-7">
         <div class="flex justify-between lg:items-center flex-col lg:flex-row gap-y-6 w-full">
             <p class="text-base text-text" set:html={markdownify(copyright)} />
             <Social className="lg:ml-auto" source={socialLinks} />
         </div>
-    </div>
+    </Container>
 </footer>

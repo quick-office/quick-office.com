@@ -3,6 +3,7 @@ import ImageMod from '@/components/ImageMod.astro';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { avatarLg } from '@/lib/assets';
+import { Container } from '@/components/ui/container';
 
 const ourStory = {
     enable: true,
@@ -28,7 +29,7 @@ if (!ourStory.enable) return;
 ---
 
 <Section class="overflow-hidden">
-    <div class="container">
+    <Container>
         <div class="flex flex-col gap-10 lg:gap-16">
             <div class="flex flex-col items-center gap-y-5 text-center">
                 <h2
@@ -91,7 +92,7 @@ if (!ourStory.enable) return;
                 <hr class="border-border" />
             </div>
         </div>
-    </div>
+    </Container>
 </Section>
 
 <style>

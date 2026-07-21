@@ -25,12 +25,14 @@ const { Content } = await render(post);
 
 const allPosts = await getSinglePage('blogs');
 const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0, 3);
+import { Content as Prose } from '@/components/ui/content';
+import { Container } from '@/components/ui/container';
 ---
 
 <SiteLayout title={postData.title} description={postData.description ?? postData.title} image={postData.image?.src}>
     <!-- Blog Single Hero -->
     <Section variant="ph" class="relative pb-10 lg:pb-14">
-        <div class="container">
+        <Container>
             <div class="mx-auto max-w-246.25 text-center">
                 <h1
                     class="[&_strong]:text-primary mb-8 text-h4-sm md:text-h1 leading-[1.1]"
@@ -76,7 +78,7 @@ const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0
 
                 <hr class="mt-8 border-border" />
             </div>
-        </div>
+        </Container>
 
         <div class="absolute inset-0 h-full w-full overflow-hidden -z-10">
             <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
@@ -85,12 +87,12 @@ const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0
 
     <!-- Article Content -->
     <Section>
-        <div class="container">
+        <Container>
             <div class="mx-auto flex max-w-322.5 flex-col gap-20">
                 <article>
-                    <div class="content">
+                    <Prose>
                         <Content />
-                    </div>
+                    </Prose>
                 </article>
 
                 <!-- Share -->
@@ -104,14 +106,14 @@ const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0
                     />
                 </div>
             </div>
-        </div>
+        </Container>
     </Section>
 
     <!-- Read More -->
     {
         relatedPosts.length > 0 && (
             <Section class="pb-34">
-                <div class="container relative isolate">
+                <Container class="relative isolate">
                     <div class="mb-12 text-center">
                         <h2 class="text-h3-sm md:text-h2 capitalize">Read More Articles</h2>
                     </div>
@@ -130,7 +132,7 @@ const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0
                             />
                         ))}
                     </div>
-                </div>
+                </Container>
             </Section>
         )
     }

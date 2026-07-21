@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils';
+
 export type TSectionVariant = 'default' | 'box' | 'ph' | 'sm';
 
 const variantMap: Record<TSectionVariant, string> = {
@@ -13,4 +15,4 @@ export const sectionVariants = ({
 }: {
     variant?: TSectionVariant;
     className?: string;
-} = {}): string => [variantMap[variant], className].filter(Boolean).join(' ');
+} = {}): string => cn(variantMap[variant], className);

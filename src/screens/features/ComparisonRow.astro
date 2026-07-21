@@ -3,6 +3,7 @@ import ImageMod from '@/components/ImageMod.astro';
 import { markdownify } from '@/lib/text-converter';
 import { Section } from '@/components/ui/section';
 import { platformAbleton, platformAirbnb, platformFacebook, platformFigma, platformSlack } from '@/lib/assets';
+import { Container } from '@/components/ui/container';
 
 const comparison = {
     enable: true,
@@ -31,7 +32,7 @@ const comparison = {
 {
     comparison.enable && (
         <Section class="relative isolate overflow-x-hidden">
-            <div class="container">
+            <Container>
                 <div class="flex flex-col gap-10 lg:gap-16">
                     <div class="flex flex-col items-center gap-y-5 text-center">
                         <h2
@@ -69,7 +70,7 @@ const comparison = {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </Section>
     )
 }

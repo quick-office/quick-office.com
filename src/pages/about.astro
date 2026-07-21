@@ -4,6 +4,7 @@ import { Badge, BrandsCarousel, CallToAction, Faq, GradientBlob, ImageMod } from
 import { OurStory, TeamCard, Features, Testimonial } from '@/screens/about';
 import { Section } from '@/components/ui/section';
 import { markdownify } from '@/lib/text-converter';
+import { Container } from '@/components/ui/container';
 import {
     aboutHero,
     peopleProfile,
@@ -74,7 +75,7 @@ const aboutData = {
 >
     <!-- Page Header -->
     <Section variant="ph" class="pb-20 overflow-hidden">
-        <div class="container">
+        <Container>
             <div class="lg:max-w-4xl mx-auto text-center">
                 <h1 class="[&_strong]:text-primary mb-6" set:html={markdownify(aboutData.page_header.title)} />
                 <p class="mb-5 text-lg text-text">{aboutData.page_header.subtitle}</p>
@@ -87,7 +88,7 @@ const aboutData = {
             <div class="absolute inset-0 h-full w-full max-h-113 overflow-hidden -z-10">
                 <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
             </div>
-        </div>
+        </Container>
     </Section>
     <hr class="border-border" />
 
@@ -96,7 +97,7 @@ const aboutData = {
     {
         aboutData.stats.enable && (
             <Section class="relative">
-                <div class="container">
+                <Container>
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
                         {aboutData.stats.items.map((stat) => (
                             <div class="text-center p-8 lg:p-10 lg:py-26 rounded-2xl bg-primary/10">
@@ -107,7 +108,7 @@ const aboutData = {
                             </div>
                         ))}
                     </div>
-                </div>
+                </Container>
                 <div class="-translate-y-140">
                     <GradientBlob />
                 </div>
@@ -120,7 +121,7 @@ const aboutData = {
     {
         aboutData.our_team.enable && (
             <Section class="relative isolate overflow-hidden">
-                <div class="container">
+                <Container>
                     <div class="flex flex-col gap-10 lg:gap-16">
                         <div class="flex flex-col items-center gap-y-5 text-center">
                             <Badge title={aboutData.our_team.badge} />
@@ -137,7 +138,7 @@ const aboutData = {
                             </div>
                         </div>
                     </div>
-                </div>
+                </Container>
             </Section>
         )
     }

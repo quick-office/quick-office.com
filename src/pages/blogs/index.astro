@@ -8,6 +8,7 @@ import { getSinglePage } from '@/lib/content-parser';
 import dateFormat from '@/lib/date-format';
 import { sortByDate } from '@/lib/sort-functions';
 import { markdownify } from '@/lib/text-converter';
+import { Container } from '@/components/ui/container';
 
 const pageData = {
     page_header: {
@@ -31,7 +32,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
 >
     <!-- Page Header -->
     <Section variant="ph" class="pb-10 relative">
-        <div class="container relative">
+        <Container class="relative">
             <div class="absolute top-0 left-0 w-full">
                 <div class="h-100 w-full overflow-hidden -translate-y-10">
                     <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
@@ -40,14 +41,14 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
             <div class="lg:max-w-4xl mx-auto text-center relative z-10">
                 <h1 class="[&_strong]:text-primary mb-0" set:html={markdownify(pageData.page_header.title)} />
             </div>
-        </div>
+        </Container>
     </Section>
 
     <!-- Featured Article -->
     {
         pageData.featured_post.enable && (
             <Section class="pt-0">
-                <div class="container">
+                <Container>
                     <div class="grid gap-4 lg:grid-cols-[1fr_1.03fr]">
                         <div class="overflow-hidden rounded-2xl border border-white/10">
                             <ImageMod
@@ -71,7 +72,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                     </div>
 
                     <hr class="mt-16 border-border" />
-                </div>
+                </Container>
             </Section>
         )
     }
@@ -80,7 +81,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
     {
         pageData.latest_posts.enable && (
             <Section class="pt-10 lg:pt-14">
-                <div class="container relative isolate">
+                <Container class="relative isolate">
                     <div class="mb-12 text-center">
                         <h2 class="text-h3-sm md:text-h2 capitalize">{pageData.latest_posts.title}</h2>
                     </div>
@@ -99,7 +100,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                             />
                         ))}
                     </div>
-                </div>
+                </Container>
             </Section>
         )
     }

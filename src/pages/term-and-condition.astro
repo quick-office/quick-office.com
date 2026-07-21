@@ -2,15 +2,17 @@
 import { SiteLayout } from '@/layouts/site-layout';
 import { PageHeader } from '@/components';
 import { Section } from '@/components/ui/section';
+import { Content } from '@/components/ui/content';
+import { Container } from '@/components/ui/container';
 ---
 
 <SiteLayout title="Terms and Conditions" description="Read the Terms and Conditions for using Quick Office.">
     <PageHeader title="Terms and Conditions" subtitle="" />
     <Section variant="sm">
-        <div class="container">
+        <Container>
             <div class="row justify-center">
                 <div class="lg:col-10">
-                    <div class="content">
+                    <Content>
                         <h4>Responsibility of Contributors</h4>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper
@@ -47,9 +49,9 @@ import { Section } from '@/components/ui/section';
                             </li>
                             <li>Any update to the technology will result in automatic notification to customers.</li>
                         </ol>
-                    </div>
+                    </Content>
                 </div>
             </div>
-        </div>
+        </Container>
     </Section>
 </SiteLayout>

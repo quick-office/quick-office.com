@@ -1,0 +1,20 @@
+---
+import { cn } from '@/lib/utils';
+
+interface Props {
+    class?: string;
+    [key: string]: unknown;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<div
+    class={cn(
+        'prose max-w-none prose-headings:mt-[.6em] prose-headings:mb-[.3em] prose-headings:text-text-dark prose-h1:text-h1-sm md:prose-h1:text-h1 prose-h2:text-h2-sm md:prose-h2:text-h2 prose-h3:text-h3-sm md:prose-h3:text-h3 prose-p:text-h6-sm prose-p:text-text prose-a:text-text prose-a:[&.btn]:no-underline prose-img:max-w-full prose-img:rounded prose-strong:text-text-dark prose-hr:border-border prose-pre:rounded-lg prose-pre:bg-dark prose-li:text-text prose-blockquote:rounded-lg prose-blockquote:border prose-blockquote:border-l-[10px] prose-blockquote:border-primary prose-blockquote:bg-light prose-blockquote:px-8 prose-blockquote:py-10 prose-blockquote:font-secondary prose-blockquote:text-2xl prose-blockquote:text-text-dark prose-blockquote:not-italic prose-table:relative prose-table:overflow-hidden prose-table:rounded-lg prose-table:before:absolute prose-table:before:top-0 prose-table:before:left-0 prose-table:before:h-full prose-table:before:w-full prose-table:before:rounded-[inherit] prose-table:before:border prose-table:before:border-border prose-table:before:content-[""] prose-thead:border-border prose-thead:bg-light prose-th:relative prose-th:z-10 prose-th:px-4 prose-th:py-[18px] prose-th:text-text prose-tr:border-border prose-td:relative prose-td:z-10 prose-td:px-3 prose-td:py-[18px] prose-td:text-text-dark',
+        className,
+    )}
+    {...rest}
+>
+    <slot />
+</div>

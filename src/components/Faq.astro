@@ -2,6 +2,7 @@
 import Accordion from './Accordion.astro';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
+import { Container } from '@/components/ui/container';
 
 const faq = {
     enable: true,
@@ -36,7 +37,7 @@ const faq = {
 {
     faq.enable && (
         <Section>
-            <div class="container">
+            <Container>
                 <div class="grid gap-10 lg:gap-16 lg:grid-cols-2">
                     <div class="max-lg:text-center">
                         <div class="sticky top-(--header-height)">
@@ -57,7 +58,7 @@ const faq = {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </Section>
     )
 }

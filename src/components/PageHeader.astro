@@ -1,5 +1,6 @@
 ---
 import { Section } from '@/components/ui/section';
+import { Container } from '@/components/ui/container';
 
 interface Props {
     title: string;
@@ -9,7 +10,7 @@ const { title, subtitle } = Astro.props;
 ---
 
 <Section variant="ph" class="pb-28 mb-0 overflow-hidden">
-    <div class="container">
+    <Container>
         <div class="lg:max-w-3xl mx-auto text-center">
             <h1 class="[&_strong]:text-primary mb-6" set:html={title} />
             <p class="mb-5 text-lg" set:html={subtitle} />
@@ -17,5 +18,5 @@ const { title, subtitle } = Astro.props;
                 <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
             </div>
         </div>
-    </div>
+    </Container>
 </Section>

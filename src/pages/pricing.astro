@@ -4,6 +4,7 @@ import { Badge, CallToAction, Faq } from '@/components';
 import { PricingSection } from '@/screens/pricing';
 import { Section } from '@/components/ui/section';
 import { markdownify } from '@/lib/text-converter';
+import { Container } from '@/components/ui/container';
 
 const pricingData = {
     page_header: {
@@ -35,7 +36,7 @@ const pricingData = {
 <SiteLayout title="Pricing" description="Simple, transparent pricing plans for businesses of every size.">
     <!-- Page Header -->
     <Section variant="ph" class="pb-0 relative overflow-hidden">
-        <div class="container relative">
+        <Container class="relative">
             <div class="absolute top-0 left-0 w-full">
                 <div class="h-100 w-full overflow-hidden -translate-y-10">
                     <canvas class="heroSporeCanvas w-full"></canvas>
@@ -52,7 +53,7 @@ const pricingData = {
                     </p>
                 </div>
             </div>
-        </div>
+        </Container>
 
         <PricingSection isHome={false} />
     </Section>
@@ -61,7 +62,7 @@ const pricingData = {
     {
         pricingData.comparison.enable && (
             <Section class="relative isolate overflow-hidden">
-                <div class="container">
+                <Container>
                     <div class="flex flex-col gap-10 lg:gap-16">
                         <div class="flex flex-col items-center gap-y-5 text-center">
                             <Badge title={pricingData.comparison.badge} />
@@ -128,7 +129,7 @@ const pricingData = {
                             </div>
                         </div>
                     </div>
-                </div>
+                </Container>
             </Section>
         )
     }

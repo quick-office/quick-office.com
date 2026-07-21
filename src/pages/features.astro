@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { BusinessNeeds, ComparisonRow, ShowcaseCard } from '@/screens/features';
 import { markdownify } from '@/lib/text-converter';
+import { Container } from '@/components/ui/container';
 import {
     quickOfficeDashboard,
     featureAutomatedMarketing,
@@ -136,7 +137,7 @@ const featuresData = {
 >
     <!-- Banner -->
     <Section variant="ph" class="relative overflow-hidden pb-20">
-        <div class="container relative">
+        <Container class="relative">
             <div class="absolute top-0 left-0 w-full">
                 <div class="h-100 w-full overflow-hidden -translate-y-10">
                     <canvas class="heroSporeCanvas w-full"></canvas>
@@ -164,7 +165,7 @@ const featuresData = {
                     <ImageMod src={featuresData.banner.image} alt="Quick Office Dashboard" class="w-full" />
                 </div>
             </div>
-        </div>
+        </Container>
     </Section>
     <hr class="border-border" />
 
@@ -175,7 +176,7 @@ const featuresData = {
     {
         featuresData.smart_platform.enable && (
             <Section class="mx-5 relative isolate overflow-hidden">
-                <div class="container">
+                <Container>
                     <div class="flex flex-col gap-10 lg:gap-16">
                         <div class="flex flex-col items-center gap-y-5 text-center">
                             <h2
@@ -196,7 +197,7 @@ const featuresData = {
                             </div>
                         </div>
                     </div>
-                </div>
+                </Container>
                 <GradientBlob />
             </Section>
         )
@@ -207,7 +208,7 @@ const featuresData = {
         featuresData.service_features.enable &&
             featuresData.service_features.items.map((feature: any, index: number) => (
                 <Section variant="sm" class="relative isolate">
-                    <div class="container">
+                    <Container>
                         <div class="rounded-3xl bg-light/6 overflow-hidden">
                             <div class="grid lg:grid-cols-2">
                                 <div class={`p-8 lg:p-12 xl:p-14 ${feature.reverse ? '' : 'lg:order-1'}`}>
@@ -236,7 +237,7 @@ const featuresData = {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Container>
                     <GradientBlob />
                 </Section>
             ))

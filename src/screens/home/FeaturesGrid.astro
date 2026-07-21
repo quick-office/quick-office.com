@@ -3,6 +3,7 @@ import FeatureCard from '@/components/FeatureCard.astro';
 import VideoShowcase from '@/screens/home/VideoShowcase.astro';
 import { Section } from '@/components/ui/section';
 import { featuresMenuIcon } from '@/lib/assets';
+import { Container } from '@/components/ui/container';
 
 const items = [
     { logo: featuresMenuIcon, title: 'Invoice Creation & Management', is_starred: false },
@@ -24,7 +25,7 @@ const items = [
         class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-primary/10 via-transparent to-transparent"
     >
     </div>
-    <div class="container">
+    <Container>
         <div class="flex flex-col gap-10 lg:gap-16">
             <div class="flex flex-col items-center gap-y-5 text-center">
                 <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary">
@@ -47,7 +48,7 @@ const items = [
                 </div>
             </div>
         </div>
-    </div>
+    </Container>
 </Section>
 
 <style>
