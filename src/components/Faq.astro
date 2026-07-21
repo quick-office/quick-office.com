@@ -1,5 +1,6 @@
 ---
 import Accordion from './Accordion.astro';
+import { Button } from '@/components/ui/button';
 
 const faq = {
     enable: true,
@@ -41,9 +42,9 @@ const faq = {
                             <h2 class="title lg:ml-0" set:html={faq.title} />
                             <p class="subtitle lg:ml-0">{faq.description}</p>
                             {faq.button.enable && faq.button.link && (
-                                <a href={faq.button.link} class="btn btn-outline mt-9">
+                                <Button href={faq.button.link} variant="outline" class="mt-9">
                                     {faq.button.label}
-                                </a>
+                                </Button>
                             )}
                         </div>
                     </div>

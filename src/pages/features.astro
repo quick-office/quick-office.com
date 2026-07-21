@@ -2,6 +2,7 @@
 import DynamicIcon from '@/components/helpers/DynamicIcon';
 import { SiteLayout } from '@/layouts/site-layout';
 import { BrandsCarousel, CallToAction, Faq, GradientBlob, ImageMod } from '@/components';
+import { Button } from '@/components/ui/button';
 import { BusinessNeeds, ComparisonRow, ShowcaseCard } from '@/screens/features';
 import { markdownify } from '@/lib/text-converter';
 import {
@@ -150,12 +151,12 @@ const featuresData = {
                         {featuresData.banner.content}
                     </p>
                     <div class="flex gap-4 justify-center items-center flex-wrap">
-                        <a class="btn btn-primary" href={featuresData.banner.button_primary.link}
-                            >{featuresData.banner.button_primary.label}</a
-                        >
-                        <a class="btn btn-outline" href={featuresData.banner.button_secondary.link}
-                            >{featuresData.banner.button_secondary.label}</a
-                        >
+                        <Button href={featuresData.banner.button_primary.link}>
+                            {featuresData.banner.button_primary.label}
+                        </Button>
+                        <Button href={featuresData.banner.button_secondary.link} variant="outline">
+                            {featuresData.banner.button_secondary.label}
+                        </Button>
                     </div>
                 </div>
                 <div class="col-12">

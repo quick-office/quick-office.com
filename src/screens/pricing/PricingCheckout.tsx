@@ -1,3 +1,4 @@
+import { buttonVariants } from '@/components/ui/button';
 import React, { useState } from 'react';
 
 interface PricingCheckoutProps {
@@ -49,7 +50,7 @@ export default function PricingCheckout({
         <>
             <button
                 onClick={() => setShowModal(true)}
-                className="btn btn-primary my-10 block w-full cursor-pointer text-center"
+                className={buttonVariants({ className: 'my-10 block w-full text-center' })}
             >
                 {buttonLabel}
             </button>
@@ -118,7 +119,10 @@ export default function PricingCheckout({
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="btn btn-primary mt-6 flex w-full items-center justify-center gap-2 disabled:cursor-not-allowed disabled:opacity-70"
+                                className={buttonVariants({
+                                    className:
+                                        'mt-6 flex w-full items-center justify-center gap-2 disabled:cursor-not-allowed disabled:opacity-70',
+                                })}
                             >
                                 {loading ? (
                                     <svg

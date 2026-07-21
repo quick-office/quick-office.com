@@ -1,5 +1,6 @@
 ---
 import ImageMod from '@/components/ImageMod.astro';
+import { Button } from '@/components/ui/button';
 import { markdownify } from '@/lib/text-converter';
 
 interface Props {
@@ -51,14 +52,14 @@ const { lead_generation } = Astro.props;
                                         class="form-input w-full mb-5"
                                         required
                                     />
-                                    <button
+                                    <Button
                                         type="submit"
                                         id="lead-submit"
-                                        class="btn btn-primary w-full disabled:opacity-60 disabled:cursor-not-allowed"
+                                        class="w-full disabled:opacity-60 disabled:cursor-not-allowed"
                                     >
                                         <span id="lead-submit-label">Get Free Checklist</span>
                                         <span id="lead-submit-loading" class="hidden">Submitting...</span>
-                                    </button>
+                                    </Button>
                                     <div
                                         id="lead-form-success"
                                         class="hidden mt-4 text-green-500 font-medium text-sm text-center"

@@ -1,5 +1,6 @@
 ---
 import ImageMod from '@/components/ImageMod.astro';
+import { Button } from '@/components/ui/button';
 import { avatarLg } from '@/lib/assets';
 
 const ourStory = {
@@ -70,9 +71,9 @@ if (!ourStory.enable) return;
                             {
                                 ourStory.button.enable && ourStory.button.link && (
                                     <div class="mt-12 flex justify-center">
-                                        <a href={ourStory.button.link} class="btn btn-primary py-4">
+                                        <Button href={ourStory.button.link} class="py-4">
                                             {ourStory.button.label}
-                                        </a>
+                                        </Button>
                                     </div>
                                 )
                             }

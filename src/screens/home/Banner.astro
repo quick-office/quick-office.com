@@ -1,5 +1,6 @@
 ---
 import { registerLink } from '@/lib/config';
+import { Button } from '@/components/ui/button';
 
 import BannerVideoShowcase from './BannerVideoShowcase.astro';
 ---
@@ -23,8 +24,8 @@ import BannerVideoShowcase from './BannerVideoShowcase.astro';
                     simple dashboard. Built for Bangladesh's SMBs.
                 </p>
                 <div class="flex gap-4 justify-center items-center flex-wrap">
-                    <a class="btn btn-primary" href={registerLink}>Start Free Trial</a>
-                    <a class="btn btn-outline" href="/#how-it-works">See How It Works</a>
+                    <Button href={registerLink}>Start Free Trial</Button>
+                    <Button href="/#how-it-works" variant="outline">See How It Works</Button>
                 </div>
                 <p class="mt-6 text-sm text-text">No credit card required · 30-day free trial · Manual billing</p>
             </div>

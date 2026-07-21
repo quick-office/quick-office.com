@@ -1,6 +1,7 @@
 ---
 import ProcessCard from '@/screens/home/ProcessCard.astro';
 import TestimonialCard from '@/components/TestimonialCard.astro';
+import { Button } from '@/components/ui/button';
 import {
     valuesIcon1,
     valuesIcon2,
@@ -52,7 +53,7 @@ const steps = [
                     {steps.map((step) => <ProcessCard logo={step.logo} title={step.title} content={step.content} />)}
                 </div>
                 <div class="flex justify-center mt-10 xl:mt-18">
-                    <a href="/pricing" class="btn btn-primary">Start My Free Trial</a>
+                    <Button href="/pricing">Start My Free Trial</Button>
                 </div>
             </div>
         </div>

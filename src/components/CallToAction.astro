@@ -1,5 +1,6 @@
 ---
 import Badge from './Badge.astro';
+import { Button } from '@/components/ui/button';
 import { markdownify } from '@/lib/text-converter';
 
 const cta = {
@@ -25,9 +26,9 @@ const cta = {
                         <h2 class="title hasHighlight lg:col-7" set:html={markdownify(cta.title)} />
                         <p class="subtitle text-h6-sm lg:col-6">{cta.description}</p>
                         {cta.button.enable && cta.button.link && (
-                            <a href={cta.button.link} class="btn btn-primary mt-9">
+                            <Button href={cta.button.link} class="mt-9">
                                 {cta.button.label}
-                            </a>
+                            </Button>
                         )}
                     </div>
                 </div>

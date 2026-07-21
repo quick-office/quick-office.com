@@ -1,5 +1,6 @@
 ---
 import Logo from './Logo.astro';
+import { Button } from '@/components/ui/button';
 
 import { registerLink } from '@/lib/config';
 
@@ -117,18 +118,18 @@ const { pathname } = Astro.url;
                 ))
             }
             <li class="pt-4 inline-block lg:hidden">
-                <a class="btn-outline btn-sm" href={primaryAction.link}>
+                <Button href={primaryAction.link} variant="outline" size="sm">
                     {primaryAction.label}
-                </a>
+                </Button>
             </li>
         </ul>
         <div class="order-1 gap-4 ml-auto flex items-center md:order-2 lg:ml-0">
-            <a class="btn btn-outline hidden lg:inline-block" href={secendaryAction.link}>
+            <Button href={secendaryAction.link} variant="outline" class="hidden lg:inline-block">
                 {secendaryAction.label}
-            </a>
-            <a class="btn btn-primary hidden lg:inline-block" href={primaryAction.link}>
+            </Button>
+            <Button href={primaryAction.link} variant="primary" class="hidden lg:inline-block">
                 {primaryAction.label}
-            </a>
+            </Button>
         </div>
     </nav>
     <!-- expanded menu background -->
