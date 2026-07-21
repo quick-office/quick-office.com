@@ -124,7 +124,10 @@ const aboutData = {
                     <div class="flex flex-col gap-10 lg:gap-16">
                         <div class="flex flex-col items-center gap-y-5 text-center">
                             <Badge title={aboutData.our_team.badge} />
-                            <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary" set:html={markdownify(aboutData.our_team.title)} />
+                            <h2
+                                class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary"
+                                set:html={markdownify(aboutData.our_team.title)}
+                            />
                         </div>
                         <div class="mb-0">
                             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">

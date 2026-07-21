@@ -28,7 +28,10 @@ const { our_features } = Astro.props;
     <div class="container">
         <div class="flex flex-col gap-10 lg:gap-16">
             <div class="flex flex-col items-center gap-y-5 text-center">
-                <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary" set:html={our_features.title} />
+                <h2
+                    class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary"
+                    set:html={our_features.title}
+                />
                 <p class="mx-auto text-lg text-text lg:col-7">{our_features.content}</p>
             </div>
             <div class="mb-0">
