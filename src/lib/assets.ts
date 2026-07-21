@@ -1,44 +1,44 @@
 // Vectors
-export { default as featuresMenuIcon } from '@/assets/vectors/features-menu-icon.svg';
-export { default as logo } from '@/assets/vectors/logo.svg';
+export { default as featuresMenuIcon } from '@/assets/vectors/features-menu-icon.svg?url';
+export { default as logo } from '@/assets/vectors/logo.svg?url';
 
 // Vectors - brands
-export { default as brandDropbox } from '@/assets/vectors/brands/dropbox-logo-svg-150px.svg';
-export { default as brandHubspot } from '@/assets/vectors/brands/hubspot-logo-svg-150.svg';
-export { default as brandLivechat } from '@/assets/vectors/brands/livechat-logo-svg-150px.svg';
-export { default as brandPingdom } from '@/assets/vectors/brands/pingdom-logo-svg-150px.svg';
-export { default as brandScapic } from '@/assets/vectors/brands/scapic-logo-svg-150px.svg';
+export { default as brandDropbox } from '@/assets/vectors/brands/dropbox-logo-svg-150px.svg?url';
+export { default as brandHubspot } from '@/assets/vectors/brands/hubspot-logo-svg-150.svg?url';
+export { default as brandLivechat } from '@/assets/vectors/brands/livechat-logo-svg-150px.svg?url';
+export { default as brandPingdom } from '@/assets/vectors/brands/pingdom-logo-svg-150px.svg?url';
+export { default as brandScapic } from '@/assets/vectors/brands/scapic-logo-svg-150px.svg?url';
 
 // Vectors - features
-export { default as featureAiPoweredGraph } from '@/assets/vectors/features/ai-powered-graph.svg';
-export { default as featureAutomatedMarketing } from '@/assets/vectors/features/automated-marketing-visual.svg';
-export { default as featureGrowYourEarnings } from '@/assets/vectors/features/grow-your-earnings.svg';
-export { default as featureMarketingAutopilot } from '@/assets/vectors/features/marketing-autopilot.svg';
-export { default as featureServiceFeature1 } from '@/assets/vectors/features/service-feature-1.svg';
-export { default as featureServiceFeature2 } from '@/assets/vectors/features/service-feature-2.svg';
-export { default as featureTurnoverTable } from '@/assets/vectors/features/turnover-table.svg';
+export { default as featureAiPoweredGraph } from '@/assets/vectors/features/ai-powered-graph.svg?url';
+export { default as featureAutomatedMarketing } from '@/assets/vectors/features/automated-marketing-visual.svg?url';
+export { default as featureGrowYourEarnings } from '@/assets/vectors/features/grow-your-earnings.svg?url';
+export { default as featureMarketingAutopilot } from '@/assets/vectors/features/marketing-autopilot.svg?url';
+export { default as featureServiceFeature1 } from '@/assets/vectors/features/service-feature-1.svg?url';
+export { default as featureServiceFeature2 } from '@/assets/vectors/features/service-feature-2.svg?url';
+export { default as featureTurnoverTable } from '@/assets/vectors/features/turnover-table.svg?url';
 
 // Vectors - icons
-export { default as iconCollaboration } from '@/assets/vectors/icons/collaboration.svg';
-export { default as iconCreativity } from '@/assets/vectors/icons/creativity.svg';
-export { default as iconInnovation } from '@/assets/vectors/icons/innovation.svg';
-export { default as iconMembership } from '@/assets/vectors/icons/membership.svg';
-export { default as iconResultDriven } from '@/assets/vectors/icons/result-driven.svg';
-export { default as iconSecurity } from '@/assets/vectors/icons/security.svg';
-export { default as iconStarredFolder } from '@/assets/vectors/icons/starred-folder.svg';
+export { default as iconCollaboration } from '@/assets/vectors/icons/collaboration.svg?url';
+export { default as iconCreativity } from '@/assets/vectors/icons/creativity.svg?url';
+export { default as iconInnovation } from '@/assets/vectors/icons/innovation.svg?url';
+export { default as iconMembership } from '@/assets/vectors/icons/membership.svg?url';
+export { default as iconResultDriven } from '@/assets/vectors/icons/result-driven.svg?url';
+export { default as iconSecurity } from '@/assets/vectors/icons/security.svg?url';
+export { default as iconStarredFolder } from '@/assets/vectors/icons/starred-folder.svg?url';
 
 // Vectors - platforms logos
-export { default as platformAbleton } from '@/assets/vectors/platforms-logo/ableton.svg';
-export { default as platformAirbnb } from '@/assets/vectors/platforms-logo/airbnb.svg';
-export { default as platformFacebook } from '@/assets/vectors/platforms-logo/facebook.svg';
-export { default as platformFigma } from '@/assets/vectors/platforms-logo/figma.svg';
-export { default as platformSlack } from '@/assets/vectors/platforms-logo/slack.svg';
+export { default as platformAbleton } from '@/assets/vectors/platforms-logo/ableton.svg?url';
+export { default as platformAirbnb } from '@/assets/vectors/platforms-logo/airbnb.svg?url';
+export { default as platformFacebook } from '@/assets/vectors/platforms-logo/facebook.svg?url';
+export { default as platformFigma } from '@/assets/vectors/platforms-logo/figma.svg?url';
+export { default as platformSlack } from '@/assets/vectors/platforms-logo/slack.svg?url';
 
 // Vectors - value proposition
-export { default as valuesIcon1 } from '@/assets/vectors/value-proposition/values-icon-1.svg';
-export { default as valuesIcon2 } from '@/assets/vectors/value-proposition/values-icon-2.svg';
-export { default as valuesIcon3 } from '@/assets/vectors/value-proposition/values-icon-3.svg';
-export { default as valuesIcon4 } from '@/assets/vectors/value-proposition/values-icon-4.svg';
+export { default as valuesIcon1 } from '@/assets/vectors/value-proposition/values-icon-1.svg?url';
+export { default as valuesIcon2 } from '@/assets/vectors/value-proposition/values-icon-2.svg?url';
+export { default as valuesIcon3 } from '@/assets/vectors/value-proposition/values-icon-3.svg?url';
+export { default as valuesIcon4 } from '@/assets/vectors/value-proposition/values-icon-4.svg?url';
 
 // Images
 export { default as aboutHero } from '@/assets/images/about_hero.png';
