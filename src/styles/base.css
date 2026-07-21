@@ -4,6 +4,7 @@ html {
 
 body {
     @apply bg-body font-primary text-base leading-relaxed font-normal text-text antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23e2e8f0'/%3E%3C/svg%3E");
 }
 
 h1,
