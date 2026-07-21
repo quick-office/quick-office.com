@@ -1,3 +1,7 @@
+@utility corner-squircle {
+    corner-shape: squircle;
+}
+
 /* navbar toggler */
 input#nav-toggle:checked + label #show-button {
     @apply hidden;

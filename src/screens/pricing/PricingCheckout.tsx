@@ -94,7 +94,7 @@ export default function PricingCheckout({
                                     required
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    className="form-input w-full rounded-lg border-border bg-transparent text-dark placeholder:text-text-light focus:border-primary focus:ring focus:ring-primary/50 dark:text-text-dark dark:placeholder:text-gray-400"
+                                    className="w-full rounded-lg border border-border bg-transparent px-7 py-5 text-dark placeholder:text-text-light focus:border-primary focus:ring focus:ring-primary/50 dark:text-text-dark dark:placeholder:text-gray-400"
                                     placeholder="John Doe"
                                     disabled={loading}
                                 />
@@ -108,7 +108,7 @@ export default function PricingCheckout({
                                     required
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="form-input w-full rounded-lg border-border bg-transparent text-dark placeholder:text-text-light focus:border-primary focus:ring focus:ring-primary/50 dark:text-text-dark dark:placeholder:text-gray-400"
+                                    className="w-full rounded-lg border border-border bg-transparent px-7 py-5 text-dark placeholder:text-text-light focus:border-primary focus:ring focus:ring-primary/50 dark:text-text-dark dark:placeholder:text-gray-400"
                                     placeholder="john@example.com"
                                     disabled={loading}
                                 />

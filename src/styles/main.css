@@ -6,7 +6,6 @@
 
 @import './theme.css';
 @import './safe.css';
-@import './utilities.css';
 
 @layer base {
     @import './base.css';
