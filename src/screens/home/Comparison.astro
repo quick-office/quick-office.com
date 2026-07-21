@@ -1,5 +1,6 @@
 ---
 import ImageMod from '@/components/ImageMod.astro';
+import { Section } from '@/components/ui/section';
 import { platformAbleton, platformAirbnb, platformFacebook, platformFigma, platformSlack } from '@/lib/assets';
 
 const items = [
@@ -21,7 +22,7 @@ const items = [
 ];
 ---
 
-<section class="section relative isolate overflow-x-hidden">
+<Section class="relative isolate overflow-x-hidden">
     <div class="absolute inset-0 -z-20 pointer-events-none bg-body"></div>
     <div class="absolute inset-0 -z-10 pointer-events-none pattern-stripes opacity-25"></div>
     <div
@@ -29,11 +30,11 @@ const items = [
     >
     </div>
     <div class="container">
-        <div class="section-container">
-            <div class="section-intro centralize">
-                <h2 class="title hasHighlight">One Tool. <strong>Replace Them All.</strong></h2>
+        <div class="flex flex-col gap-10 lg:gap-16">
+            <div class="flex flex-col items-center gap-y-5 text-center">
+                <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary">One Tool. <strong>Replace Them All.</strong></h2>
             </div>
-            <div class="section-content">
+            <div class="mb-0">
                 <div class="flex flex-col gap-y-5 px-4">
                     {
                         items.map(({ title, price, images }) => (
@@ -64,7 +65,7 @@ const items = [
             </div>
         </div>
     </div>
-</section>
+</Section>
 
 <style>
     .pattern-stripes {

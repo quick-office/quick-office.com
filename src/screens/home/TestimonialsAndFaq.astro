@@ -1,6 +1,7 @@
 ---
 import TestimonialCard from '@/components/TestimonialCard.astro';
 import Accordion from '@/components/Accordion.astro';
+import { Section } from '@/components/ui/section';
 import { testimonial1, testimonial2, testimonial3, bannerShowcaseVideo } from '@/lib/assets';
 
 const testimonials = [
@@ -55,7 +56,7 @@ const faqs = [
 ---
 
 <!-- Testimonials -->
-<section class="section relative overflow-hidden">
+<Section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-20 pointer-events-none bg-body"></div>
     <div class="absolute inset-0 -z-10 pointer-events-none pattern-zigzag opacity-30"></div>
     <div
@@ -63,11 +64,11 @@ const faqs = [
     >
     </div>
     <div class="container">
-        <div class="section-container">
-            <div class="section-intro centralize">
-                <h2 class="title hasHighlight">Real Stories From <strong>Business Owners</strong></h2>
+        <div class="flex flex-col gap-10 lg:gap-16">
+            <div class="flex flex-col items-center gap-y-5 text-center">
+                <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary">Real Stories From <strong>Business Owners</strong></h2>
             </div>
-            <div class="section-content">
+            <div class="mb-0">
                 <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
                     {
                         testimonials.map((item) => (
@@ -84,12 +85,12 @@ const faqs = [
             </div>
         </div>
     </div>
-</section>
+</Section>
 
 <hr class="border-border" />
 
 <!-- FAQ -->
-<section class="section relative overflow-hidden">
+<Section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-20 pointer-events-none bg-body"></div>
     <div class="absolute inset-0 -z-10 pointer-events-none pattern-diamond opacity-30"></div>
     <div
@@ -97,23 +98,23 @@ const faqs = [
     >
     </div>
     <div class="container">
-        <div class="section-container grid lg:grid-cols-2">
-            <div class="section-intro max-lg:text-center">
+        <div class="grid gap-10 lg:gap-16 lg:grid-cols-2">
+            <div class="max-lg:text-center">
                 <div class="sticky top-(--header-height)">
-                    <h2 class="title lg:ml-0">Common <strong>Questions</strong></h2>
-                    <p class="subtitle lg:ml-0">
+                    <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 lg:ml-0">Common <strong>Questions</strong></h2>
+                    <p class="mx-auto text-lg text-text lg:col-7 lg:ml-0">
                         Everything you need to know before getting started with Quick Office.
                     </p>
                 </div>
             </div>
-            <div class="section-content">
+            <div class="mb-0">
                 <div class="space-y-4">
                     {faqs.map((item) => <Accordion title={item.question} content={item.answer} />)}
                 </div>
             </div>
         </div>
     </div>
-</section>
+</Section>
 
 <style>
     .pattern-zigzag {

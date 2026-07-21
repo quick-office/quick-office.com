@@ -2,6 +2,7 @@
 import { SiteLayout } from '@/layouts/site-layout';
 import { CallToAction, Faq, PageHeader } from '@/components';
 import { Button } from '@/components/ui/button';
+import { Section } from '@/components/ui/section';
 import DynamicIcon from '@/components/helpers/DynamicIcon';
 
 const contactData = {
@@ -43,7 +44,7 @@ const contactData = {
     <PageHeader title={contactData.page_header.title} subtitle={contactData.page_header.subtitle} />
 
     <!-- Contact Section -->
-    <section class="section pt-0">
+    <Section class="pt-0">
         <div class="container">
             <div class="row g-7 max-lg:gap-5">
                 <!-- Left Column - Contact Cards -->
@@ -157,7 +158,7 @@ const contactData = {
                 </div>
             </div>
         </div>
-    </section>
+    </Section>
 
     <!-- FAQ -->
     <Faq />

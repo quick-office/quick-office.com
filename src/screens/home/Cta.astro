@@ -1,21 +1,22 @@
 ---
 import Badge from '@/components/Badge.astro';
 import { Button } from '@/components/ui/button';
+import { Section } from '@/components/ui/section';
 ---
 
-<section class="section">
+<Section>
     <div class="container bg-light py-20 rounded-4xl relative overflow-hidden isolate">
         <div
             class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-primary/12 via-transparent to-primary/10"
         >
         </div>
-        <div class="section-container">
-            <div class="section-intro centralize">
+        <div class="flex flex-col gap-10 lg:gap-16">
+            <div class="flex flex-col items-center gap-y-5 text-center">
                 <Badge title="Get Started Today" />
-                <h2 class="title hasHighlight lg:col-7">
+                <h2 class="mx-auto mb-2 text-h3 lg:text-h2 [&_strong]:text-primary lg:col-7">
                     Ready to take control of your <strong>business finances?</strong>
                 </h2>
-                <p class="subtitle text-h6-sm lg:col-6">
+                <p class="mx-auto text-text text-h6-sm lg:col-6">
                     Join hundreds of businesses using Quick Office. Start free, no card required.
                 </p>
                 <Button href="/pricing" class="mt-9">Start My Free Trial</Button>
@@ -25,4 +26,4 @@ import { Button } from '@/components/ui/button';
             <canvas class="heroSporeCanvas w-full"></canvas>
         </div>
     </div>
-</section>
+</Section>

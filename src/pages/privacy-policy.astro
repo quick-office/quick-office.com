@@ -1,6 +1,7 @@
 ---
 import { SiteLayout } from '@/layouts/site-layout';
 import { PageHeader } from '@/components';
+import { Section } from '@/components/ui/section';
 ---
 
 <SiteLayout
@@ -8,7 +9,7 @@ import { PageHeader } from '@/components';
     description="Read our privacy policy to understand how Quick Office handles your data."
 >
     <PageHeader title="Privacy Policy" subtitle="" />
-    <section class="section-sm">
+    <Section variant="sm">
         <div class="container">
             <div class="row justify-center">
                 <div class="lg:col-10">
@@ -50,5 +51,5 @@ import { PageHeader } from '@/components';
                 </div>
             </div>
         </div>
-    </section>
+    </Section>
 </SiteLayout>

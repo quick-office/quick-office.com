@@ -1,5 +1,6 @@
 ---
 import ValueCard from '@/screens/home/ValueCard.astro';
+import { Section } from '@/components/ui/section';
 import { valuesIcon1, valuesIcon2, valuesIcon3, valuesIcon4 } from '@/lib/assets';
 
 const items = [
@@ -30,7 +31,7 @@ const items = [
 ];
 ---
 
-<section class="section relative overflow-hidden">
+<Section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-20 pointer-events-none bg-body"></div>
     <div class="absolute inset-0 -z-10 pointer-events-none pattern-hlines opacity-30"></div>
     <div
@@ -38,19 +39,19 @@ const items = [
     >
     </div>
     <div class="container">
-        <div class="section-container">
-            <div class="section-intro centralize">
-                <h2 class="title hasHighlight">One Platform. <strong>Every Financial Workflow.</strong></h2>
-                <p class="subtitle">Log in to a single dashboard to run your entire financial operation.</p>
+        <div class="flex flex-col gap-10 lg:gap-16">
+            <div class="flex flex-col items-center gap-y-5 text-center">
+                <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary">One Platform. <strong>Every Financial Workflow.</strong></h2>
+                <p class="mx-auto text-lg text-text lg:col-7">Log in to a single dashboard to run your entire financial operation.</p>
             </div>
-            <div class="section-content">
+            <div class="mb-0">
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
                     {items.map((item) => <ValueCard logo={item.logo} title={item.title} list={item.list} />)}
                 </div>
             </div>
         </div>
     </div>
-</section>
+</Section>
 
 <style>
     .pattern-hlines {

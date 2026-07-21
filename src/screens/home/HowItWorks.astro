@@ -2,6 +2,7 @@
 import ProcessCard from '@/screens/home/ProcessCard.astro';
 import TestimonialCard from '@/components/TestimonialCard.astro';
 import { Button } from '@/components/ui/button';
+import { Section } from '@/components/ui/section';
 import {
     valuesIcon1,
     valuesIcon2,
@@ -30,10 +31,7 @@ const steps = [
 ];
 ---
 
-<section
-    class="section-box max-lg:overflow-hidden pb-16 xl:pb-19 bg-transparent relative isolate overflow-hidden"
-    id="how-it-works"
->
+<Section variant="box" id="how-it-works" class="max-lg:overflow-hidden pb-16 xl:pb-19 bg-transparent relative isolate overflow-hidden">
     <div class="absolute inset-0 -z-20 pointer-events-none bg-body"></div>
     <div class="absolute inset-0 -z-10 pointer-events-none pattern-wave opacity-30"></div>
     <div
@@ -41,11 +39,11 @@ const steps = [
     >
     </div>
     <div class="container">
-        <div class="section-container">
-            <div class="section-intro centralize">
-                <h2 class="title hasHighlight">Up and Running in <strong class="italic">3 Simple Steps</strong></h2>
+        <div class="flex flex-col gap-10 lg:gap-16">
+            <div class="flex flex-col items-center gap-y-5 text-center">
+                <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary">Up and Running in <strong class="italic">3 Simple Steps</strong></h2>
             </div>
-            <div class="section-content">
+            <div class="mb-0">
                 <div class="mb-14">
                     <TestimonialCard poster={howItWorksPoster} video={bannerShowcaseVideo} />
                 </div>
@@ -67,7 +65,7 @@ const steps = [
                 stroke-width="3"></path>
         </svg>
     </div>
-</section>
+</Section>
 
 <style>
     .pattern-wave {

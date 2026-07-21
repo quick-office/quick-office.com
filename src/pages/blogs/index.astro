@@ -2,6 +2,7 @@
 import { SiteLayout } from '@/layouts/site-layout';
 import { BlogCard, FeaturedPostCard } from '@/screens/blogs';
 import { CallToAction, ImageMod } from '@/components';
+import { Section } from '@/components/ui/section';
 import { blogAuthor1 } from '@/lib/assets';
 import { getSinglePage } from '@/lib/content-parser';
 import dateFormat from '@/lib/date-format';
@@ -29,7 +30,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
     description="Stay informed with the latest insights and guides on getting more local customers on autopilot."
 >
     <!-- Page Header -->
-    <section class="section-ph pb-10 relative">
+    <Section variant="ph" class="pb-10 relative">
         <div class="container relative">
             <div class="absolute top-0 left-0 w-full">
                 <div class="h-100 w-full overflow-hidden -translate-y-10">
@@ -37,15 +38,15 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                 </div>
             </div>
             <div class="lg:max-w-4xl mx-auto text-center relative z-10">
-                <h1 class="hasHighlight mb-0" set:html={markdownify(pageData.page_header.title)} />
+                <h1 class="[&_strong]:text-primary mb-0" set:html={markdownify(pageData.page_header.title)} />
             </div>
         </div>
-    </section>
+    </Section>
 
     <!-- Featured Article -->
     {
         pageData.featured_post.enable && (
-            <section class="section pt-0">
+            <Section class="pt-0">
                 <div class="container">
                     <div class="grid gap-4 lg:grid-cols-[1fr_1.03fr]">
                         <div class="overflow-hidden rounded-2xl border border-white/10">
@@ -71,14 +72,14 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
 
                     <hr class="mt-16 border-border" />
                 </div>
-            </section>
+            </Section>
         )
     }
 
     <!-- Latest Articles -->
     {
         pageData.latest_posts.enable && (
-            <section class="section pt-10 lg:pt-14">
+            <Section class="pt-10 lg:pt-14">
                 <div class="container relative isolate">
                     <div class="mb-12 text-center">
                         <h2 class="text-h3-sm md:text-h2 capitalize">{pageData.latest_posts.title}</h2>
@@ -99,7 +100,7 @@ const latestPosts = allPosts.filter((p) => p.id !== featuredPost.id);
                         ))}
                     </div>
                 </div>
-            </section>
+            </Section>
         )
     }
 

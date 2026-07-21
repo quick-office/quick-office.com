@@ -1,6 +1,7 @@
 ---
 import GradientBlob from '@/components/GradientBlob.astro';
 import PricingCard from '@/components/PricingCard.astro';
+import { Section } from '@/components/ui/section';
 
 interface Props {
     title?: string;
@@ -87,18 +88,18 @@ const sectionTitle = title ?? pricingData.page_header.title;
 const sectionContent = content ?? pricingData.page_header.content;
 ---
 
-<section class={`section-box ${isHome ? '' : 'pt-0'} my-0 bg-transparent`} id="pricing">
+<Section variant="box" id="pricing" class={`${isHome ? '' : 'pt-0'} my-0 bg-transparent`}>
     <div class="container">
-        <div class="section-container">
+        <div class="flex flex-col gap-10 lg:gap-16">
             {
                 isHome && (
-                    <div class="section-intro centralize">
-                        <h2 class="title hasHighlight" set:html={sectionTitle} />
-                        {sectionContent && <p>{sectionContent}</p>}
+                    <div class="flex flex-col items-center gap-y-5 text-center">
+                        <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary" set:html={sectionTitle} />
+                        {sectionContent && <p class="mx-auto text-lg text-text lg:col-7">{sectionContent}</p>}
                     </div>
                 )
             }
-            <div class="section-content">
+            <div class="mb-0">
                 <div class="pricing-container">
                     <div class="price-togger">
                         <input type="checkbox" data-pricing-toggle id="pricing-toggle" class="hidden" />
@@ -128,4 +129,4 @@ const sectionContent = content ?? pricingData.page_header.content;
             </div>
         </div>
     </div>
-</section>
+</Section>

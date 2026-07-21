@@ -1,6 +1,7 @@
 ---
 import Accordion from './Accordion.astro';
 import { Button } from '@/components/ui/button';
+import { Section } from '@/components/ui/section';
 
 const faq = {
     enable: true,
@@ -34,13 +35,13 @@ const faq = {
 
 {
     faq.enable && (
-        <section class="section">
+        <Section>
             <div class="container">
-                <div class="section-container grid lg:grid-cols-2">
-                    <div class="section-intro max-lg:text-center">
+                <div class="grid gap-10 lg:gap-16 lg:grid-cols-2">
+                    <div class="max-lg:text-center">
                         <div class="sticky top-(--header-height)">
-                            <h2 class="title lg:ml-0" set:html={faq.title} />
-                            <p class="subtitle lg:ml-0">{faq.description}</p>
+                            <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 lg:ml-0" set:html={faq.title} />
+                            <p class="mx-auto text-lg text-text lg:col-7 lg:ml-0">{faq.description}</p>
                             {faq.button.enable && faq.button.link && (
                                 <Button href={faq.button.link} variant="outline" class="mt-9">
                                     {faq.button.label}
@@ -48,7 +49,7 @@ const faq = {
                             )}
                         </div>
                     </div>
-                    <div class="section-content">
+                    <div class="mb-0">
                         <div class="space-y-4">
                             {faq.items.map((item) => (
                                 <Accordion title={item.question} content={item.answer} />
@@ -57,6 +58,6 @@ const faq = {
                     </div>
                 </div>
             </div>
-        </section>
+        </Section>
     )
 }

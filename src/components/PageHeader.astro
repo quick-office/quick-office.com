@@ -1,4 +1,6 @@
 ---
+import { Section } from '@/components/ui/section';
+
 interface Props {
     title: string;
     subtitle: string;
@@ -6,14 +8,14 @@ interface Props {
 const { title, subtitle } = Astro.props;
 ---
 
-<section class="section-ph pb-28 mb-0 overflow-hidden">
+<Section variant="ph" class="pb-28 mb-0 overflow-hidden">
     <div class="container">
         <div class="lg:max-w-3xl mx-auto text-center">
-            <h1 class="hasHighlight mb-6" set:html={title} />
+            <h1 class="[&_strong]:text-primary mb-6" set:html={title} />
             <p class="mb-5 text-lg" set:html={subtitle} />
             <div class="absolute inset-0 h-full w-full overflow-hidden -z-10">
                 <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
             </div>
         </div>
     </div>
-</section>
+</Section>

@@ -2,6 +2,7 @@
 import { SiteLayout } from '@/layouts/site-layout';
 import { Badge, CallToAction, Faq } from '@/components';
 import { PricingSection } from '@/screens/pricing';
+import { Section } from '@/components/ui/section';
 import { markdownify } from '@/lib/text-converter';
 
 const pricingData = {
@@ -33,7 +34,7 @@ const pricingData = {
 
 <SiteLayout title="Pricing" description="Simple, transparent pricing plans for businesses of every size.">
     <!-- Page Header -->
-    <section class="section-ph pb-0 relative overflow-hidden">
+    <Section variant="ph" class="pb-0 relative overflow-hidden">
         <div class="container relative">
             <div class="absolute top-0 left-0 w-full">
                 <div class="h-100 w-full overflow-hidden -translate-y-10">
@@ -43,7 +44,7 @@ const pricingData = {
             <div class="row justify-center">
                 <div class="mb-10 text-center relative z-10">
                     <h1
-                        class="mb-6 lg:col-9 mx-auto text-h3 lg:text-h1 hasHighlight"
+                        class="mb-6 lg:col-9 mx-auto text-h3 lg:text-h1 [&_strong]:text-primary"
                         set:html={markdownify(pricingData.page_header.title)}
                     />
                     <p class="mb-10 lg:col-6 mx-auto text-text-light text-base">
@@ -54,19 +55,19 @@ const pricingData = {
         </div>
 
         <PricingSection isHome={false} />
-    </section>
+    </Section>
 
     <!-- Comparison Table -->
     {
         pricingData.comparison.enable && (
-            <section class="section relative isolate overflow-hidden">
+            <Section class="relative isolate overflow-hidden">
                 <div class="container">
-                    <div class="section-container">
-                        <div class="section-intro centralize">
+                    <div class="flex flex-col gap-10 lg:gap-16">
+                        <div class="flex flex-col items-center gap-y-5 text-center">
                             <Badge title={pricingData.comparison.badge} />
-                            <h2 class="title hasHighlight" set:html={markdownify(pricingData.comparison.title)} />
+                            <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary" set:html={markdownify(pricingData.comparison.title)} />
                         </div>
-                        <div class="section-content">
+                        <div class="mb-0">
                             <div class="overflow-x-auto">
                                 <div class="relative min-w-275 overflow-hidden rounded-3xl border border-border/80 bg-light/70 text-text shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-md">
                                     <div class="grid grid-cols-[1.2fr_1fr_1fr_1fr] items-center text-sm md:text-base font-primary text-text relative z-10">
@@ -125,7 +126,7 @@ const pricingData = {
                         </div>
                     </div>
                 </div>
-            </section>
+            </Section>
         )
     }
 

@@ -1,6 +1,7 @@
 ---
 import StepCard from './StepCard.astro';
 import { markdownify } from '@/lib/text-converter';
+import { Section } from '@/components/ui/section';
 import { brandsGroup1, brandsGroup2, brandsGroup3, brandsGroup4, brandsGroup5 } from '@/lib/assets';
 
 const businessNeeds = {
@@ -47,13 +48,13 @@ const businessNeeds = {
 
 {
     businessNeeds.enable && (
-        <section class="section relative isolate">
+        <Section class="relative isolate">
             <div class="container">
-                <div class="section-container">
-                    <div class="section-intro centralize">
-                        <h2 class="title hasHighlight" set:html={markdownify(businessNeeds.title)} />
+                <div class="flex flex-col gap-10 lg:gap-16">
+                    <div class="flex flex-col items-center gap-y-5 text-center">
+                        <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary" set:html={markdownify(businessNeeds.title)} />
                     </div>
-                    <div class="section-content">
+                    <div class="mb-0">
                         <div class="flex flex-col gap-y-2 px-4">
                             {businessNeeds.items.map((item) => (
                                 <StepCard
@@ -67,6 +68,6 @@ const businessNeeds = {
                     </div>
                 </div>
             </div>
-        </section>
+        </Section>
     )
 }

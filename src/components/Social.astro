@@ -9,7 +9,7 @@ export interface ISocial {
 }
 ---
 
-<ul class={className}>
+<ul class={`social-icons ${className ?? ''}`}>
     {
         source.map((social: ISocial) => (
             <li>
@@ -21,3 +21,18 @@ export interface ISocial {
         ))
     }
 </ul>
+
+<style>
+    .social-icons {
+        @apply space-x-4;
+    }
+    .social-icons li {
+        @apply inline-block;
+    }
+    .social-icons li a {
+        @apply flex size-11 items-center justify-center rounded-full bg-black/5 text-center text-lg leading-9 text-text-dark transition-all duration-200 hover:bg-black/10;
+    }
+    .social-icons li a svg {
+        @apply size-5;
+    }
+</style>

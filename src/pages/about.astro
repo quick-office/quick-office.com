@@ -2,6 +2,7 @@
 import { SiteLayout } from '@/layouts/site-layout';
 import { Badge, BrandsCarousel, CallToAction, Faq, GradientBlob, ImageMod } from '@/components';
 import { OurStory, TeamCard, Features, Testimonial } from '@/screens/about';
+import { Section } from '@/components/ui/section';
 import { markdownify } from '@/lib/text-converter';
 import {
     aboutHero,
@@ -72,10 +73,10 @@ const aboutData = {
     description="Learn about the team behind Quick Office and our mission to help local businesses grow."
 >
     <!-- Page Header -->
-    <section class="section-ph pb-20 overflow-hidden">
+    <Section variant="ph" class="pb-20 overflow-hidden">
         <div class="container">
             <div class="lg:max-w-4xl mx-auto text-center">
-                <h1 class="hasHighlight mb-6" set:html={markdownify(aboutData.page_header.title)} />
+                <h1 class="[&_strong]:text-primary mb-6" set:html={markdownify(aboutData.page_header.title)} />
                 <p class="mb-5 text-lg text-text">{aboutData.page_header.subtitle}</p>
                 <ImageMod
                     src={aboutData.page_header.image}
@@ -87,14 +88,14 @@ const aboutData = {
                 <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
             </div>
         </div>
-    </section>
+    </Section>
     <hr class="border-border" />
 
     <BrandsCarousel />
 
     {
         aboutData.stats.enable && (
-            <section class="section relative">
+            <Section class="relative">
                 <div class="container">
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
                         {aboutData.stats.items.map((stat) => (
@@ -110,7 +111,7 @@ const aboutData = {
                 <div class="-translate-y-140">
                     <GradientBlob />
                 </div>
-            </section>
+            </Section>
         )
     }
 
@@ -118,14 +119,14 @@ const aboutData = {
 
     {
         aboutData.our_team.enable && (
-            <section class="section relative isolate overflow-hidden">
+            <Section class="relative isolate overflow-hidden">
                 <div class="container">
-                    <div class="section-container">
-                        <div class="section-intro centralize">
+                    <div class="flex flex-col gap-10 lg:gap-16">
+                        <div class="flex flex-col items-center gap-y-5 text-center">
                             <Badge title={aboutData.our_team.badge} />
-                            <h2 class="title hasHighlight" set:html={markdownify(aboutData.our_team.title)} />
+                            <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary" set:html={markdownify(aboutData.our_team.title)} />
                         </div>
-                        <div class="section-content">
+                        <div class="mb-0">
                             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
                                 {aboutData.our_team.members.map((member) => (
                                     <TeamCard image={member.image} name={member.name} role={member.role} />
@@ -134,7 +135,7 @@ const aboutData = {
                         </div>
                     </div>
                 </div>
-            </section>
+            </Section>
         )
     }
 

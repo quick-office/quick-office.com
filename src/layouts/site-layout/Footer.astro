@@ -30,7 +30,7 @@ const socialLinks = [
 ];
 ---
 
-<footer class="section pb-0 relative overflow-hidden">
+<footer class="relative py-16 xl:py-19 pb-0 overflow-hidden">
     <div class="container pb-10">
         <div class="flex lg:justify-between flex-wrap gap-x-10 gap-y-10">
             <!-- Column 1 - Logo & Contact -->
@@ -42,12 +42,15 @@ const socialLinks = [
             </div>
             <!-- Column 2 - Primary -->
             <div>
-                <h3 class="footer-label">Primary</h3>
+                <h3 class="mb-11 text-h6 font-semibold text-text-dark">Primary</h3>
                 <ul>
                     {
                         footerPrimary.map((item) => (
                             <li class="mb-5">
-                                <a href={item.url} class="footer-link">
+                                <a
+                                    href={item.url}
+                                    class="text-text transition-colors duration-200 hover:text-text-dark"
+                                >
                                     {item.name}
                                 </a>
                             </li>
@@ -57,12 +60,15 @@ const socialLinks = [
             </div>
             <!-- Column 3 - Resource -->
             <div>
-                <h3 class="footer-label">Resource</h3>
+                <h3 class="mb-11 text-h6 font-semibold text-text-dark">Resource</h3>
                 <ul>
                     {
                         footerResource.map((item) => (
                             <li class="mb-5">
-                                <a href={item.url} class="footer-link">
+                                <a
+                                    href={item.url}
+                                    class="text-text transition-colors duration-200 hover:text-text-dark"
+                                >
                                     {item.name}
                                 </a>
                             </li>
@@ -72,12 +78,15 @@ const socialLinks = [
             </div>
             <!-- Column 4 - Legal -->
             <div>
-                <h3 class="footer-label">Legal</h3>
+                <h3 class="mb-11 text-h6 font-semibold text-text-dark">Legal</h3>
                 <ul>
                     {
                         footerLegal.map((item) => (
                             <li class="mb-5">
-                                <a href={item.url} class="footer-link">
+                                <a
+                                    href={item.url}
+                                    class="text-text transition-colors duration-200 hover:text-text-dark"
+                                >
                                     {item.name}
                                 </a>
                             </li>
@@ -92,7 +101,7 @@ const socialLinks = [
     <div class="container py-7">
         <div class="flex justify-between lg:items-center flex-col lg:flex-row gap-y-6 w-full">
             <p class="text-base text-text" set:html={markdownify(copyright)} />
-            <Social className="social-icons lg:ml-auto" source={socialLinks} />
+            <Social className="lg:ml-auto" source={socialLinks} />
         </div>
     </div>
 </footer>

@@ -3,6 +3,7 @@ import DynamicIcon from '@/components/helpers/DynamicIcon';
 import { SiteLayout } from '@/layouts/site-layout';
 import { BrandsCarousel, CallToAction, Faq, GradientBlob, ImageMod } from '@/components';
 import { Button } from '@/components/ui/button';
+import { Section } from '@/components/ui/section';
 import { BusinessNeeds, ComparisonRow, ShowcaseCard } from '@/screens/features';
 import { markdownify } from '@/lib/text-converter';
 import {
@@ -134,7 +135,7 @@ const featuresData = {
     description="Explore the powerful features Quick Office offers to automate and grow your local business."
 >
     <!-- Banner -->
-    <section class="section-ph relative overflow-hidden pb-20">
+    <Section variant="ph" class="relative overflow-hidden pb-20">
         <div class="container relative">
             <div class="absolute top-0 left-0 w-full">
                 <div class="h-100 w-full overflow-hidden -translate-y-10">
@@ -144,7 +145,7 @@ const featuresData = {
             <div class="row justify-center">
                 <div class="mb-20 text-center relative">
                     <h1
-                        class="mb-8 lg:col-9 mx-auto text-h3 lg:text-h1 hasHighlight"
+                        class="mb-8 lg:col-9 mx-auto text-h3 lg:text-h1 [&_strong]:text-primary"
                         set:html={markdownify(featuresData.banner.title)}
                     />
                     <p class="mb-10 lg:col-6 mx-auto text-lg">
@@ -164,7 +165,7 @@ const featuresData = {
                 </div>
             </div>
         </div>
-    </section>
+    </Section>
     <hr class="border-border" />
 
     <!-- Trusted Partners -->
@@ -173,13 +174,13 @@ const featuresData = {
     <!-- Smart Platform Cards -->
     {
         featuresData.smart_platform.enable && (
-            <section class="section mx-5 relative isolate overflow-hidden">
+            <Section class="mx-5 relative isolate overflow-hidden">
                 <div class="container">
-                    <div class="section-container">
-                        <div class="section-intro centralize">
-                            <h2 class="title hasHighlight" set:html={markdownify(featuresData.smart_platform.title)} />
+                    <div class="flex flex-col gap-10 lg:gap-16">
+                        <div class="flex flex-col items-center gap-y-5 text-center">
+                            <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary" set:html={markdownify(featuresData.smart_platform.title)} />
                         </div>
-                        <div class="section-content">
+                        <div class="mb-0">
                             <div class="grid md:grid-cols-2 xl:grid-cols-3 grid-flow-dense gap-7">
                                 {featuresData.smart_platform.cards.map((card: any) => (
                                     <ShowcaseCard
@@ -194,7 +195,7 @@ const featuresData = {
                     </div>
                 </div>
                 <GradientBlob />
-            </section>
+            </Section>
         )
     }
 
@@ -202,13 +203,13 @@ const featuresData = {
     {
         featuresData.service_features.enable &&
             featuresData.service_features.items.map((feature: any, index: number) => (
-                <section class={index === 0 ? 'section-sm relative isolate' : 'section-sm relative isolate'}>
+                <Section variant="sm" class="relative isolate">
                     <div class="container">
                         <div class="rounded-3xl bg-light/6 overflow-hidden">
                             <div class="grid lg:grid-cols-2">
                                 <div class={`p-8 lg:p-12 xl:p-14 ${feature.reverse ? '' : 'lg:order-1'}`}>
                                     <h2
-                                        class="text-h3-sm lg:text-h2 font-bold hasHighlight mb-9 lg:mb-12"
+                                        class="text-h3-sm lg:text-h2 font-bold [&_strong]:text-primary mb-9 lg:mb-12"
                                         set:html={markdownify(feature.title)}
                                     />
 
@@ -234,7 +235,7 @@ const featuresData = {
                         </div>
                     </div>
                     <GradientBlob />
-                </section>
+                </Section>
             ))
     }
 

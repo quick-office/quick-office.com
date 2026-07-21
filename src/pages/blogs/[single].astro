@@ -2,6 +2,7 @@
 import { Share, BlogCard } from '@/screens/blogs';
 import { SiteLayout } from '@/layouts/site-layout';
 import { ImageMod } from '@/components';
+import { Section } from '@/components/ui/section';
 import { blogAuthor1 } from '@/lib/assets';
 import { getSinglePage } from '@/lib/content-parser';
 import dateFormat from '@/lib/date-format';
@@ -28,11 +29,11 @@ const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0
 
 <SiteLayout title={postData.title} description={postData.description ?? postData.title} image={postData.image?.src}>
     <!-- Blog Single Hero -->
-    <section class="section-ph relative pb-10 lg:pb-14">
+    <Section variant="ph" class="relative pb-10 lg:pb-14">
         <div class="container">
             <div class="mx-auto max-w-246.25 text-center">
                 <h1
-                    class="hasHighlight mb-8 text-h4-sm md:text-h1 leading-[1.1]"
+                    class="[&_strong]:text-primary mb-8 text-h4-sm md:text-h1 leading-[1.1]"
                     set:html={markdownify(postData.title)}
                 />
 
@@ -80,10 +81,10 @@ const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0
         <div class="absolute inset-0 h-full w-full overflow-hidden -z-10">
             <canvas class="heroSporeCanvas w-full opacity-70"></canvas>
         </div>
-    </section>
+    </Section>
 
     <!-- Article Content -->
-    <section class="section">
+    <Section>
         <div class="container">
             <div class="mx-auto flex max-w-322.5 flex-col gap-20">
                 <article>
@@ -104,12 +105,12 @@ const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0
                 </div>
             </div>
         </div>
-    </section>
+    </Section>
 
     <!-- Read More -->
     {
         relatedPosts.length > 0 && (
-            <section class="section pb-34">
+            <Section class="pb-34">
                 <div class="container relative isolate">
                     <div class="mb-12 text-center">
                         <h2 class="text-h3-sm md:text-h2 capitalize">Read More Articles</h2>
@@ -130,7 +131,7 @@ const relatedPosts = allPosts.filter((p: BlogEntry) => p.id !== post.id).slice(0
                         ))}
                     </div>
                 </div>
-            </section>
+            </Section>
         )
     }
 </SiteLayout>

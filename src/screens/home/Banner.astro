@@ -1,11 +1,12 @@
 ---
 import { registerLink } from '@/lib/config';
 import { Button } from '@/components/ui/button';
+import { Section } from '@/components/ui/section';
 
 import BannerVideoShowcase from './BannerVideoShowcase.astro';
 ---
 
-<section class="section-ph relative overflow-hidden">
+<Section variant="ph" class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 pointer-events-none bg-linear-to-b from-primary/10 via-primary/5 to-transparent">
     </div>
     <div class="container relative">
@@ -16,7 +17,7 @@ import BannerVideoShowcase from './BannerVideoShowcase.astro';
         </div>
         <div class="row justify-center">
             <div class="mb-20 text-center relative">
-                <h1 class="mb-8 lg:col-9 mx-auto text-h3 lg:text-h1 hasHighlight">
+                <h1 class="mb-8 lg:col-9 mx-auto text-h3 lg:text-h1 [&_strong]:text-primary">
                     The All-In-One Accounting Software for <strong>Growing Businesses</strong>
                 </h1>
                 <p class="mb-10 lg:col-6 mx-auto">
@@ -36,4 +37,4 @@ import BannerVideoShowcase from './BannerVideoShowcase.astro';
             </div>
         </div>
     </div>
-</section>
+</Section>

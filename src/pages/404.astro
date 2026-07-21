@@ -1,10 +1,11 @@
 ---
 import { SiteLayout } from '@/layouts/site-layout';
 import { Button } from '@/components/ui/button';
+import { Section } from '@/components/ui/section';
 ---
 
 <SiteLayout title="Page Not Found" description="The page you are looking for could not be found.">
-    <section class="section-ph text-center relative overflow-hidden">
+    <Section variant="ph" class="text-center relative overflow-hidden">
         <div class="container relative">
             <div class="absolute top-0 left-0 w-full">
                 <div class="h-100 w-full overflow-hidden -translate-y-10">
@@ -26,5 +27,5 @@ import { Button } from '@/components/ui/button';
                 </div>
             </div>
         </div>
-    </section>
+    </Section>
 </SiteLayout>

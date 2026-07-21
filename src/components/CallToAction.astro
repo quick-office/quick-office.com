@@ -1,6 +1,7 @@
 ---
 import Badge from './Badge.astro';
 import { Button } from '@/components/ui/button';
+import { Section } from '@/components/ui/section';
 import { markdownify } from '@/lib/text-converter';
 
 const cta = {
@@ -18,13 +19,13 @@ const cta = {
 
 {
     cta.enable && (
-        <section class="section">
+        <Section>
             <div class="container bg-light py-20 rounded-4xl relative overflow-hidden isolate">
-                <div class="section-container">
-                    <div class="section-intro centralize">
+                <div class="flex flex-col gap-10 lg:gap-16">
+                    <div class="flex flex-col items-center gap-y-5 text-center">
                         <Badge title={cta.badge} />
-                        <h2 class="title hasHighlight lg:col-7" set:html={markdownify(cta.title)} />
-                        <p class="subtitle text-h6-sm lg:col-6">{cta.description}</p>
+                        <h2 class="mx-auto mb-2 text-h3 lg:text-h2 [&_strong]:text-primary lg:col-7" set:html={markdownify(cta.title)} />
+                        <p class="mx-auto text-text text-h6-sm lg:col-6">{cta.description}</p>
                         {cta.button.enable && cta.button.link && (
                             <Button href={cta.button.link} class="mt-9">
                                 {cta.button.label}
@@ -36,6 +37,6 @@ const cta = {
                     <canvas class="heroSporeCanvas w-full" />
                 </div>
             </div>
-        </section>
+        </Section>
     )
 }

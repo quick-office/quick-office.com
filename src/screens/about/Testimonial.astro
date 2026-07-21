@@ -1,6 +1,7 @@
 ---
 import GradientBlob from '@/components/GradientBlob.astro';
 import TestimonialCard from '@/components/TestimonialCard.astro';
+import { Section } from '@/components/ui/section';
 import { testimonial1, testimonial2, testimonial3, bannerShowcaseVideo } from '@/lib/assets';
 
 const testimonial = {
@@ -37,13 +38,13 @@ const testimonial = {
 
 {
     testimonial.enable && (
-        <section class="section relative">
+        <Section class="relative">
             <div class="container">
-                <div class="section-container">
-                    <div class="section-intro centralize">
-                        <h2 class="title hasHighlight" set:html={testimonial.title} />
+                <div class="flex flex-col gap-10 lg:gap-16">
+                    <div class="flex flex-col items-center gap-y-5 text-center">
+                        <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 [&_strong]:text-primary" set:html={testimonial.title} />
                     </div>
-                    <div class="section-content">
+                    <div class="mb-0">
                         <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
                             {testimonial.testimonials.map((item) => (
                                 <TestimonialCard
@@ -59,6 +60,6 @@ const testimonial = {
                 </div>
             </div>
             <GradientBlob />
-        </section>
+        </Section>
     )
 }
