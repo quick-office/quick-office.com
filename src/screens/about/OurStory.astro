@@ -62,7 +62,8 @@ if (!ourStory.enable) return;
                                         <div class="text-h6 text-text-dark font-semibold text-center mb-7">
                                             {ourStory.letter_points_title}
                                         </div>
-                                        <div class="flex flex-col gap-y-7 vertical-bg-line">
+                                        <div class="relative isolate flex flex-col gap-y-7">
+                                            <div class="absolute top-0 left-1/2 -z-10 h-full w-px -translate-x-1/2 bg-primary/20 pointer-events-none" />
                                             {ourStory.letter_points.map((point) => (
                                                 <div class="bg-light border border-border px-8 w-full py-2.5 rounded-full flex items-center justify-center relative z-10 gap-x-2">
                                                     <span class="font-semibold text-text-dark text-lg">{point}</span>
@@ -94,13 +95,3 @@ if (!ourStory.enable) return;
         </div>
     </Container>
 </Section>
-
-<style>
-    .vertical-bg-line {
-        @apply relative isolate;
-    }
-    .vertical-bg-line::before {
-        content: '';
-        @apply absolute top-0 left-1/2 -z-10 h-full w-px -translate-x-1/2 bg-primary/20;
-    }
-</style>

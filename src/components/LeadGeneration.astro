@@ -28,8 +28,30 @@ const { lead_generation } = Astro.props;
                             {lead_generation.subtitle}
                         </h3>
                         <div class="space-y-4" set:html={markdownify(lead_generation.content, true)} />
-                        <ul class="green-tick-list [&>li]:mb-8 mt-10">
-                            {lead_generation.list.map((item: string) => <li set:html={markdownify(item)} />)}
+                        <ul class="list-none pl-0 mt-10">
+                            {
+                                lead_generation.list.map((item: string) => (
+                                    <li class="relative pl-6 mb-8">
+                                        <svg
+                                            class="absolute left-0 top-0 mt-0.5 size-4 translate-y-[4px]"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 20 20"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill="#28C114"
+                                                fill-rule="evenodd"
+                                                d="M1.042 10a8.958 8.958 0 1 0 17.916 0 8.958 8.958 0 0 0-17.916 0Zm12.854-3.114c.34.311.363.838.052 1.177l-4.584 5a.834.834 0 0 1-1.203.027l-2.084-2.084a.833.833 0 1 1 1.179-1.178l1.468 1.468 3.995-4.359a.833.833 0 0 1 1.177-.051Z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        <span set:html={markdownify(item)} />
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </div>
                     <div class="lg:w-6/12">
@@ -87,24 +109,6 @@ const { lead_generation } = Astro.props;
     </Container>
     <hr class="border-border" />
 </Section>
-
-<style>
-    ul.green-tick-list {
-        @apply list-none pl-0;
-        li {
-            @apply relative mb-3 pl-6;
-
-            &::before {
-                content: '';
-                @apply absolute left-0 mt-0.5 size-4 translate-y-[4px];
-                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iIzI4QzExNCIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMS4wNDIgMTBhOC45NTggOC45NTggMCAxIDAgMTcuOTE2IDAgOC45NTggOC45NTggMCAwIDAtMTcuOTE2IDBabTEyLjg1NC0zLjExNGMuMzQuMzExLjM2My44MzguMDUyIDEuMTc3bC00LjU4NCA1YS44MzQuODM0IDAgMCAxLTEuMjAzLjAyN2wtMi4wODQtMi4wODRhLjgzMy44MzMgMCAxIDEgMS4xNzktMS4xNzhsMS40NjggMS40NjggMy45OTUtNC4zNTlhLjgzMy44MzMgMCAwIDEgMS4xNzctLjA1MVoiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==');
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 16px 16px;
-            }
-        }
-    }
-</style>
 
 <script>
     const form = document.getElementById('lead-form') as HTMLFormElement | null;

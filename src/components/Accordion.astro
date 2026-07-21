@@ -6,10 +6,18 @@ interface Props {
 const { title, content } = Astro.props;
 ---
 
-<div class="accordion">
-    <button class="accordion-header" data-accordion>
+<div class="group mb-6 overflow-hidden rounded-2xl border border-border bg-black/5">
+    <button
+        class="flex w-full cursor-pointer items-center justify-between border-b border-transparent py-4 pr-4 pl-8 text-left text-lg text-text-dark group-[&.active]:border-border"
+        data-accordion
+    >
         {title}
-        <svg class="accordion-icon" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+            class="size-6.5 -rotate-90 rounded-full bg-black/5 p-1.5 transition-transform duration-200 group-[&.active]:rotate-0"
+            viewBox="0 0 11 11"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <path
                 d="M0.75 5.41602H10.0833"
                 stroke="var(--color-text-dark)"
@@ -18,41 +26,14 @@ const { title, content } = Astro.props;
                 stroke-linejoin="round"></path>
             <path
                 d="M5.41663 10.083L5.41663 0.749675"
-                class="accordion-icon-vertical-line"
+                class="group-[&.active]:hidden"
                 stroke="var(--color-text-dark)"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"></path>
         </svg>
     </button>
-    <div class="accordion-content">
+    <div class="max-h-0 overflow-hidden px-8 py-0 text-text group-[&.active]:max-h-screen group-[&.active]:py-5">
         {content}
     </div>
 </div>
-
-<style>
-    .accordion {
-        @apply mb-6 overflow-hidden rounded-2xl border border-border bg-black/5;
-    }
-    .accordion-header {
-        @apply flex w-full cursor-pointer items-center justify-between border-b border-transparent py-4 pr-4 pl-8 text-left text-lg text-text-dark;
-    }
-    .accordion-icon {
-        @apply size-6.5 -rotate-90 rounded-full bg-black/5 p-1.5 transition-transform duration-200;
-    }
-    .accordion-content {
-        @apply max-h-0 overflow-hidden px-8 py-0 text-text;
-    }
-    .accordion.active .accordion-header {
-        @apply border-border text-text-dark;
-    }
-    .accordion.active .accordion-icon {
-        @apply rotate-0;
-    }
-    .accordion.active .accordion-icon .accordion-icon-vertical-line {
-        @apply hidden;
-    }
-    .accordion.active .accordion-content {
-        @apply max-h-screen py-5;
-    }
-</style>

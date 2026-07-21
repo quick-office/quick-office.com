@@ -9,30 +9,21 @@ export interface ISocial {
 }
 ---
 
-<ul class={`social-icons ${className ?? ''}`}>
+<ul class={`flex gap-4 ${className ?? ''}`}>
     {
         source.map((social: ISocial) => (
-            <li>
-                <a aria-label={social.name} href={social.link} target="_blank" rel="noopener noreferrer nofollow">
+            <li class="inline-block">
+                <a
+                    aria-label={social.name}
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    class="flex size-11 items-center justify-center rounded-full bg-black/5 text-center text-lg leading-9 text-text-dark transition-all duration-200 hover:bg-black/10"
+                >
                     <span class="sr-only">{social.name}</span>
-                    <DynamicIcon className="inline-block" icon={social.icon} />
+                    <DynamicIcon className="inline-block size-5" icon={social.icon} />
                 </a>
             </li>
         ))
     }
 </ul>
-
-<style>
-    .social-icons {
-        @apply space-x-4;
-    }
-    .social-icons li {
-        @apply inline-block;
-    }
-    .social-icons li a {
-        @apply flex size-11 items-center justify-center rounded-full bg-black/5 text-center text-lg leading-9 text-text-dark transition-all duration-200 hover:bg-black/10;
-    }
-    .social-icons li a svg {
-        @apply size-5;
-    }
-</style>

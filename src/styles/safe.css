@@ -1,7 +1,3 @@
-@utility corner-squircle {
-    corner-shape: squircle;
-}
-
 /* navbar toggler */
 input#nav-toggle:checked + label #show-button {
     @apply hidden;
@@ -13,6 +9,11 @@ input#nav-toggle:checked + label #hide-button {
 
 input#nav-toggle:checked ~ #nav-menu {
     @apply max-lg:block;
+}
+
+/* header hide on scroll */
+.header.hide {
+    transform: translateY(-200px);
 }
 
 /* nav menu background expand */

@@ -20,7 +20,11 @@ const items = [
 
 <Section variant="box" class="mx-5 relative isolate overflow-hidden">
     <div class="absolute inset-0 -z-20 pointer-events-none bg-body"></div>
-    <div class="absolute inset-0 -z-10 pointer-events-none pattern-dots opacity-40"></div>
+    <div
+        class="absolute inset-0 -z-10 pointer-events-none opacity-40"
+        style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='36' height='36' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='18' cy='18' r='1.5' fill='%23b8c6d6'/%3E%3C/svg%3E&quot;); background-size: 36px 36px;"
+    >
+    </div>
     <div
         class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-primary/10 via-transparent to-transparent"
     >
@@ -50,10 +54,3 @@ const items = [
         </div>
     </Container>
 </Section>
-
-<style>
-    .pattern-dots {
-        background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='18' cy='18' r='1.5' fill='%23b8c6d6'/%3E%3C/svg%3E");
-        background-size: 36px 36px;
-    }
-</style>

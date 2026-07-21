@@ -62,7 +62,11 @@ const plans = [
 
 <Section variant="box" id="pricing" class="my-0 bg-transparent relative isolate overflow-hidden">
     <div class="absolute inset-0 -z-20 pointer-events-none bg-body"></div>
-    <div class="absolute inset-0 -z-10 pointer-events-none pattern-circles opacity-30"></div>
+    <div
+        class="absolute inset-0 -z-10 pointer-events-none opacity-30"
+        style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='44' height='44' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='22' cy='22' r='9' stroke='%23c7d2e0' stroke-width='1' fill='none'/%3E%3C/svg%3E&quot;); background-size: 44px 44px;"
+    >
+    </div>
     <div
         class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-primary/8"
     >
@@ -106,10 +110,3 @@ const plans = [
         </div>
     </Container>
 </Section>
-
-<style>
-    .pattern-circles {
-        background-image: url("data:image/svg+xml,%3Csvg width='44' height='44' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='22' cy='22' r='9' stroke='%23c7d2e0' stroke-width='1' fill='none'/%3E%3C/svg%3E");
-        background-size: 44px 44px;
-    }
-</style>

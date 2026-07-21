@@ -38,7 +38,9 @@ const primaryAction = {
 const { pathname } = Astro.url;
 ---
 
-<header class={`header left-0 z-50 w-full bg-transparent py-6 transition-all duration-700 ${stickyHeader ? 'fixed top-0' : ''}`}>
+<header
+    class={`header left-0 z-50 w-full bg-transparent py-6 transition-all duration-700 ${stickyHeader ? 'fixed top-0' : ''}`}
+>
     <nav class="mx-auto px-8 xl:max-w-330.5! relative z-30 flex flex-wrap items-center justify-between">
         <!-- logo -->
         <div class="order-0 bg-white/70 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-4 py-2">
@@ -135,9 +137,3 @@ const { pathname } = Astro.url;
     <!-- expanded menu background -->
     <div class="bg-black/20 backdrop-blur-sm -z-10" id="nav-menu-bg"></div>
 </header>
-
-<style>
-    .header.hide {
-        transform: translateY(-200px);
-    }
-</style>

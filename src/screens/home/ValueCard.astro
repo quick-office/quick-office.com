@@ -12,25 +12,27 @@ const { logo, title, list } = Astro.props;
 <div class="p-8 rounded-2xl bg-black/5">
     <ImageMod src={logo} alt={`${title} icon`} class="mb-6" />
     <h3 class="text-h5-sm font-bold">{title}</h3>
-    <ul class="stars-list mt-5 text-text-dark">
-        {list?.map((item) => <li>{item}</li>)}
+    <ul class="list-none pl-0 mt-5 text-text-dark">
+        {
+            list?.map((item) => (
+                <li class="relative mb-3 pl-6">
+                    <svg
+                        class="absolute left-0 top-0 mt-0.5 size-4 translate-y-[4px]"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M8 0C8 0 7.91482 4.48677 9.71404 6.28596C11.5132 8.08517 16 8 16 8C16 8 11.5132 7.91482 9.71404 9.71404C7.91482 11.5132 8 16 8 16C8 16 8.08517 11.5132 6.28596 9.71404C4.48677 7.91482 0 8 0 8C0 8 4.48677 8.08517 6.28596 6.28596C8.08517 4.48677 8 0 8 0Z"
+                            fill="#A6A1A9"
+                        />
+                    </svg>
+                    {item}
+                </li>
+            ))
+        }
     </ul>
 </div>
-
-<style>
-    ul.stars-list {
-        @apply list-none pl-0;
-        li {
-            @apply relative mb-3 pl-6;
-
-            &::before {
-                content: '';
-                @apply absolute left-0 mt-0.5 size-4 translate-y-[4px];
-                background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTggMEM4IDAgNy45MTQ4MiA0LjQ4Njc3IDkuNzE0MDQgNi4yODU5NkMxMS41MTMyIDguMDg1MTcgMTYgOCAxNiA4QzE2IDggMTEuNTEzMiA3LjkxNDgyIDkuNzE0MDQgOS43MTQwNEM3LjkxNDgyIDExLjUxMzIgOCAxNiA4IDE2QzggMTYgOC4wODUxNyAxMS41MTMyIDYuMjg1OTYgOS43MTQwNEM0LjQ4Njc3IDcuOTE0ODIgMCA4IDAgOEMwIDggNC40ODY3NyA4LjA4NTE3IDYuMjg1OTYgNi4yODU5NkM4LjA4NTE3IDQuNDg2NzcgOCAwIDggMFoiIGZpbGw9IiNBNkExQTkiLz4KPC9zdmc+Cg==');
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 16px 16px;
-            }
-        }
-    }
-</style>

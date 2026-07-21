@@ -15,7 +15,10 @@ const { image, number, title, content } = Astro.props;
     <div class="flex items-center flex-col lg:flex-row lg:justify-between">
         <ImageMod src={image} alt={`${title} icon`} class="max-h-28 max-lg:order-1" height={142} width={142} />
         <div class="relative grid place-items-center max-lg:order-0">
-            <div class="text-[5rem] lg:text-[100px] font-extrabold t-stroke text-transparent leading-none">
+            <div
+                class="font-extrabold text-transparent leading-none"
+                style="font-size: 3em; margin: 0; -webkit-text-stroke: 1px color-mix(in srgb, var(--color-text-dark) 20%, transparent 70%);"
+            >
                 {number}
             </div>
             <h3 class="text-h5-sm font-bold absolute">{title}</h3>
@@ -30,11 +33,3 @@ const { image, number, title, content } = Astro.props;
         </div>
     </div>
 </div>
-
-<style>
-    .t-stroke {
-        font-size: 3em;
-        margin: 0;
-        -webkit-text-stroke: 1px color-mix(in srgb, var(--color-text-dark) 20%, transparent 70%);
-    }
-</style>
