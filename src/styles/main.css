@@ -14,5 +14,4 @@
 
 @layer components {
     @import './animations.css';
-    @import './navigation.css';
 }

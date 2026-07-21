@@ -38,8 +38,8 @@ const primaryAction = {
 const { pathname } = Astro.url;
 ---
 
-<header class={`header z-50 w-full transition-all duration-300 ${stickyHeader ? 'fixed top-0' : ''}`}>
-    <nav class="navbar mx-auto px-8 xl:max-w-330.5! relative z-30">
+<header class={`header left-0 z-50 w-full bg-transparent py-6 transition-all duration-700 ${stickyHeader ? 'fixed top-0' : ''}`}>
+    <nav class="mx-auto px-8 xl:max-w-330.5! relative z-30 flex flex-wrap items-center justify-between">
         <!-- logo -->
         <div class="order-0 bg-white/70 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-4 py-2">
             <Logo />
@@ -64,17 +64,17 @@ const { pathname } = Astro.url;
         <!-- /navbar toggler -->
         <ul
             id="nav-menu"
-            class="navbar-nav order-3 bg-white/70 hidden peer-checked:flex-col lg:flex w-full py-6 max-lg:mt-5 lg:order-1 lg:w-auto lg:gap-x-2 lg:py-0 xl:gap-x-8 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-6"
+            class="order-3 text-center lg:text-left bg-white/70 hidden peer-checked:flex-col lg:flex w-full py-6 max-lg:mt-5 lg:order-1 lg:w-auto lg:gap-x-2 lg:py-0 xl:gap-x-8 backdrop-blur-lg rounded-2xl lg:rounded-full lg:corner-squircle px-6"
         >
             {
                 navigationLinks.map((menu) => (
                     <>
                         {menu.hasChildren ? (
-                            <li class="nav-item nav-dropdown group relative">
+                            <li class="mr-0 group relative">
                                 <input type="checkbox" id={`submenu-${menu.name}`} class="peer hidden lg:hidden" />
                                 <label
                                     for={`submenu-${menu.name}`}
-                                    class={`nav-link inline-flex items-center ${
+                                    class={`cursor-pointer p-3 font-normal text-text-dark transition hover:text-primary lg:px-2 lg:py-3 inline-flex items-center ${
                                         menu.children?.map(({ url }) => url).includes(pathname) ||
                                         menu.children?.map(({ url }) => `${url}/`).includes(pathname)
                                             ? 'active'
@@ -86,13 +86,13 @@ const { pathname } = Astro.url;
                                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                     </svg>
                                 </label>
-                                <ul class="nav-dropdown-list hidden lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
+                                <ul class="z-10 min-w-45 rounded bg-body p-4 shadow-sm hidden lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
                                     {menu.children?.map((child) => (
-                                        <li class="nav-dropdown-item">
+                                        <li class="not-last:mb-2">
                                             <a
                                                 href={child.url}
                                                 aria-label={child.name}
-                                                class={`nav-dropdown-link block ${
+                                                class={`block py-1 font-semibold text-text-dark transition hover:text-primary ${
                                                     (pathname === `${child.url}/` || pathname === child.url) && 'active'
                                                 }`}
                                             >
@@ -103,10 +103,10 @@ const { pathname } = Astro.url;
                                 </ul>
                             </li>
                         ) : (
-                            <li class="nav-item">
+                            <li>
                                 <a
                                     href={menu.url}
-                                    class={`nav-link block ${
+                                    class={`cursor-pointer p-3 font-normal text-text-dark transition hover:text-primary lg:px-2 lg:py-3 block ${
                                         (pathname === `${menu.url}/` || pathname === menu.url) && 'active'
                                     }`}
                                 >
@@ -135,3 +135,9 @@ const { pathname } = Astro.url;
     <!-- expanded menu background -->
     <div class="bg-black/20 backdrop-blur-sm -z-10" id="nav-menu-bg"></div>
 </header>
+
+<style>
+    .header.hide {
+        transform: translateY(-200px);
+    }
+</style>
