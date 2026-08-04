@@ -8,6 +8,9 @@ interface Props {
     href?: string;
     variant?: TButtonVariant;
     size?: TButtonSize;
+    type?: 'button' | 'submit' | 'reset';
+    id?: string;
+    [key: string]: unknown;
 }
 
 const { variant, size, href, class: className, ...rest } = Astro.props;
