@@ -1,6 +1,8 @@
+export { default as logoFull } from '@/assets/vectors/logo-full.svg?url';
+export { default as logoMark } from '@/assets/vectors/logo-mark.svg?url';
+
 // Vectors
 export { default as featuresMenuIcon } from '@/assets/vectors/features-menu-icon.svg?url';
-export { default as logo } from '@/assets/vectors/logo.svg?url';
 
 // Vectors - brands
 export { default as brandDropbox } from '@/assets/vectors/brands/dropbox-logo-svg-150px.svg?url';
