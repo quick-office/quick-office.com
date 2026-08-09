@@ -1,5 +1,5 @@
 ---
-import PricingCheckout from '@/screens/pricing/PricingCheckout';
+import { PricingCheckout } from './PricingCheckout';
 
 interface Feature {
     label: string;
@@ -49,15 +49,9 @@ const { price, yearly_price, title, is_featured = false, offer_text, button, des
     <h3 class="text-h6 text-text-dark mb-5">{title}</h3>
     <p class="text-text-dark">{description}</p>
 
-
     {
         button.enable && (
-            <PricingCheckout
-                client:load
-                link={button.link}
-                buttonLabel={button.label}
-                isFeatured={is_featured}
-            />
+            <PricingCheckout client:load link={button.link} buttonLabel={button.label} isFeatured={is_featured} />
         )
     }
 
