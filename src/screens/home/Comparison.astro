@@ -1,6 +1,6 @@
 ---
 import { platformAbleton, platformAirbnb, platformFacebook, platformFigma, platformSlack } from '@/lib/assets';
-import { siteName, basePricing } from '@/lib/config';
+import { siteName, basicPrice } from '@/lib/config';
 
 import { Section } from '@/components/ui/section';
 import { Container } from '@/components/ui/container';
@@ -22,7 +22,7 @@ const items = [
     },
     {
         title: `${siteName} — All-in-One`,
-        price: basePricing,
+        price: basicPrice,
         images: [platformSlack],
         highlight: true,
     },

@@ -1,4 +1,6 @@
 ---
+import { registerLink } from '@/lib/config';
+
 import { Section } from '@/components/ui/section';
 import { Container } from '@/components/ui/container';
 
@@ -24,6 +26,10 @@ import PricingCards from '@/components/elements/PricingCards.astro';
                 </h2>
                 <p class="mx-auto text-lg text-text lg:col-7">
                     Manual billing — pay when you are ready. No automatic charges, ever.
+                </p>
+                <p class="text-sm text-text">
+                    30-day free trial, no credit card required.
+                    <a href={registerLink} class="text-primary font-semibold hover:underline">Start Free Trial →</a>
                 </p>
             </div>
             <PricingCards />

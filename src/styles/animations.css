@@ -164,3 +164,9 @@
 .price-toggler-btn.active {
     @apply bg-primary text-white;
 }
+.discount-badge {
+    color: var(--color-primary);
+}
+.price-toggler-btn.active .discount-badge {
+    color: rgba(255, 255, 255, 0.8);
+}
