@@ -1,9 +1,11 @@
 ---
-import ImageMod from '@/components/ImageMod.astro';
-import { Section } from '@/components/ui/section';
 import { platformAbleton, platformAirbnb, platformFacebook, platformFigma, platformSlack } from '@/lib/assets';
-import { Container } from '@/components/ui/container';
 import { siteName } from '@/lib/config';
+
+import { Section } from '@/components/ui/section';
+import { Container } from '@/components/ui/container';
+
+import ImageMod from '@/components/ImageMod.astro';
 
 const items = [
     {
@@ -32,7 +34,7 @@ const items = [
     >
     </div>
     <div
-        class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-b from-transparent via-primary/8 to-transparent"
+        class="absolute inset-0 -z-10 pointer-events-none bg-linear-to-b from-transparent via-primary/8 to-transparent"
     >
     </div>
     <Container>
