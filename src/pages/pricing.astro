@@ -9,6 +9,7 @@ import { Container } from '@/components/ui/container';
 import { PricingCards } from '@/components/parts/pricing-cards';
 
 import Badge from '@/components/elements/Badge.astro';
+import CheckIcon from '@/components/icons/CheckIcon.astro';
 
 const pricingData = {
     page_header: {
@@ -102,18 +103,7 @@ const pricingData = {
                                                         {typeof val === 'boolean' ? (
                                                             val ? (
                                                                 <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-primary/80 shadow-[0_8px_18px_rgba(147,122,255,0.35)]">
-                                                                    <svg
-                                                                        class="h-4 w-4 text-text-dark"
-                                                                        viewBox="0 0 24 24"
-                                                                        fill="none"
-                                                                        stroke="currentColor"
-                                                                        stroke-width="3"
-                                                                        stroke-linecap="round"
-                                                                        stroke-linejoin="round"
-                                                                        aria-hidden="true"
-                                                                    >
-                                                                        <polyline points="20 6 9 17 4 12" />
-                                                                    </svg>
+                                                                    <CheckIcon class="h-4 w-4 text-text-dark" />
                                                                 </span>
                                                             ) : (
                                                                 <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-black/10 ring-1 ring-border/60">

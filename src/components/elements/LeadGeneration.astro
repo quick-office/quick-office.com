@@ -6,6 +6,7 @@ import { Section } from '@/components/ui/section';
 import { Container } from '@/components/ui/container';
 
 import ImageMod from '@/components/elements/ImageMod.astro';
+import CheckCircleIcon from '@/components/icons/CheckCircleIcon.astro';
 
 interface Props {
     lead_generation: any;
@@ -34,22 +35,7 @@ const { lead_generation } = Astro.props;
                             {
                                 lead_generation.list.map((item: string) => (
                                     <li class="relative pl-6 mb-8">
-                                        <svg
-                                            class="absolute left-0 top-0 mt-0.5 size-4 translate-y-[4px]"
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 20 20"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            aria-hidden="true"
-                                        >
-                                            <path
-                                                fill="#28C114"
-                                                fill-rule="evenodd"
-                                                d="M1.042 10a8.958 8.958 0 1 0 17.916 0 8.958 8.958 0 0 0-17.916 0Zm12.854-3.114c.34.311.363.838.052 1.177l-4.584 5a.834.834 0 0 1-1.203.027l-2.084-2.084a.833.833 0 1 1 1.179-1.178l1.468 1.468 3.995-4.359a.833.833 0 0 1 1.177-.051Z"
-                                                clip-rule="evenodd"
-                                            />
-                                        </svg>
+                                        <CheckCircleIcon class="absolute left-0 top-0 mt-0.5 size-4 translate-y-[4px]" />
                                         <span set:html={markdownify(item)} />
                                     </li>
                                 ))
