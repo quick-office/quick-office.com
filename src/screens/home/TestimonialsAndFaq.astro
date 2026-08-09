@@ -1,10 +1,12 @@
 ---
-import TestimonialCard from '@/components/TestimonialCard.astro';
-import Accordion from '@/components/Accordion.astro';
-import { Section } from '@/components/ui/section';
 import { testimonial1, testimonial2, testimonial3, bannerShowcaseVideo } from '@/lib/assets';
-import { Container } from '@/components/ui/container';
 import { siteName } from '@/lib/config';
+
+import { Section } from '@/components/ui/section';
+import { Container } from '@/components/ui/container';
+
+import TestimonialCard from '@/components/TestimonialCard.astro';
+import Accordion from '@/components/elements/Accordion.astro';
 
 const testimonials = [
     {
@@ -12,8 +14,7 @@ const testimonials = [
         designation: 'Rahman Trading Co., Dhaka',
         poster: testimonial1,
         video: bannerShowcaseVideo,
-        content:
-            `${siteName} completely replaced our separate invoicing tool, expense tracker, and month-end spreadsheets. Everything is in one place and I can check our financial health from my phone.`,
+        content: `${siteName} completely replaced our separate invoicing tool, expense tracker, and month-end spreadsheets. Everything is in one place and I can check our financial health from my phone.`,
     },
     {
         name: 'Nadia Islam',

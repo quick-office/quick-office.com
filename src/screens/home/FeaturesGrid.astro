@@ -1,58 +1,31 @@
 ---
-import { featuresMenuIcon } from '@/lib/assets';
 import { siteName } from '@/lib/config';
 
 import { Section } from '@/components/ui/section';
 import { Container } from '@/components/ui/container';
 
+import InvoiceIcon from '@/components/icons/InvoiceIcon.astro';
+import PaymentIcon from '@/components/icons/PaymentIcon.astro';
+import SupplierInvoiceIcon from '@/components/icons/SupplierInvoiceIcon.astro';
+import SupplierPaymentIcon from '@/components/icons/SupplierPaymentIcon.astro';
+import ChartOfAccountsIcon from '@/components/icons/ChartOfAccountsIcon.astro';
+import VoucherIcon from '@/components/icons/VoucherIcon.astro';
+import ProfitLossIcon from '@/components/icons/ProfitLossIcon.astro';
+import CostCenterIcon from '@/components/icons/CostCenterIcon.astro';
+import TeamRolesIcon from '@/components/icons/TeamRolesIcon.astro';
+
 import FeatureCard from './FeatureCard.astro';
 
 const items = [
-    {
-        logo: featuresMenuIcon,
-        title: 'Invoice Creation & Management',
-        is_starred: false,
-    },
-    {
-        logo: featuresMenuIcon,
-        title: 'Payment Receive & History',
-        is_starred: false,
-    },
-    {
-        logo: featuresMenuIcon,
-        title: 'Supplier Invoice Management',
-        is_starred: false,
-    },
-    {
-        logo: featuresMenuIcon,
-        title: 'Supplier Payment Processing',
-        is_starred: false,
-    },
-    {
-        logo: featuresMenuIcon,
-        title: 'Chart of Accounts',
-        is_starred: true,
-    },
-    {
-        logo: featuresMenuIcon,
-        title: 'Voucher Creation (Debit/Credit)',
-        is_starred: false,
-    },
-    {
-        logo: featuresMenuIcon,
-        title: 'Profit & Loss Reports',
-        is_starred: false,
-    },
-    {
-        logo: featuresMenuIcon,
-        title: 'Cost Center & Cost Analysis',
-        is_starred: false,
-    },
-    {
-        logo: featuresMenuIcon,
-        title: 'Team Roles & Permissions',
-        is_starred: false,
-    },
+    { icon: InvoiceIcon, title: 'Invoice Creation & Management', is_starred: false },
+    { icon: PaymentIcon, title: 'Payment Receive & History', is_starred: false },
+    { icon: SupplierInvoiceIcon, title: 'Supplier Invoice Management', is_starred: false },
+    { icon: SupplierPaymentIcon, title: 'Supplier Payment Processing', is_starred: false },
+    { icon: ChartOfAccountsIcon, title: 'Chart of Accounts', is_starred: true },
+    { icon: VoucherIcon, title: 'Voucher Creation (Debit/Credit)', is_starred: false },
+    { icon: ProfitLossIcon, title: 'Profit & Loss Reports', is_starred: false },
+    { icon: CostCenterIcon, title: 'Cost Center & Cost Analysis', is_starred: false },
+    { icon: TeamRolesIcon, title: 'Team Roles & Permissions', is_starred: false },
 ];
 ---
 
@@ -81,7 +54,7 @@ const items = [
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 border-r border-text-light/5 border-b">
                     {
                         items.map((item) => (
-                            <FeatureCard logo={item.logo} title={item.title} is_starred={item.is_starred} />
+                            <FeatureCard icon={item.icon} title={item.title} is_starred={item.is_starred} />
                         ))
                     }
                 </div>

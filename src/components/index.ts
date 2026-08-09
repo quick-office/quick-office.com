@@ -1,5 +1,3 @@
-export { default as Accordion } from './Accordion.astro';
-export { default as Badge } from './Badge.astro';
 export { default as BrandsCarousel } from './BrandsCarousel.astro';
 export { default as CallToAction } from './CallToAction.astro';
 export { default as Faq } from './Faq.astro';
