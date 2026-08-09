@@ -1,9 +1,17 @@
 ---
 import { brandDropbox, brandHubspot, brandLivechat, brandPingdom, brandScapic } from '@/lib/assets';
+
 import { Section } from '@/components/ui/section';
 import { Container } from '@/components/ui/container';
 
 const brandUrls = [brandDropbox, brandHubspot, brandLivechat, brandPingdom, brandScapic];
+
+const stats = [
+    { value: '500+', label: 'Active Businesses' },
+    { value: '৳10 Crore+', label: 'Revenue Tracked' },
+    { value: '8 hrs/week', label: 'Saved per Business' },
+    { value: '98%', label: 'Customer Satisfaction' },
+];
 ---
 
 <div class="relative">
@@ -19,22 +27,12 @@ const brandUrls = [brandDropbox, brandHubspot, brandLivechat, brandPingdom, bran
     </div>
     <Container>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 py-10 border-y border-border text-center">
-            <div>
-                <p class="text-h3 font-bold font-secondary text-text-dark">500+</p>
-                <p class="text-sm text-text mt-1">Active Businesses</p>
-            </div>
-            <div>
-                <p class="text-h3 font-bold font-secondary text-text-dark">৳10 Crore+</p>
-                <p class="text-sm text-text mt-1">Revenue Tracked</p>
-            </div>
-            <div>
-                <p class="text-h3 font-bold font-secondary text-text-dark">8 hrs/week</p>
-                <p class="text-sm text-text mt-1">Saved per Business</p>
-            </div>
-            <div>
-                <p class="text-h3 font-bold font-secondary text-text-dark">98%</p>
-                <p class="text-sm text-text mt-1">Customer Satisfaction</p>
-            </div>
+            {stats.map(({ value, label }) => (
+                <div>
+                    <p class="text-h3 font-bold font-secondary text-text-dark">{value}</p>
+                    <p class="text-sm text-text mt-1">{label}</p>
+                </div>
+            ))}
         </div>
     </Container>
     <Section variant="sm" class="pt-16 xl:pt-20">

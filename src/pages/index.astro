@@ -1,6 +1,7 @@
 ---
-import { SiteLayout } from '@/layouts/site-layout';
+import { siteName } from '@/lib/config';
 
+import SiteLayout from '@/layouts/site-layout/SiteLayout.astro';
 import Banner from '@/screens/home/Banner.astro';
 import Comparison from '@/screens/home/Comparison.astro';
 import Cta from '@/screens/home/Cta.astro';
@@ -14,8 +15,9 @@ import ValueProps from '@/screens/home/ValueProps.astro';
 ---
 
 <SiteLayout
-    title="All-in-One Growth Software for Local Businesses"
-    description="Quick Office is an all-in-one growth software platform for local businesses."
+    title={`${siteName} - All-in-One Growth Software for Local Businesses`}
+    description={`${siteName} is an all-in-one growth software platform for local businesses.`}
+    noSiteTitle
 >
     <Banner />
     <SocialProof />
