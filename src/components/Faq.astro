@@ -3,20 +3,21 @@ import Accordion from './Accordion.astro';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { Container } from '@/components/ui/container';
+import { siteName } from '@/lib/config';
 
 const faq = {
     enable: true,
     title: 'Common <strong>Questions</strong>',
-    description: 'Everything you need to know before getting started with Quick Office.',
+    description: `Everything you need to know before getting started with ${siteName}.`,
     button: { enable: false, label: '', link: '' },
     items: [
         {
-            question: 'Do I need an accounting background to use Quick Office?',
-            answer: 'No. Quick Office is designed for business owners, not accountants. Common workflows like creating invoices, recording payments, and generating reports are guided step by step.',
+            question: `Do I need an accounting background to use ${siteName}?`,
+            answer: `No. ${siteName} is designed for business owners, not accountants. Common workflows like creating invoices, recording payments, and generating reports are guided step by step.`,
         },
         {
             question: 'How does billing work?',
-            answer: 'Quick Office uses manual billing. You choose when to pay and renew your plan — there are no automatic charges. You also get a 24-hour grace period after your plan expires before access is restricted.',
+            answer: `${siteName} uses manual billing. You choose when to pay and renew your plan — there are no automatic charges. You also get a 24-hour grace period after your plan expires before access is restricted.`,
         },
         {
             question: 'Can I add my team members?',

@@ -4,9 +4,10 @@ import { PageHeader } from '@/components';
 import { Section } from '@/components/ui/section';
 import { Content } from '@/components/ui/content';
 import { Container } from '@/components/ui/container';
+import { siteName } from '@/lib/config';
 ---
 
-<SiteLayout title="Terms and Conditions" description="Read the Terms and Conditions for using Quick Office.">
+<SiteLayout title="Terms and Conditions" description={`Read the Terms and Conditions for using ${siteName}.`}>
     <PageHeader title="Terms and Conditions" subtitle="" />
     <Section variant="sm">
         <Container>
@@ -39,7 +40,7 @@ import { Container } from '@/components/ui/container';
                         </p>
                         <h4>Privacy Policy Changes</h4>
                         <ol>
-                            <li>All the Quick Office items are designed to be with the latest standards.</li>
+                            <li>All the {siteName} items are designed to be with the latest standards.</li>
                             <li>
                                 Comments that threaten or harm the reputation of any person or organization are not
                                 allowed.

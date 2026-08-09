@@ -4,16 +4,17 @@ import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { avatarLg } from '@/lib/assets';
 import { Container } from '@/components/ui/container';
+import { siteName } from '@/lib/config';
 
 const ourStory = {
     enable: true,
-    title: 'Why We Built Quick Office — A Note From <strong>Our Founder</strong>',
+    title: `Why We Built ${siteName} — A Note From <strong>Our Founder</strong>`,
     ceo: {
         image: avatarLg,
         name: 'Rahim Chowdhury',
         role: 'Co-Founder & CEO',
     },
-    letter: `<p><strong class="text-white font-normal">In 2021, I was helping manage my family's trading business in Dhaka — and I was drowning in spreadsheets, WhatsApp follow-ups, and three separate apps just to track invoices and stay on top of leads.</strong> Every missed call was a missed sale. Every manual follow-up we forgot to send was a customer lost to a competitor. I knew we weren't the only ones dealing with this.</p><br><p>Every business owner I spoke to had the same problem: too many disconnected tools, too much admin work, and no clear system for turning new contacts into paying customers. So we built Quick Office — not a generic Western SaaS product with a language toggle, but a platform built from the ground up for how local businesses in Bangladesh actually operate: invoicing in BDT, payments via bKash and Nagad, and automation workflows that run 24/7 so you don't have to.</p>`,
+    letter: `<p><strong class="text-white font-normal">In 2021, I was helping manage my family's trading business in Dhaka — and I was drowning in spreadsheets, WhatsApp follow-ups, and three separate apps just to track invoices and stay on top of leads.</strong> Every missed call was a missed sale. Every manual follow-up we forgot to send was a customer lost to a competitor. I knew we weren't the only ones dealing with this.</p><br><p>Every business owner I spoke to had the same problem: too many disconnected tools, too much admin work, and no clear system for turning new contacts into paying customers. So we built ${siteName} — not a generic Western SaaS product with a language toggle, but a platform built from the ground up for how local businesses in Bangladesh actually operate: invoicing in BDT, payments via bKash and Nagad, and automation workflows that run 24/7 so you don't have to.</p>`,
     letter_points_title: 'Our commitment to every customer:',
     letter_points: [
         'Local support team, available 6 days a week',

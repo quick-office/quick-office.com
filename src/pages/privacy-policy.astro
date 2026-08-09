@@ -4,11 +4,12 @@ import { PageHeader } from '@/components';
 import { Section } from '@/components/ui/section';
 import { Content } from '@/components/ui/content';
 import { Container } from '@/components/ui/container';
+import { siteName } from '@/lib/config';
 ---
 
 <SiteLayout
     title="Privacy Policy"
-    description="Read our privacy policy to understand how Quick Office handles your data."
+    description={`Read our privacy policy to understand how ${siteName} handles your data.`}
 >
     <PageHeader title="Privacy Policy" subtitle="" />
     <Section variant="sm">
@@ -39,7 +40,7 @@ import { Container } from '@/components/ui/container';
                         </p>
                         <h4>Privacy Policy Changes</h4>
                         <ol>
-                            <li>All the Quick Office items are designed to be with the latest standards.</li>
+                            <li>All the {siteName} items are designed to be with the latest standards.</li>
                             <li>
                                 Comments that threaten or harm the reputation of any person or organization are not
                                 allowed.

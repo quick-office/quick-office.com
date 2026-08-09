@@ -4,6 +4,7 @@ import VideoShowcase from '@/screens/home/VideoShowcase.astro';
 import { Section } from '@/components/ui/section';
 import { featuresMenuIcon } from '@/lib/assets';
 import { Container } from '@/components/ui/container';
+import { siteName } from '@/lib/config';
 
 const items = [
     { logo: featuresMenuIcon, title: 'Invoice Creation & Management', is_starred: false },
@@ -36,7 +37,7 @@ const items = [
                     Everything You Need to Run Your <strong>Business Finances</strong>
                 </h2>
                 <p class="mx-auto text-lg text-text lg:col-7">
-                    From your first invoice to a complete P&L report — Quick Office covers it all.
+                    From your first invoice to a complete P&L report — {siteName} covers it all.
                 </p>
             </div>
             <div class="mb-0">

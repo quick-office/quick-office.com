@@ -1,6 +1,7 @@
 ---
 import { SiteLayout } from '@/layouts/site-layout';
 import { CallToAction, Faq, PageHeader } from '@/components';
+import { siteName } from '@/lib/config';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import DynamicIcon from '@/components/helpers/DynamicIcon';
@@ -41,7 +42,7 @@ const contactData = {
 };
 ---
 
-<SiteLayout title="Contact Us" description="Get in touch with Quick Office. We're here to help your business grow.">
+<SiteLayout title="Contact Us" description={`Get in touch with ${siteName}. We're here to help your business grow.`}>
     <PageHeader title={contactData.page_header.title} subtitle={contactData.page_header.subtitle} />
 
     <!-- Contact Section -->

@@ -1,6 +1,7 @@
 ---
 import { SiteLayout } from '@/layouts/site-layout';
 import { Badge, BrandsCarousel, CallToAction, Faq, GradientBlob, ImageMod } from '@/components';
+import { siteName } from '@/lib/config';
 import { OurStory, TeamCard, Features, Testimonial } from '@/screens/about';
 import { Section } from '@/components/ui/section';
 import { markdownify } from '@/lib/text-converter';
@@ -25,7 +26,7 @@ const aboutData = {
     page_header: {
         title: "The All-in-One Platform Built for <strong>Bangladesh's Local Businesses.</strong>",
         subtitle:
-            'We started Quick Office because local entrepreneurs in Bangladesh deserved better tools — not expensive enterprise software locked behind complexity, but a smart, integrated platform that grows your business on autopilot.',
+            `We started ${siteName} because local entrepreneurs in Bangladesh deserved better tools — not expensive enterprise software locked behind complexity, but a smart, integrated platform that grows your business on autopilot.`,
         image: aboutHero,
     },
     stats: {
@@ -40,7 +41,7 @@ const aboutData = {
     our_team: {
         enable: true,
         badge: 'Our Team',
-        title: 'Meet the People <strong>Behind Quick Office</strong>',
+        title: `Meet the People <strong>Behind ${siteName}</strong>`,
         members: [
             { image: peopleProfile, name: 'Rahim Chowdhury', role: 'Co-Founder & CEO' },
             { image: peopleProfile1, name: 'Tasneem Haque', role: 'Co-Founder & CTO' },
@@ -53,7 +54,7 @@ const aboutData = {
         badge: 'Our Core Values',
         title: 'Built on Principles That <strong>Put You First</strong>',
         content:
-            'Every feature in Quick Office exists for one reason: to make your business easier to run, so you can focus on your customers — not your software.',
+            `Every feature in ${siteName} exists for one reason: to make your business easier to run, so you can focus on your customers — not your software.`,
         items: [
             { logo: iconInnovation, title: 'Radically Simple', is_starred: false },
             { logo: iconSecurity, title: 'Bank-Level Security', is_starred: false },
@@ -71,7 +72,7 @@ const aboutData = {
 
 <SiteLayout
     title="About Us"
-    description="Learn about the team behind Quick Office and our mission to help local businesses grow."
+    description={`Learn about the team behind ${siteName} and our mission to help local businesses grow.`}
 >
     <!-- Page Header -->
     <Section variant="ph" class="pb-20 overflow-hidden">

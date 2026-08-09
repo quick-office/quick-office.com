@@ -3,6 +3,7 @@ import Badge from '@/components/Badge.astro';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { Container } from '@/components/ui/container';
+import { siteName } from '@/lib/config';
 ---
 
 <Section>
@@ -18,7 +19,7 @@ import { Container } from '@/components/ui/container';
                     Ready to take control of your <strong>business finances?</strong>
                 </h2>
                 <p class="mx-auto text-text text-h6-sm lg:col-6">
-                    Join hundreds of businesses using Quick Office. Start free, no card required.
+                    Join hundreds of businesses using {siteName}. Start free, no card required.
                 </p>
                 <Button href="/pricing" class="mt-9">Start My Free Trial</Button>
             </div>

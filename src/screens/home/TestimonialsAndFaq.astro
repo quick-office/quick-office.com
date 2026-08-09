@@ -4,6 +4,7 @@ import Accordion from '@/components/Accordion.astro';
 import { Section } from '@/components/ui/section';
 import { testimonial1, testimonial2, testimonial3, bannerShowcaseVideo } from '@/lib/assets';
 import { Container } from '@/components/ui/container';
+import { siteName } from '@/lib/config';
 
 const testimonials = [
     {
@@ -12,7 +13,7 @@ const testimonials = [
         poster: testimonial1,
         video: bannerShowcaseVideo,
         content:
-            'Quick Office completely replaced our separate invoicing tool, expense tracker, and month-end spreadsheets. Everything is in one place and I can check our financial health from my phone.',
+            `${siteName} completely replaced our separate invoicing tool, expense tracker, and month-end spreadsheets. Everything is in one place and I can check our financial health from my phone.`,
     },
     {
         name: 'Nadia Islam',
@@ -34,12 +35,12 @@ const testimonials = [
 
 const faqs = [
     {
-        question: 'Do I need an accounting background to use Quick Office?',
-        answer: 'No. Quick Office is designed for business owners, not accountants. Common workflows like creating invoices, recording payments, and generating reports are guided step by step.',
+        question: `Do I need an accounting background to use ${siteName}?`,
+        answer: `No. ${siteName} is designed for business owners, not accountants. Common workflows like creating invoices, recording payments, and generating reports are guided step by step.`,
     },
     {
         question: 'How does billing work?',
-        answer: 'Quick Office uses manual billing. You choose when to pay and renew your plan — there are no automatic charges. You also get a 24-hour grace period after your plan expires before access is restricted.',
+        answer: `${siteName} uses manual billing. You choose when to pay and renew your plan — there are no automatic charges. You also get a 24-hour grace period after your plan expires before access is restricted.`,
     },
     {
         question: 'Can I add my team members?',
@@ -114,7 +115,7 @@ const faqs = [
                 <div class="sticky top-(--header-height)">
                     <h2 class="mx-auto mb-2 text-h3 lg:col-10 lg:text-h2 lg:ml-0">Common <strong>Questions</strong></h2>
                     <p class="mx-auto text-lg text-text lg:col-7 lg:ml-0">
-                        Everything you need to know before getting started with Quick Office.
+                        Everything you need to know before getting started with {siteName}.
                     </p>
                 </div>
             </div>

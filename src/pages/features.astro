@@ -1,6 +1,7 @@
 ---
 import DynamicIcon from '@/components/helpers/DynamicIcon';
 import { SiteLayout } from '@/layouts/site-layout';
+import { siteName } from '@/lib/config';
 import { BrandsCarousel, CallToAction, Faq, GradientBlob, ImageMod } from '@/components';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
@@ -133,7 +134,7 @@ const featuresData = {
 
 <SiteLayout
     title="Features"
-    description="Explore the powerful features Quick Office offers to automate and grow your local business."
+    description={`Explore the powerful features ${siteName} offers to automate and grow your local business.`}
 >
     <!-- Banner -->
     <Section variant="ph" class="relative overflow-hidden pb-20">
@@ -162,7 +163,7 @@ const featuresData = {
                     </div>
                 </div>
                 <div class="col-12">
-                    <ImageMod src={featuresData.banner.image} alt="Quick Office Dashboard" class="w-full" />
+                    <ImageMod src={featuresData.banner.image} alt={`${siteName} Dashboard`} class="w-full" />
                 </div>
             </div>
         </Container>

@@ -4,6 +4,7 @@ import { markdownify } from '@/lib/text-converter';
 import { Section } from '@/components/ui/section';
 import { platformAbleton, platformAirbnb, platformFacebook, platformFigma, platformSlack } from '@/lib/assets';
 import { Container } from '@/components/ui/container';
+import { siteName } from '@/lib/config';
 
 const comparison = {
     enable: true,
@@ -21,7 +22,7 @@ const comparison = {
             images: [platformFacebook, platformFigma],
         },
         {
-            title: 'Quick Office (All-in-One)',
+            title: `${siteName} (All-in-One)`,
             price: '৳1,999',
             images: [platformSlack],
         },

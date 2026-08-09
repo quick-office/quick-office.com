@@ -1,6 +1,7 @@
 ---
 import { logoFull as logo } from '@/lib/assets';
 import { markdownify } from '@/lib/text-converter';
+import { siteName } from '@/lib/config';
 
 import { Social } from '@/components';
 import { Container } from '@/components/ui/container';
@@ -8,7 +9,7 @@ import { Container } from '@/components/ui/container';
 const footerTagline = 'Empowering Marketing businesses through intelligent automation.';
 const footerEmail = 'contact@quick-office.com';
 const footerPhone = '(+1) 165-320-0102';
-const copyright = 'Copyright &copy; 2026 <strong>Quick Office</strong> All Rights Reserved';
+const copyright = `Copyright &copy; 2026 <strong>${siteName}</strong> All Rights Reserved`;
 
 const footerPrimary = [
     { name: 'Home', url: '/' },
