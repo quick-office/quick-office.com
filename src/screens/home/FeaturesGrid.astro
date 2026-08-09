@@ -1,10 +1,11 @@
 ---
-import FeatureCard from '@/components/FeatureCard.astro';
-import VideoShowcase from '@/screens/home/VideoShowcase.astro';
-import { Section } from '@/components/ui/section';
 import { featuresMenuIcon } from '@/lib/assets';
-import { Container } from '@/components/ui/container';
 import { siteName } from '@/lib/config';
+
+import { Section } from '@/components/ui/section';
+import { Container } from '@/components/ui/container';
+
+import FeatureCard from '@/components/FeatureCard.astro';
 
 const items = [
     { logo: featuresMenuIcon, title: 'Invoice Creation & Management', is_starred: false },
@@ -27,7 +28,7 @@ const items = [
     >
     </div>
     <div
-        class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-t from-primary/10 via-transparent to-transparent"
+        class="absolute inset-0 -z-10 pointer-events-none bg-linear-to-t from-primary/10 via-transparent to-transparent"
     >
     </div>
     <Container>
@@ -47,9 +48,6 @@ const items = [
                             <FeatureCard logo={item.logo} title={item.title} is_starred={item.is_starred} />
                         ))
                     }
-                </div>
-                <div class="mt-16 flex justify-center w-full perspective-near xl:perspective-dramatic">
-                    <VideoShowcase />
                 </div>
             </div>
         </div>

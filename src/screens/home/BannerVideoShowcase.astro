@@ -5,7 +5,7 @@
 // - Click button → unmute video, hide overlay button
 // - Click again → mute, show overlay
 
-import { bannerShowcaseVideo as bannerShowcase } from '@/lib/assets';
+import { bannerShowcaseVideo as video } from '@/lib/assets';
 ---
 
 <div class="relative w-full max-w-280 mx-auto rounded-4xl overflow-hidden" data-gsap-video-showcase>
@@ -19,7 +19,7 @@ import { bannerShowcaseVideo as bannerShowcase } from '@/lib/assets';
         playsinline
         preload="metadata"
     >
-        <source src={bannerShowcase} type="video/mp4" />
+        <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
     </video>
     <!-- Sound toggle overlay — visible = muted (shows icon to unmute) -->
