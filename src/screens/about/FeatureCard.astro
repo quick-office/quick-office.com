@@ -1,11 +1,15 @@
 ---
 import type { ImageMetadata } from 'astro';
+
 import ImageMod from '@/components/ImageMod.astro';
+import SparkleIcon from '@/components/icons/SparkleIcon.astro';
+
 interface Props {
     logo: ImageMetadata | string;
     title: string;
     is_starred: boolean;
 }
+
 const { logo, title, is_starred } = Astro.props;
 ---
 
@@ -19,22 +23,6 @@ const { logo, title, is_starred } = Astro.props;
             'top-0 right-0 translate-x-1/2 -translate-y-1/2',
             'bottom-0 left-0 -translate-x-1/2 translate-y-1/2',
             'bottom-0 right-0 translate-x-1/2 translate-y-1/2',
-        ].map((pos) => (
-            <svg
-                data-is-starred={String(is_starred)}
-                class={`absolute z-10 ${pos} hidden`}
-                width="23"
-                height="23"
-                viewBox="0 0 23 23"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    opacity="0.5"
-                    d="M11.5 0C11.5 0 11.3776 6.44974 13.9639 9.03606C16.5503 11.6224 23 11.5 23 11.5C23 11.5 16.5503 11.3776 13.9639 13.9639C11.3776 16.5503 11.5 23 11.5 23C11.5 23 11.6224 16.5503 9.03606 13.9639C6.44974 11.3776 0 11.5 0 11.5C0 11.5 6.44974 11.6224 9.03606 9.03606C11.6224 6.44974 11.5 0 11.5 0Z"
-                    fill="var(--color-text-light)"
-                />
-            </svg>
-        ))
+        ].map((pos) => <SparkleIcon data-is-starred={String(is_starred)} class={`absolute z-10 ${pos} hidden`} />)
     }
 </div>
