@@ -1,13 +1,13 @@
 import { buttonVariants } from '@/components/ui/button';
-import React, { useState } from 'react';
 
-interface PricingCheckoutProps {
+export const PricingCheckout = ({
+    link,
+    buttonLabel = 'Get Access',
+}: {
     link: string;
     buttonLabel?: string;
     isFeatured?: boolean;
-}
-
-export default function PricingCheckout({ link, buttonLabel = 'Get Access' }: PricingCheckoutProps) {
+}) => {
     const handleClick = () => {
         const toggleEl = document.getElementById('pricing-toggle') as HTMLInputElement;
         const billing = toggleEl?.checked ? 'yearly' : 'monthly';
@@ -19,4 +19,4 @@ export default function PricingCheckout({ link, buttonLabel = 'Get Access' }: Pr
             {buttonLabel}
         </button>
     );
-}
+};
