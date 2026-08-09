@@ -8,12 +8,13 @@ import {
 } from '@/lib/assets';
 
 import { Button } from '@/components/ui/button';
-import OvalBgIcon from '@/components/icons/OvalBgIcon.astro';
 import { Section } from '@/components/ui/section';
 import { Container } from '@/components/ui/container';
 
+import OvalBgIcon from '@/components/icons/OvalBgIcon.astro';
 import ProcessCard from './ProcessCard.astro';
 import TestimonialCard from '@/components/TestimonialCard.astro';
+import { registerLink } from '@/lib/config';
 
 const steps = [
     {
@@ -65,7 +66,7 @@ const steps = [
                     {steps.map((step) => <ProcessCard logo={step.logo} title={step.title} content={step.content} />)}
                 </div>
                 <div class="flex justify-center mt-10 xl:mt-18">
-                    <Button href="/pricing">Start My Free Trial</Button>
+                    <Button href={registerLink}>Start My Free Trial</Button>
                 </div>
             </div>
         </div>
