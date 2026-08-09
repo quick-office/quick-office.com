@@ -21,6 +21,7 @@ export { default as featureServiceFeature2 } from '@/assets/vectors/features/ser
 export { default as featureTurnoverTable } from '@/assets/vectors/features/turnover-table.svg?url';
 
 // Vectors - icons
+export { default as iconSparkle } from '@/assets/vectors/icons/sparkle.svg?url';
 export { default as iconCollaboration } from '@/assets/vectors/icons/collaboration.svg?url';
 export { default as iconCreativity } from '@/assets/vectors/icons/creativity.svg?url';
 export { default as iconInnovation } from '@/assets/vectors/icons/innovation.svg?url';
