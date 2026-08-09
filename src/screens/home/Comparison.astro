@@ -1,6 +1,6 @@
 ---
 import { platformAbleton, platformAirbnb, platformFacebook, platformFigma, platformSlack } from '@/lib/assets';
-import { siteName } from '@/lib/config';
+import { siteName, basePricing } from '@/lib/config';
 
 import { Section } from '@/components/ui/section';
 import { Container } from '@/components/ui/container';
@@ -12,18 +12,24 @@ const items = [
         title: 'Tally + Excel + Separate Payroll',
         price: '৳8,000+',
         images: [platformAbleton, platformAirbnb],
+        highlight: false,
     },
     {
         title: 'Enterprise Accounting Suite',
         price: '৳15,000+',
         images: [platformFacebook, platformFigma],
+        highlight: false,
     },
     {
-        title: `${siteName} (All-in-One)`,
-        price: '৳1,999',
+        title: `${siteName} — All-in-One`,
+        price: basePricing,
         images: [platformSlack],
+        highlight: true,
     },
 ];
+
+const competitors = items.filter((i) => !i.highlight);
+const featured = items.find((i) => i.highlight)!;
 ---
 
 <Section class="relative isolate overflow-x-hidden">
@@ -37,6 +43,7 @@ const items = [
         class="absolute inset-0 -z-10 pointer-events-none bg-linear-to-b from-transparent via-primary/8 to-transparent"
     >
     </div>
+
     <Container>
         <div class="flex flex-col gap-10 lg:gap-16">
             <div class="flex flex-col items-center gap-y-5 text-center">
@@ -44,33 +51,66 @@ const items = [
                     One Tool. <strong>Replace Them All.</strong>
                 </h2>
             </div>
-            <div class="mb-0">
-                <div class="flex flex-col gap-y-5 px-4">
-                    {
-                        items.map(({ title, price, images }) => (
-                            <div class="relative max-lg:border max-lg:border-border max-lg:rounded-4xl max-lg:py-8 max-lg:corner-squircle">
-                                <div class="flex items-center flex-col lg:flex-row lg:justify-between w-full gap-y-8">
-                                    <div class="bg-body border border-border px-4 w-full py-2.5 rounded-full flex items-center justify-center relative z-10 gap-x-2 max-w-70">
-                                        <span class="font-semibold text-text-dark text-lg">{title}</span>
-                                    </div>
-                                    <div class="flex items-center justify-start gap-3 xl:gap-5 lg:min-w-90">
-                                        {images.map((src) => (
-                                            <ImageMod src={src} alt={`${title} icon`} class="max-h-12" />
-                                        ))}
-                                    </div>
-                                    <div class="bg-body border border-border px-4 w-full py-2.5 rounded-full flex items-center justify-center relative z-10 gap-x-2 max-w-60">
-                                        <span class="font-normal text-text text-base">
-                                            <span class="text-secondary font-secondary font-bold text-h6">{price}</span>{' '}
-                                            /Per Month
-                                        </span>
-                                    </div>
+
+            <div class="flex flex-col gap-3 px-4">
+                {
+                    competitors.map(({ title, price, images }) => (
+                        <div class="relative rounded-2xl border border-border bg-body/50 py-5 px-6 corner-squircle">
+                            <div class="flex flex-col items-center gap-6 lg:flex-row lg:justify-between">
+                                <div class="bg-body border border-border px-4 py-2.5 rounded-full flex items-center justify-center gap-x-2 w-full max-w-70 relative z-10">
+                                    <span class="font-semibold text-text-dark text-lg">{title}</span>
                                 </div>
-                                <div class="absolute inset-0 items-center -z-10 hidden xl:flex">
-                                    <div class="border-t border-border border-dashed w-full" />
+                                <div class="flex items-center justify-start gap-3 xl:gap-5 lg:min-w-90 relative z-10">
+                                    {images.map((src) => (
+                                        <ImageMod src={src} alt={`${title} icon`} class="max-h-12" />
+                                    ))}
+                                </div>
+                                <div class="bg-body border border-border px-4 py-2.5 rounded-full flex items-center justify-center gap-x-2 w-full max-w-60 relative z-10">
+                                    <span class="font-normal text-text text-base">
+                                        <span class="text-secondary font-secondary font-bold text-h6">{price}</span>{' '}
+                                        /Per Month
+                                    </span>
                                 </div>
                             </div>
-                        ))
-                    }
+                            <div class="absolute inset-0 items-center -z-10 hidden xl:flex">
+                                <div class="border-t border-dashed border-border w-full" />
+                            </div>
+                        </div>
+                    ))
+                }
+
+                <div class="flex items-center gap-4 px-2 my-1">
+                    <div class="flex-1 border-t border-dashed border-border/60"></div>
+                    <span class="text-xs font-bold text-text-light uppercase tracking-widest">vs</span>
+                    <div class="flex-1 border-t border-dashed border-border/60"></div>
+                </div>
+
+                <div class="relative rounded-2xl border-2 border-primary bg-primary/5 py-5 px-6 corner-squircle">
+                    <div class="flex flex-col items-center gap-6 lg:flex-row lg:justify-between">
+                        <div
+                            class="bg-body border-2 border-primary px-4 py-2.5 rounded-full flex items-center justify-center gap-x-2 w-full max-w-70 relative z-10"
+                        >
+                            <span class="font-semibold text-primary text-lg">{featured.title}</span>
+                        </div>
+                        <div class="flex items-center justify-start gap-3 xl:gap-5 lg:min-w-90 relative z-10">
+                            {
+                                featured.images.map((src) => (
+                                    <ImageMod src={src} alt={`${featured.title} icon`} class="max-h-12" />
+                                ))
+                            }
+                        </div>
+                        <div
+                            class="bg-body border-2 border-primary px-4 py-2.5 rounded-full flex items-center justify-center gap-x-2 w-full max-w-60 relative z-10"
+                        >
+                            <span class="font-normal text-text text-base">
+                                <span class="text-primary font-secondary font-bold text-h6">{featured.price}</span>{' '}
+                                /Per Month
+                            </span>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 items-center -z-10 hidden xl:flex">
+                        <div class="border-t border-dashed border-primary/30 w-full"></div>
+                    </div>
                 </div>
             </div>
         </div>
