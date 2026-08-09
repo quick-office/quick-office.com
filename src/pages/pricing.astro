@@ -1,11 +1,13 @@
 ---
+import { markdownify } from '@/lib/text-converter';
+
 import { SiteLayout } from '@/layouts/site-layout';
 import { CallToAction, Faq } from '@/components';
-import { PricingSection } from '@/screens/pricing';
 import { Section } from '@/components/ui/section';
-import { markdownify } from '@/lib/text-converter';
 import { Container } from '@/components/ui/container';
+
 import Badge from '@/components/elements/Badge.astro';
+import PricingCards from '@/components/elements/PricingCards.astro';
 
 const pricingData = {
     page_header: {
@@ -17,18 +19,21 @@ const pricingData = {
         enable: true,
         badge: 'Plan Matrix',
         title: 'Pricing Plans <strong>Comparison</strong>',
-        headers: [{ label: 'Features' }, { label: 'Essentials' }, { label: 'Growth' }, { label: 'Scale' }],
+        headers: [{ label: 'Features' }, { label: 'Free' }, { label: 'Basic' }, { label: 'Pro' }],
         rows: [
-            { feature: 'Monthly Price', values: ['$97', '$297', '$497'] },
-            { feature: 'User Accounts', values: ['3', '10', 'Unlimited'] },
-            { feature: 'Unified Lead Inbox', values: [true, true, true] },
-            { feature: 'Missed Call Auto-Responder', values: [true, true, true] },
-            { feature: 'Autopilot Review Generator', values: [true, true, true] },
-            { feature: '24/7 Appointment Scheduler', values: [false, true, true] },
-            { feature: 'Website & Funnel Builder', values: [false, true, true] },
-            { feature: 'Automated SMS/Email Campaigns', values: [false, true, true] },
-            { feature: 'Multi-Location Management', values: [false, false, true] },
-            { feature: 'Support', values: ['Email Support', 'Priority Support', 'Dedicated Manager'] },
+            { feature: 'Monthly Price', values: ['৳0', '৳1,999', '৳4,999'] },
+            { feature: 'Invoice Creation & Management', values: [true, true, true] },
+            { feature: 'Payment Receive History', values: [true, true, true] },
+            { feature: 'Supplier Invoice Management', values: [true, true, true] },
+            { feature: 'Chart of Accounts', values: [false, true, true] },
+            { feature: 'Voucher Creation (Debit/Credit)', values: [false, true, true] },
+            { feature: 'Profit & Loss Reports', values: [false, true, true] },
+            { feature: 'Cost Center Analysis', values: [false, false, true] },
+            { feature: 'Account Distribution Overview', values: [false, false, true] },
+            { feature: 'Journal Book & Account Book', values: [false, false, true] },
+            { feature: 'Team Members', values: ['—', 'Up to 5', 'Up to 20'] },
+            { feature: 'SSLCommerz Payments', values: [false, false, true] },
+            { feature: 'Support', values: ['Community', 'Email Support', 'Priority Support'] },
         ],
     },
 };
@@ -56,7 +61,7 @@ const pricingData = {
             </div>
         </Container>
 
-        <PricingSection isHome={false} />
+        <PricingCards />
     </Section>
 
     <!-- Comparison Table -->
