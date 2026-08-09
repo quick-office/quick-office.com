@@ -1,16 +1,19 @@
 ---
-import ProcessCard from '@/screens/home/ProcessCard.astro';
-import TestimonialCard from '@/components/TestimonialCard.astro';
-import { Button } from '@/components/ui/button';
-import { Section } from '@/components/ui/section';
-import { Container } from '@/components/ui/container';
 import {
     valuesIcon1,
     valuesIcon2,
     valuesIcon3,
     featuredVideoThumbnail as howItWorksPoster,
-    bannerShowcaseVideo,
+    bannerShowcaseVideo as video,
 } from '@/lib/assets';
+
+import { Button } from '@/components/ui/button';
+import OvalBgIcon from '@/components/icons/OvalBgIcon.astro';
+import { Section } from '@/components/ui/section';
+import { Container } from '@/components/ui/container';
+
+import ProcessCard from './ProcessCard.astro';
+import TestimonialCard from '@/components/TestimonialCard.astro';
 
 const steps = [
     {
@@ -44,7 +47,7 @@ const steps = [
     >
     </div>
     <div
-        class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-l from-primary/10 via-transparent to-transparent"
+        class="absolute inset-0 -z-10 pointer-events-none bg-linear-to-l from-primary/10 via-transparent to-transparent"
     >
     </div>
     <Container>
@@ -56,7 +59,7 @@ const steps = [
             </div>
             <div class="mb-0">
                 <div class="mb-14">
-                    <TestimonialCard poster={howItWorksPoster} video={bannerShowcaseVideo} />
+                    <TestimonialCard poster={howItWorksPoster} video={video} />
                 </div>
                 <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-16">
                     {steps.map((step) => <ProcessCard logo={step.logo} title={step.title} content={step.content} />)}
@@ -68,12 +71,6 @@ const steps = [
         </div>
     </Container>
     <div class="absolute inset-x-0 top-0 -z-10">
-        <svg class="w-full" viewBox="0 0 1920 1099" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M960 1.5C1224.88 1.5 1464.62 62.943 1638.08 162.205C1811.58 261.491 1918.5 398.425 1918.5 549.356C1918.5 700.287 1811.58 837.222 1638.08 936.508C1464.62 1035.77 1224.88 1097.21 960 1097.21C695.116 1097.21 455.383 1035.77 281.923 936.508C108.42 837.222 1.50012 700.287 1.5 549.356C1.5 398.425 108.42 261.491 281.923 162.205C455.383 62.943 695.116 1.5 960 1.5Z"
-                fill="black"
-                stroke="var(--color-border)"
-                stroke-width="3"></path>
-        </svg>
+        <OvalBgIcon class="w-full" />
     </div>
 </Section>
