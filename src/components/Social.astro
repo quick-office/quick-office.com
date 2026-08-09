@@ -1,17 +1,25 @@
 ---
-const { source, className } = Astro.props;
+import { cn } from '@/lib/utils';
+
 import DynamicIcon from '@/components/helpers/DynamicIcon';
 
-export interface ISocial {
+type TSocial = {
     name: string;
     icon: string;
     link: string;
+};
+
+interface Props {
+    source: TSocial[];
+    className?: string;
 }
+
+const { source, className } = Astro.props;
 ---
 
-<ul class={`flex gap-4 ${className ?? ''}`}>
+<ul class={cn('flex gap-4', className)}>
     {
-        source.map((social: ISocial) => (
+        source.map((social) => (
             <li class="inline-block">
                 <a
                     aria-label={social.name}

@@ -1,7 +1,5 @@
-export { default as BrandsCarousel } from './BrandsCarousel.astro';
 export { default as CallToAction } from './CallToAction.astro';
 export { default as Faq } from './Faq.astro';
-export { default as GradientBlob } from './GradientBlob.astro';
 export { default as ImageMod } from './ImageMod.astro';
 export { default as LeadGeneration } from './LeadGeneration.astro';
 export { default as PageHeader } from './PageHeader.astro';

@@ -1,6 +1,6 @@
 ---
 import { SiteLayout } from '@/layouts/site-layout';
-import { BrandsCarousel, CallToAction, Faq, GradientBlob, ImageMod } from '@/components';
+import { CallToAction, Faq, ImageMod } from '@/components';
 import { siteName } from '@/lib/config';
 import { OurStory, TeamCard, Features, Testimonial } from '@/screens/about';
 import { Section } from '@/components/ui/section';
@@ -22,6 +22,7 @@ import {
     featuresMenuIcon,
 } from '@/lib/assets';
 import Badge from '@/components/elements/Badge.astro';
+import BrandsCarousel from '@/components/BrandsCarousel.astro';
 
 const aboutData = {
     page_header: {
@@ -109,9 +110,6 @@ const aboutData = {
                         ))}
                     </div>
                 </Container>
-                <div class="-translate-y-140">
-                    <GradientBlob />
-                </div>
             </Section>
         )
     }

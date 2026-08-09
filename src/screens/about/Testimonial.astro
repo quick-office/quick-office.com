@@ -1,5 +1,4 @@
 ---
-import GradientBlob from '@/components/GradientBlob.astro';
 import TestimonialCard from '@/components/TestimonialCard.astro';
 import { Section } from '@/components/ui/section';
 import { testimonial1, testimonial2, testimonial3, bannerShowcaseVideo } from '@/lib/assets';
@@ -15,8 +14,7 @@ const testimonial = {
             designation: 'Owner, Rahman Trading Co. — Dhaka',
             poster: testimonial1,
             video: bannerShowcaseVideo,
-            content:
-                `Before ${siteName}, I was losing at least 5 leads a week just because we couldn't follow up fast enough. Now the system does it automatically. Our bookings went up 40% in the first two months.`,
+            content: `Before ${siteName}, I was losing at least 5 leads a week just because we couldn't follow up fast enough. Now the system does it automatically. Our bookings went up 40% in the first two months.`,
         },
         {
             name: 'Nadia Islam',
@@ -64,7 +62,6 @@ const testimonial = {
                     </div>
                 </div>
             </Container>
-            <GradientBlob />
         </Section>
     )
 }

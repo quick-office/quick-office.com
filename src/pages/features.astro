@@ -2,7 +2,7 @@
 import DynamicIcon from '@/components/helpers/DynamicIcon';
 import { SiteLayout } from '@/layouts/site-layout';
 import { siteName } from '@/lib/config';
-import { BrandsCarousel, CallToAction, Faq, GradientBlob, ImageMod } from '@/components';
+import { CallToAction, Faq, ImageMod } from '@/components';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { BusinessNeeds, ComparisonRow, ShowcaseCard } from '@/screens/features';
@@ -18,6 +18,7 @@ import {
     featureServiceFeature1,
     featureServiceFeature2,
 } from '@/lib/assets';
+import BrandsCarousel from '@/components/BrandsCarousel.astro';
 
 const featuresData = {
     banner: {
@@ -199,7 +200,6 @@ const featuresData = {
                         </div>
                     </div>
                 </Container>
-                <GradientBlob />
             </Section>
         )
     }
@@ -239,7 +239,6 @@ const featuresData = {
                             </div>
                         </div>
                     </Container>
-                    <GradientBlob />
                 </Section>
             ))
     }
